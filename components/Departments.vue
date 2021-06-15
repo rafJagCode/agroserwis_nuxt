@@ -1,11 +1,9 @@
 <template>
-  <v-row>
-    <v-col class="col-md-3" v-for="department in departments" :key="department.name">
+  <v-row justify="center">
+    <v-col class="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-xs-12" v-for="department in departments" :key="department.name">
       <DepartmentCard
-        :name="department.name"
-        :phone="department.phone"
-        :description="department.description"
-        :image="department.image">
+        :department="department"
+      >
       </DepartmentCard>
     </v-col>
   </v-row>
@@ -16,29 +14,62 @@ export default {
   data: ()=>({
     departments: [
       {
-        name: 'oddział 1',
-        image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        description: 'opis 1',
-        phone: '666 666 111'
+        mobile: null,
+        phone: '(+48)86 270 30 99',
+        email: 'biuro@agro-serwis.pl',
+        fax: '(+48)86 270 30 99',
+        name: 'Oddział w Zambrowie',
+        street: 'ul. Polowa 14',
+        address: '18-300 Zambrów',
+        description: '',
+        image: 'zambrów.png',
       },
       {
-        name: 'oddział 2',
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1147&q=80',
-        description: 'opis 2',
-        phone: '666 666 222'
+        mobile: '(+48)693 500 193',
+        phone: null,
+        email: null,
+        fax: null,
+        name: 'Oddział w Przasnyszu',
+        street: 'ul. leszno 44',
+        address: '06-300 Przasnysz',
+        description: null,
+        image: 'przasnysz.png',
       },
       {
-        name: 'oddział 3',
-        image: 'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=689&q=80',
-        description: 'opis 3',
-        phone: '666 666 333'
+        mobile: '603 500 709',
+        phone: '25/631 34 66',
+        email: null,
+        fax: null,
+        name: 'Oddział w Starym Opolu k.Siedlec',
+        street: 'ul. Warszawska 55',
+        address: '08-103 Stare Opole',
+        description: null,
+        image: 'stare_opole.png',
       },
       {
-        name: 'oddział 4',
-        image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80',
-        description: 'opis 4',
-        phone: '666 666 444'
-      }
+        mobile: null,
+        phone: '(+48)85 662 71 23',
+        email: null,
+        fax: null,
+        name: 'Odział w Białymstoku',
+        street: 'ul. Elewatorska 13',
+        address: '15-620 Białystok',
+        description: null,
+        image: 'białystok.png',
+      },
+      {
+        mobile: null,
+        phone: 'do uzupełnienia',
+        email: null,
+        fax: null,
+        name: 'Odział w Grójcu',
+        street: 'do uzupełnienia',
+        address: 'do uzupełnienia',
+        description: null,
+        image: 'grójec.png',
+      },
+
+
     ]
   })
 }

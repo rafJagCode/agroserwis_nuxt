@@ -1,5 +1,6 @@
 <template>
   <v-container class="partners py-6">
+    <v-row class="partners__text text-h6 font-weight-black" justify="center">NASI PARTNERZY</v-row>
     <v-row justify="center" class="partners__row">
       <Partner
         v-for="partner in partners"
@@ -7,6 +8,7 @@
         :image="partner.image"
       ></Partner>
     </v-row>
+    <v-divider></v-divider>
   </v-container>
 </template>
 
@@ -18,34 +20,34 @@ export default {
     partners: [
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-adagamingcenter.png',
+          'case.svg',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-theartesianhotel.png',
+          'annaburger.svg',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-blackgoldcasino.png',
+          'italmix.png',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-bordercasino.png',
+          'lemken.png',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-chickasawtravelstop.png',
+          'manitou.png',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-chisholmtrailcasino.png',
+          'mashio.png',
       },
       {
         image:
-          'https://dkr2rmsityotp.cloudfront.net/wp-content/uploads/2018/07/logo-goldsbygamingcenter.png',
+          'partner_agro.png',
       },
       {
-        image: 'https://via.placeholder.com/600/92c952',
+        image: 'steyr.png',
       },
     ],
   }),
@@ -55,9 +57,10 @@ export default {
 <style scoped>
 .partners {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-.partners__col {
-  cursor: pointer;
+.partners__text{
+  font-family: 'Mate SC', serif!important;
 }
 </style>

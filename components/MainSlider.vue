@@ -6,7 +6,7 @@
     show-arrows-on-hover
     cycle
     interval="4000"
-    class="mb-6"
+    class="ma-0"
     :touch="{
       left: () => activeSlide--,
       right: () => activeSlide++,
@@ -15,7 +15,7 @@
     <v-carousel-item
       v-for="(item, i) in items"
       :key="i"
-      :src="item.src"
+      :src="require(`~/assets/images/slides/${item.src}`)"
     ></v-carousel-item>
   </v-carousel>
 </template>
@@ -27,16 +27,19 @@ export default {
       activeSlide: 0,
       items: [
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+          src: 'axial2.png',
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+          src: 'axial3.jpg',
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+          src: 'steyr1.jpg',
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+          src: 'steyr2.jpg',
+        },
+        {
+          src: 'steyr3.png',
         },
       ],
     }

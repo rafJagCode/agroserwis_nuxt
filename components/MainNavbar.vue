@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app>
+  <v-app-bar app color="primary">
     <v-img
       :src="require('~/assets/images/logo.png')"
       contain
@@ -13,7 +13,9 @@
     <MainCollapsingMenu
       @hamburger-clicked="showMobileList = !showMobileList"
     ></MainCollapsingMenu>
-    <NavbarMobileList v-show="showMobileList"></NavbarMobileList>
+    <transition name="slide-fade">
+      <NavbarMobileList v-show="showMobileList && mobile"></NavbarMobileList>
+    </transition>
   </v-app-bar>
 </template>
 
@@ -22,5 +24,18 @@ export default {
   data: () => ({
     showMobileList: false,
   }),
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs
+    },
+  },
 }
 </script>
+<style lang="scss">
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all 300ms ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  opacity: 0;
+}
+</style>

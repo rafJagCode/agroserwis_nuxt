@@ -2,9 +2,9 @@
   <v-col cols="6" sm="3" md="2" lg="1" class="partners__col">
     <v-img
       class="partners__col-image"
-      :src="image"
-      :max-height="70"
-      :max-width="70"
+      :src="require(`~/assets/images/partners/${image}`)"
+      :max-height="90"
+      :max-width="90"
       contain
     ></v-img>
   </v-col>
