@@ -3,9 +3,9 @@
   <div class="department mb-12">
   <v-hover v-slot="{hover}">
   <v-card
+    :elevation="hover ? 4 : 0"
     class="department-card"
     width="300"
-    :elevation="hover ? 12 : 4"
     color="success"
   >
     <div class="department-card__main-content">
@@ -19,11 +19,11 @@
       ></v-img>
       </div>
 
-        <v-card-title class="department-card__title pl-0">{{department.name}}</v-card-title>
+        <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
 </div>
       <div class="department-card__info">
 
-        <v-card-text>
+        <v-card-text class="pt-0 font-weight-medium">
           <div v-show="department.street">{{department.street}}</div>
           <div v-show="department.address">{{department.address}}</div>
         </v-card-text>
@@ -36,8 +36,9 @@
 
       <v-card-actions>
         <v-btn
-          color="deep-purple lighten-2"
+          color="accent"
           icon
+          :href="`tel:${department.phone}`"
         >
           <v-icon>mdi-phone</v-icon>
         </v-btn>
@@ -50,8 +51,9 @@
 
       <v-card-actions>
         <v-btn
-          color="deep-purple lighten-2"
+          color="accent"
           icon
+          :href="`tel:${department.mobile}`"
         >
           <v-icon>mdi-cellphone-basic</v-icon>
         </v-btn>
@@ -64,31 +66,19 @@
 
       <v-card-actions>
         <v-btn
-          color="deep-purple lighten-2"
+          color="accent"
           icon
+          :href="`mailto:${department.email}`"
         >
           <v-icon>mdi-email</v-icon>
         </v-btn>
         <div class="ml-1 text-subtitle-2">{{department.email}}</div>
       </v-card-actions>
     </div>
-      <div v-show="department.fax" class="department-card__action">
-        <v-divider class="mx-4"></v-divider>
-
-        <v-card-actions>
-          <v-btn
-            color="deep-purple lighten-2"
-            icon
-          >
-            <v-icon>mdi-fax</v-icon>
-          </v-btn>
-          <div class="ml-1 text-subtitle-2">{{department.fax}}</div>
-        </v-card-actions>
-      </div>
     </div>
   </v-card>
   </v-hover>
-    <v-btn @click="showActions = !showActions" class="department-card__info-btn" text>kontakt</v-btn>
+    <v-btn @click="showActions = !showActions" class="department-card__info-btn error--text" text>kontakt</v-btn>
   </div>
 </template>
 
@@ -114,16 +104,17 @@ export default {
 </script>>
 <style scoped lang="scss">
 .department{
+  flex: 1 1 150px; /*  Stretching: */
+  flex: 0 1 150px; /*  No stretching: */
+  margin: 5px;
   position: relative;
-  display:grid;
-  place-items:center;
 }
 .department-card{
   display: grid;
   grid-template-rows: 1fr auto;
-  cursor: pointer;
 }
 .department-card__main-content{
+  cursor: pointer;
   display: grid;
   grid-template-rows: 110px 1fr;
 }

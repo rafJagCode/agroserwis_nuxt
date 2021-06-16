@@ -1,6 +1,6 @@
 <template>
   <v-carousel
-    :height="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm ? 200 : 500"
+    :height="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm ? 200 : fullHeight"
     v-model="activeSlide"
     hide-delimiters
     show-arrows-on-hover
@@ -44,5 +44,10 @@ export default {
       ],
     }
   },
+  computed:{
+    fullHeight(){
+      return window.innerHeight - 112;
+    }
+  }
 }
 </script>

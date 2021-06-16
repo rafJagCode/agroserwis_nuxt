@@ -1,6 +1,6 @@
 <template>
   <v-container class="partners py-6">
-    <v-row class="partners__text text-h6 font-weight-black" justify="center">NASI PARTNERZY</v-row>
+    <v-row class="partners__text text-h6 font-weight-black primary--text" justify="center">NASI PARTNERZY</v-row>
     <v-row justify="center" class="partners__row">
       <Partner
         v-for="partner in partners"
@@ -8,7 +8,7 @@
         :image="partner.image"
       ></Partner>
     </v-row>
-    <v-divider></v-divider>
+    <v-divider color="primary" class="my-6"></v-divider>
   </v-container>
 </template>
 
@@ -55,12 +55,15 @@ export default {
 </script>
 
 <style scoped>
+.theme--light.v-divider {
+  border-color: var(--v-primary-base);
+}
 .partners {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .partners__text{
-  font-family: 'Mate SC', serif!important;
+  font-family: 'Brygada 1918', serif!important;
 }
 </style>

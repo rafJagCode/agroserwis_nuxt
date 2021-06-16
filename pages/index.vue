@@ -1,7 +1,8 @@
 <template>
-  <v-container>
+  <div class="py-12">
     <Departments></Departments>
-  </v-container>
+    <MainAboutUs></MainAboutUs>
+  </div>
 </template>
 <script>
 export default {

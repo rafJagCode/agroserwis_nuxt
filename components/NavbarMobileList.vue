@@ -15,18 +15,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+  color: var(--v-accent-base) !important;
+}
 .navbar-mobile-list {
   position: absolute;
   right: 0;
   bottom: 0;
   transform: translateY(100%);
   width: 100%;
+  border-top: 1px solid var(--v-accent-base);
+  z-index: 2;
 }
 .navbar-mobile-list__item{
   cursor: pointer;
   background-color: var(--v-primary-base);
+  z-index: 3;
 }
 .navbar-mobile-list__item:hover {
-  background-color: red;
+  background-color: var(--v-accent-base);
+  &.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled){
+    color: var(--v-primary-base)!important;
+  }
 }
 </style>

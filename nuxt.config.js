@@ -63,12 +63,12 @@ export default {
       },
       themes: {
         light: {
-          primary: '#BFC0C0',
-          secondary: '#8B94A3',
+          primary: '#ffffff',
+          secondary: '#656468',
           accent: '#466060',
-          error: '#E6DDDB',
+          error: '#E0E0E1',
           info: '#221D23',
-          success: '#d8cbc7',
+          success: '#E0E0E1',
           warning: '#d4af37',
         }
       }

@@ -1,6 +1,7 @@
 <template>
-  <v-list class="navbar__list" color="transparent">
+  <v-list class="main-collapsing-menu" color="transparent">
     <v-btn
+      class="accent--text"
       v-show="mobile"
       text
       elevation="false"
@@ -8,7 +9,7 @@
     >
       <v-icon>mdi-menu</v-icon>
     </v-btn>
-    <v-btn v-show="!mobile" v-for="link in links" :key="link" text>
+    <v-btn class="main-collapsing-menu__link accent--text" v-show="!mobile" v-for="link in links" :key="link" text @click="$vuetify.goTo('.departments')">
       {{ link }}
     </v-btn>
   </v-list>
@@ -29,4 +30,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.main-collapsing-menu__link:hover{
+  background-color: var(--v-accent-base);
+  color: var(--v-primary-base)!important;
+}
+</style>

@@ -3,7 +3,7 @@
       <v-btn
         v-for="icon in icons"
         :key="icon"
-        class="mx-4 white--text"
+        class="mx-4 primary--text"
         icon
       >
         <v-icon size="24px">

@@ -1,12 +1,12 @@
 <template>
-  <v-footer color="primary" padless class="main-footer">
+  <v-footer color="secondary" padless class="main-footer">
     <Partners></Partners>
 
     <v-container class="main-footer__sections">
       <FooterContact></FooterContact>
       <FooterSocialMedia></FooterSocialMedia>
     </v-container>
-    <div class="main-footer__copyright">
+    <div class="main-footer__copyright primary--text">
       {{ new Date().getFullYear() }} — <strong>Agroserwis</strong>
     </div>
 
