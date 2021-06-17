@@ -1,5 +1,5 @@
 <template>
-  <div class="departments pb-12 px-4">
+  <div class="departments py-12 px-4">
     <div v-for="department in departments" :key="department.name">
       <DepartmentCard
         :department="department"
@@ -10,7 +10,11 @@
 </template>
 
 <script>
+import DepartmentCard from "~/components/departments/DepartmentCard";
 export default {
+  components:{
+    DepartmentCard
+  },
   data: ()=>({
     departments: [
       {

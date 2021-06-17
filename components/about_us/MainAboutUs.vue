@@ -1,13 +1,13 @@
 <template>
-<div class="main-about-us pa-4 pt-12">
+<div class="main-about-us pa-4 py-12">
   <MainAboutUsGallery v-show="!mobile"></MainAboutUsGallery>
   <MainAboutUsText></MainAboutUsText>
 </div>
 </template>
 
 <script>
-import MainAboutUsGallery from "~/components/MainAboutUsGallery";
-import MainAboutUsText from "~/components/MainAboutUsText";
+import MainAboutUsGallery from "~/components/about_us/MainAboutUsGallery";
+import MainAboutUsText from "~/components/about_us/MainAboutUsText";
 export default {
   components: {MainAboutUsText, MainAboutUsGallery},
   computed: {

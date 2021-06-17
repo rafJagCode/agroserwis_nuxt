@@ -6,7 +6,6 @@
     <!-- Sizes your content based upon application components -->
     <v-main>
       <!-- Provides the application the proper gutter -->
-      <MainSlider></MainSlider>
         <Nuxt />
     </v-main>
 
@@ -14,13 +13,15 @@
   </v-app>
 </template>
 <script>
+
+import MainLogoBar from "~/components/navbar/MainLogoBar";
+import MainNavbar from "~/components/navbar/MainNavbar";
+import MainFooter from "~/components/footer/MainFooter";
 export default {
+  components: {
+    MainFooter, MainNavbar, MainLogoBar
+  }
 }
 </script>
 <style scoped lang="scss">
-.main-container{
-  //background-image: url("~/assets/images/bg/carbon_bg4.jpg");
-  //background-size: auto, auto;
-
-}
 </style>

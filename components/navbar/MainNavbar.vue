@@ -20,7 +20,11 @@
 </template>
 
 <script>
+import MainCollapsingMenu from "~/components/navbar/MainCollapsingMenu";
 export default {
+  components: {
+    MainCollapsingMenu
+  },
   data: () => ({
     showMobileList: false,
   }),
