@@ -1,5 +1,5 @@
 <template>
-  <div class="departments">
+  <div class="departments pb-12 px-4">
     <div v-for="department in departments" :key="department.name">
       <DepartmentCard
         :department="department"
@@ -79,7 +79,12 @@ export default {
 .departments{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+}
+@media (max-width: 1350px){
+  .departments{
+    justify-content: center;
+  }
 }
 /*@media (min-width:1264px) and (max-width: 1904px){*/
 /*}*/

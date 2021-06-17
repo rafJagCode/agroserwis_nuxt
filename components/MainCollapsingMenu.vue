@@ -9,8 +9,8 @@
     >
       <v-icon>mdi-menu</v-icon>
     </v-btn>
-    <v-btn class="main-collapsing-menu__link accent--text" v-show="!mobile" v-for="link in links" :key="link" text @click="$vuetify.goTo('.departments')">
-      {{ link }}
+    <v-btn class="main-collapsing-menu__link accent--text" v-show="!mobile" v-for="link in links" :key="link.name" text @click="$vuetify.goTo(link.link)">
+      {{ link.name }}
     </v-btn>
   </v-list>
 </template>
@@ -19,7 +19,20 @@
 export default {
   data() {
     return {
-      links: ['Home', 'O nas', 'Kontakt'],
+      links: [
+        {
+          name: 'Home',
+          link: '#app'
+        },
+        {
+          name: 'Oddziały',
+          link: '.departments'
+        },
+        {
+          name: 'O nas',
+          link: '.main-about-us'
+        },
+      ],
     }
   },
   computed: {

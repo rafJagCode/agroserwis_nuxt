@@ -1,6 +1,6 @@
 <template>
     <v-list class="navbar-mobile-list py-0">
-        <v-list-item v-for="link in links" :key="link" class="navbar-mobile-list__item">{{link}}</v-list-item>
+        <v-list-item @click="$vuetify.goTo(link.link)" v-for="link in links" :key="link.name" class="navbar-mobile-list__item">{{link.name}}</v-list-item>
     </v-list>
 </template>
 
@@ -8,7 +8,20 @@
 export default {
   data() {
     return {
-      links: ['Home', 'O nas', 'Kontakt'],
+      links: [
+        {
+          name: 'Home',
+          link: '#app'
+        },
+        {
+          name: 'Oddziały',
+          link: '.departments'
+        },
+        {
+          name: 'O nas',
+          link: '.main-about-us'
+        },
+      ],
     }
   },
 }

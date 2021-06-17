@@ -6,6 +6,7 @@
     :elevation="hover ? 4 : 0"
     class="department-card"
     width="300"
+
     color="success"
   >
     <div class="department-card__main-content">
@@ -13,7 +14,7 @@
       <div class="department-card__crest">
       <v-img
         height="80"
-        widht="80"
+        width="80"
         contain
         :src="require(`~/assets/images/crest/${department.image}`)"
       ></v-img>

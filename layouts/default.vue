@@ -7,9 +7,7 @@
     <v-main>
       <!-- Provides the application the proper gutter -->
       <MainSlider></MainSlider>
-      <v-container class="main-container my-0">
         <Nuxt />
-      </v-container>
     </v-main>
 
     <MainFooter></MainFooter>
