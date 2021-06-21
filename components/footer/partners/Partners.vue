@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Partner from '~/components/partners/Partner';
+import Partner from '~/components/footer/partners/Partner';
 export default {
   components: { Partner },
   data: () => ({

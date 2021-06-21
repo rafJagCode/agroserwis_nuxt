@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import MainAboutUsGallery from "~/components/about_us/MainAboutUsGallery";
-import MainAboutUsText from "~/components/about_us/MainAboutUsText";
+import MainAboutUsGallery from "~/components/home/about_us/MainAboutUsGallery";
+import MainAboutUsText from "~/components/home/about_us/MainAboutUsText";
 export default {
   components: {MainAboutUsText, MainAboutUsGallery},
   computed: {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DepartmentCard from "~/components/departments/DepartmentCard";
+import DepartmentCard from "~/components/home/departments/DepartmentCard";
 export default {
   data(){
     return{

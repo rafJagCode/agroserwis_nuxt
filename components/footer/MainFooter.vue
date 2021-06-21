@@ -14,7 +14,9 @@
 </template>
 
 <script>
+import Partners from "~/components/footer/partners/Partners";
 export default {
+  components: { Partners }
 }
 </script>
 <style scoped lang="scss">
