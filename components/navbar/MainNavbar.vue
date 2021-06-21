@@ -37,7 +37,7 @@ export default {
 </script>
 <style lang="scss">
 .main-navbar{
-  z-index: 1;
+  z-index: 2;
 }
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: all 300ms ease;
