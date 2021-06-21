@@ -18,7 +18,7 @@
       :src="require(`~/assets/images/slides/${item.src}`)"
     ></v-carousel-item>
     <v-btn
-      @click="$vuetify.goTo('.departments')"
+      @click="scrollFullPage"
       class="main-slider__go-down-btn"
       elevation="2"
       fab
@@ -37,19 +37,13 @@ export default {
       activeSlide: 0,
       items: [
         {
-          src: 'axial2.png',
+          src: 'casenew.jpg',
         },
         {
-          src: 'axial3.jpg',
+          src: 'lemkennew.jpg',
         },
         {
-          src: 'steyr1.jpg',
-        },
-        {
-          src: 'steyr2.jpg',
-        },
-        {
-          src: 'steyr3.png',
+          src: 'lemkennew2.jpg',
         },
       ],
     }
@@ -67,6 +61,9 @@ export default {
       window.onscroll = () => {
         this.scrolledTop = window.scrollY === 0;
       }
+    },
+    scrollFullPage(){
+      window.scroll(0, window.innerHeight);
     }
   },
   beforeMount(){

@@ -9,7 +9,7 @@
 
     color="success"
   >
-    <div class="department-card__main-content">
+    <div class="department-card__main-content" @click="$nuxt.$router.push({path: `/${department.link}`})">
 <div class="department-card__header">
       <div class="department-card__crest">
       <v-img
@@ -79,7 +79,7 @@
     </div>
   </v-card>
   </v-hover>
-    <v-btn @click="showActions = !showActions" class="department-card__info-btn error--text" text>kontakt</v-btn>
+    <v-btn @click="showActions = !showActions" class="department-card__info-btn primary--text" text>kontakt</v-btn>
   </div>
 </template>
 

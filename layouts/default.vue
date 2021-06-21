@@ -20,7 +20,7 @@ import MainFooter from "~/components/footer/MainFooter";
 export default {
   components: {
     MainFooter, MainNavbar, MainLogoBar
-  }
+  },
 }
 </script>
 <style scoped lang="scss">

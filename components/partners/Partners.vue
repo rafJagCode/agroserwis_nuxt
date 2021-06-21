@@ -1,7 +1,7 @@
 <template>
   <v-container class="partners py-6">
     <v-row class="partners__text text-h6 font-weight-black primary--text" justify="center">NASI PARTNERZY</v-row>
-    <v-row justify="center" class="partners__row">
+    <v-row class="partners__row">
       <Partner
         v-for="partner in partners"
         :key="partner.image"
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Partner from '~/components/partners/Partner'
+import Partner from '~/components/partners/Partner';
 export default {
   components: { Partner },
   data: () => ({
@@ -61,7 +61,9 @@ export default {
 .partners {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+.partners__row{
+  justify-content: space-evenly;
 }
 .partners__text{
   font-family: 'Brygada 1918', serif!important;
