@@ -84,9 +84,6 @@ export default {
 </script>
 
 <style scoped>
-.theme--light.v-label {
-  color: #ff9800;
-}
 .email-us-card{
   height: 100%;
   display: flex;
