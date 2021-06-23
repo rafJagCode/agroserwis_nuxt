@@ -9,7 +9,7 @@
 
     color="success"
   >
-    <div class="department-card__main-content" @click="$nuxt.$router.push({path: `/${department.link}`})">
+    <NuxtLink class="department-card__main-content" :to="department.link" v-show="department.name !== 'Białystok'">
 <div class="department-card__header">
       <div class="department-card__crest">
       <v-img
@@ -29,7 +29,30 @@
           <div v-show="department.address">{{department.address}}</div>
         </v-card-text>
       </div>
-    </div>
+    </NuxtLink>
+
+
+    <a class="department-card__main-content" :href="department.link" v-show="department.name === 'Białystok'">
+      <div class="department-card__header">
+        <div class="department-card__crest">
+          <v-img
+            height="80"
+            width="80"
+            contain
+            :src="require(`~/assets/images/crest/${department.image}`)"
+          ></v-img>
+        </div>
+
+        <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
+      </div>
+      <div class="department-card__info">
+
+        <v-card-text class="pt-0 font-weight-medium">
+          <div v-show="department.street">{{department.street}}</div>
+          <div v-show="department.address">{{department.address}}</div>
+        </v-card-text>
+      </div>
+    </a>
 
     <div v-show="showActions" class="department-card__actions">
    <div v-show="department.phone" class="department-card__action">
@@ -89,17 +112,7 @@ export default {
    showActions: false,
   }),
   props: {
-    department: {
-      mobile: null,
-      phone: null,
-      email: null,
-      fax: null,
-      name: null,
-      street: null,
-      address: null,
-      description: null,
-      image: null,
-    }
+    department: null
   }
 }
 </script>>
@@ -118,6 +131,8 @@ export default {
   cursor: pointer;
   display: grid;
   grid-template-rows: 110px 1fr;
+  color: black;
+  text-decoration: none;
 }
 .department-card__header{
   display: grid;

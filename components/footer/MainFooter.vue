@@ -1,6 +1,6 @@
 <template>
   <v-footer color="secondary" padless class="main-footer mt-12">
-    <Partners></Partners>
+    <Partners v-show="$nuxt.$route.name==='index'"></Partners>
 
     <v-container class="main-footer__sections">
       <FooterContact></FooterContact>
