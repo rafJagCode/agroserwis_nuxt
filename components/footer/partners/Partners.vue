@@ -8,7 +8,7 @@
         :image="partner.image"
       ></Partner>
     </v-row>
-    <v-divider color="primary" class="my-6"></v-divider>
+    <v-divider color="primary" class="mt-6"></v-divider>
   </v-container>
 </template>
 
@@ -36,18 +36,18 @@ export default {
       },
       {
         image:
-          'manitou.png',
+          'manitou.svg',
       },
       {
         image:
-          'mashio.png',
+          'maschio.svg',
       },
       {
         image:
           'partner_agro.png',
       },
       {
-        image: 'steyr.png',
+        image: 'steyr.svg',
       },
     ],
   }),

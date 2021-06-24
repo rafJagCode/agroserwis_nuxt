@@ -12,11 +12,14 @@
       </div>
     </div>
   </div>
+    <CheckOffer></CheckOffer>
 </div>
 </template>
 
 <script>
+import CheckOffer from "~/components/department/CheckOffer";
 export default {
+  components: {CheckOffer},
   props: {
     product: null,
     index: null,
@@ -111,6 +114,7 @@ export default {
   padding: 20px;
   max-width: 60%;
   margin: 0 auto 0 8em;
+  box-shadow: 0px 0px 1px var(--v-secondary-base);
 }
 .tilt__upper-layer{
   position: absolute;
@@ -121,7 +125,10 @@ export default {
   left:0;
 }
 .tilt:hover {
-  box-shadow: 0px 0px 10px rgba(0,0,0, 0.6);
+  box-shadow: 0px 0px 10px var(--v-secondary-base);
+  & .check-offer {
+    color: var(--v-warning-base)!important;
+  }
 }
 .product{
   height: 400px;
@@ -130,9 +137,8 @@ export default {
   place-items: center;
 }
 .product__image{
-  height: 100%;
-  max-height:100%;
-  max-width: 100%;
+  height: 400px;
+  width: 400px;
   background-size: contain;
 }
 .product__text{
@@ -157,5 +163,15 @@ export default {
     padding-left: 0;
     padding-right: 2em;
   }
+  & .check-offer{
+    margin-right: calc(100% - 20px);
+    transform: translateX(100%);
+  }
+}
+.check-offer{
+  font-size:1.5rem;
+  left: initial;
+  margin-left: calc(100% - 20px);
+  transform: translateX(-100%);
 }
 </style>

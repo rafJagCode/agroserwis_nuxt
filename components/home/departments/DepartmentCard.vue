@@ -3,13 +3,14 @@
   <div class="department mb-12">
   <v-hover v-slot="{hover}">
   <v-card
-    :elevation="hover ? 4 : 0"
     class="department-card"
+    :class="hover ? 'department-card--shadow' : ''"
     width="300"
 
     color="success"
   >
     <NuxtLink class="department-card__main-content" :to="department.link" v-show="department.name !== 'Białystok'">
+  <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
 <div class="department-card__header">
       <div class="department-card__crest">
       <v-img
@@ -33,6 +34,7 @@
 
 
     <a class="department-card__main-content" :href="department.link" v-show="department.name === 'Białystok'">
+      <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
       <div class="department-card__header">
         <div class="department-card__crest">
           <v-img
@@ -60,13 +62,15 @@
 
       <v-card-actions>
         <v-btn
+          class="department-card__contact-btn"
           color="accent"
-          icon
+          text
+          block
           :href="`tel:${department.phone}`"
         >
-          <v-icon>mdi-phone</v-icon>
+          <v-icon left size="25">mdi-phone</v-icon>
+          <div class="ml-1 text-subtitle-2">{{department.phone}}</div>
         </v-btn>
-        <div class="ml-1 text-subtitle-2">{{department.phone}}</div>
       </v-card-actions>
    </div>
 
@@ -75,13 +79,15 @@
 
       <v-card-actions>
         <v-btn
+          class="department-card__contact-btn"
           color="accent"
-          icon
+          text
+          block
           :href="`tel:${department.mobile}`"
         >
-          <v-icon>mdi-cellphone-basic</v-icon>
+          <v-icon left size="25">mdi-cellphone-basic</v-icon>
+          <div class="ml-1 text-subtitle-2">{{department.mobile}}</div>
         </v-btn>
-        <div class="ml-1 text-subtitle-2">{{department.mobile}}</div>
       </v-card-actions>
     </div>
 
@@ -90,13 +96,15 @@
 
       <v-card-actions>
         <v-btn
+          class="department-card__contact-btn"
           color="accent"
-          icon
+          text
+          block
           :href="`mailto:${department.email}`"
         >
-          <v-icon>mdi-email</v-icon>
+          <v-icon left size="25">mdi-email</v-icon>
+          <div class="ml-1 text-subtitle-2">{{department.email}}</div>
         </v-btn>
-        <div class="ml-1 text-subtitle-2">{{department.email}}</div>
       </v-card-actions>
     </div>
     </div>
@@ -126,13 +134,35 @@ export default {
 .department-card{
   display: grid;
   grid-template-rows: 1fr auto;
+  padding: 4px;
+}
+.department-card--shadow{
+  box-shadow: 0 0 1px 2px var(--v-accent-base)!important;
 }
 .department-card__main-content{
   cursor: pointer;
   display: grid;
-  grid-template-rows: 110px 1fr;
+  grid-template-rows: auto 110px 1fr;
   color: black;
   text-decoration: none;
+  white-space: nowrap;
+  &:hover .department-card__go-to-page{
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+}
+.department-card__go-to-page{
+  text-align: center;
+  background-color: var(--v-accent-base);
+  color: var(--v-primary-base);
+  width: 100%;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: 'Brygada 1918', serif;
+  text-transform: uppercase;
+  height:36px;
+  line-height: 36px;
 }
 .department-card__header{
   display: grid;
@@ -146,6 +176,10 @@ export default {
 .department-card__title{
   word-break: break-word;
 }
+.department-card__contact-btn{
+  justify-content: left;
+  text-transform: lowercase;
+}
 .department-card__info-btn{
   position: absolute;
   bottom: 0;
@@ -153,5 +187,7 @@ export default {
   background-color: var(--v-accent-base);
   width: 300px;
   margin: 0 auto;
+  font-family: 'Brygada 1918', serif;
+  font-weight: 600;
 }
 </style>
