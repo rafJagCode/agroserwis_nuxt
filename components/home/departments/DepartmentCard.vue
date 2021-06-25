@@ -9,7 +9,30 @@
 
     color="success"
   >
-    <a class="department-card__main-content" :href="department.link">
+    <NuxtLink v-show="department.name !== 'Białystok'" class="department-card__main-content" :to="department.link">
+      <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
+      <div class="department-card__header">
+        <div class="department-card__crest">
+          <v-img
+            height="80"
+            width="80"
+            contain
+            :src="require(`~/assets/images/crest/${department.image}`)"
+          ></v-img>
+        </div>
+
+        <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
+      </div>
+      <div class="department-card__info">
+
+        <v-card-text class="pt-0 font-weight-medium">
+          <div v-show="department.street">{{department.street}}</div>
+          <div v-show="department.address">{{department.address}}</div>
+        </v-card-text>
+      </div>
+    </NuxtLink>
+
+    <a v-show="department.name === 'Białystok'" class="department-card__main-content" :href="department.link">
       <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
       <div class="department-card__header">
         <div class="department-card__crest">

@@ -2,19 +2,18 @@
 <div class="department-page">
   <MainSlider></MainSlider>
   <Products></Products>
+  <MainFooter></MainFooter>
 </div>
 </template>
 
 <script>
 import MainSlider from '~/components/slider/MainSlider';
 import Products from '~/components/department/Products';
+import MainFooter from "~/components/footer/MainFooter";
 export default {
-  components: { MainSlider, Products }
+  components: {MainFooter, MainSlider, Products },
 }
 </script>
 
 <style scoped>
-.test{
-  height: 100vh;
-}
 </style>

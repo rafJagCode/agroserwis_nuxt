@@ -9,17 +9,15 @@
         <Nuxt />
     </v-main>
 
-    <MainFooter></MainFooter>
   </v-app>
 </template>
 <script>
 
 import MainLogoBar from "~/components/navbar/MainLogoBar";
 import MainNavbar from "~/components/navbar/MainNavbar";
-import MainFooter from "~/components/footer/MainFooter";
 export default {
   components: {
-    MainFooter, MainNavbar, MainLogoBar
+    MainNavbar, MainLogoBar
   },
 }
 </script>

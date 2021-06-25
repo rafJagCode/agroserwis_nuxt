@@ -1,6 +1,6 @@
 <template>
   <v-list class="main-collapsing-menu" color="transparent">
-    <v-btn v-show="$nuxt.$route.name != 'contact' && !mobile" class="main-collapsing-menu__link accent--text" nuxt text href="contact">Kontakt</v-btn>
+    <v-btn v-show="$nuxt.$route.name != 'contact' && !mobile" class="main-collapsing-menu__link accent--text" nuxt text href="/contact">Kontakt</v-btn>
     <v-btn
       class="accent--text"
       v-show="mobile"

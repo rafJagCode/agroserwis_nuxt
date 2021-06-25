@@ -1,6 +1,6 @@
 <template>
 <v-app-bar class="main-logo-bar" color="primary">
-    <v-img class="main-logo-bar__logo" :src="require('~/assets/images/agroserwis_logo.png')" height="80" width="100" contain></v-img>
+    <v-img class="main-logo-bar__logo" :src="require('~/assets/images/agroserwis_logo.png')" height="40" width="40" contain></v-img>
 </v-app-bar>
 </template>
 

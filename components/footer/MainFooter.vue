@@ -24,7 +24,7 @@ export default {
     const department = !this.$route.params.department ? 'default' : this.$route.params.department;
     let response = await this.$content('footer_info', `/${department}`).fetch();
     this.sections = response.sections;
-  }
+  },
 }
 </script>
 <style scoped lang="scss">
