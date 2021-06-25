@@ -1,6 +1,6 @@
 <template>
   <div class="footer-section-link">
-    <a>{{data.value}}</a>
+    <v-btn :href="data.value" text><v-icon left color="primary" size="20">mdi-web</v-icon>{{data.value}}</v-btn>
   </div>
 </template>
 
@@ -17,4 +17,5 @@ export default {
 .footer-section-link{
   white-space: normal;
 }
+
 </style>

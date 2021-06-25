@@ -1,6 +1,6 @@
 <template>
 <div class="footer-section">
-  <p class="footer-section__name text-h6">{{section.name}}</p>
+  <p class="footer-section__name text-h6 ml-4">{{section.name}}</p>
   <FooterSectionInfo v-for="data in info" :key="data.name" :data="data"></FooterSectionInfo>
   <FooterSectionContact v-for="data in contacts" :key="data.name" :data="data"></FooterSectionContact>
   <FooterSectionLink v-for="data in links" :key="data.value" :data="data"></FooterSectionLink>
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .footer-section{
   font-family: "Roboto", sans-serif;
   color: var(--v-primary-base);
@@ -41,10 +41,16 @@ export default {
   white-space: nowrap;
   margin: 0 1em;
 }
+@media (max-width: 400px){
+  .footer-section{
+    white-space: normal;
+  }
+}
 .footer-section__name{
   text-transform: capitalize;
   position: relative;
   width: max-content;
+  max-width: 100%;
   &::before{
     content: '';
     position: absolute;
@@ -56,4 +62,22 @@ export default {
   }
 }
 
+.footer-section .v-btn {
+  text-transform:none !important;
+  font-family: "Roboto", sans-serif;
+  color: var(--v-primary-base);
+  font-size: 0.875rem;
+  padding: 1em;
+  font-weight: 500;
+  letter-spacing: normal;
+  &.v-btn--disabled{
+    color:var(--v-primary-base)!important;
+    & .v-icon{
+      color:var(--v-primary-base)!important;
+    }
+  }
+  & .v-btn__content{
+    justify-content: left;
+  }
+}
 </style>

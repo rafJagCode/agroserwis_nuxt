@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style scoped>
-
+.footer-section-info{
+  padding-left: 16px;
+}
 </style>
 >

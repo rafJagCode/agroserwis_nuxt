@@ -1,17 +1,17 @@
 <template>
   <div class="footer-section-contact">
-    <div>
+    <v-btn text disabled>
       <v-icon left color="primary" size="20">mdi-account</v-icon>
       {{data.name}}
-    </div>
-    <div>
+    </v-btn>
+    <v-btn :href="`tel:${data.mobile}}`" text block>
       <v-icon left color="primary" size="20">mdi-cellphone-basic</v-icon>
       {{data.mobile}}
-    </div>
-    <div>
+    </v-btn>
+    <v-btn :href="`mailTo:${data.email}`" text block>
       <v-icon left color="primary" size="20">mdi-wechat</v-icon>
       {{data.email}}
-    </div>
+    </v-btn>
     <hr class="my-2">
   </div>
 </template>
