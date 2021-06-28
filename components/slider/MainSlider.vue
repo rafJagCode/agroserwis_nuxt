@@ -39,13 +39,25 @@ export default {
       activeSlide: 0,
       items: [
         {
-          src: 'casenew.jpg',
+          src: '1.png'
         },
         {
-          src: 'lemkennew.jpg',
+          src: '2.jpg'
         },
         {
-          src: 'lemkennew2.jpg',
+          src: '3.jpg'
+        },
+        {
+          src: '4.jpg',
+        },
+        {
+          src: '5.png',
+        },
+        {
+          src: '7.jpg'
+        },
+        {
+          src: '8.jpg'
         },
       ],
     }
