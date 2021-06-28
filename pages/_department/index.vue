@@ -12,6 +12,13 @@ import Products from '~/components/department/Products';
 import MainFooter from "~/components/footer/MainFooter";
 export default {
   components: {MainFooter, MainSlider, Products },
+  mounted() {
+    console.log('mounted')
+    setTimeout(()=>{
+      window.scrollTo(0,0)
+    }, 100)
+  },
+
 }
 </script>
 

@@ -1,7 +1,7 @@
 {
   "sections": [
     {
-      "name": "magazyn główny części zamiennych",
+      "name": "sprzedaż maszyn",
       "data": [
         {
           "type": "contact",
@@ -11,9 +11,32 @@
         },
         {
           "type": "contact",
+          "name": "Rafał Zaniewski",
+          "mobile": "dane do uzupełnienia",
+          "email": "dane do uzupełnienia"
+        }
+      ]
+    },
+    {
+      "name": "sprzedaż części",
+      "data": [
+        {
+          "type": "contact",
           "name": "Marcin Sopolewski",
           "mobile": "693 500 193",
           "email": "m.sopelewski@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Paweł Szewczyk",
+          "mobile": "697 500 210",
+          "email": "p.szewczyk@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Paweł Wdziękoński",
+          "mobile": "697 500 425",
+          "email": "p.wdziekonski@agro-serwis.pl"
         }
       ]
     },
@@ -22,16 +45,11 @@
       "data": [
         {
           "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
+          "name": "Mariusz Walterski",
+          "mobile": "697 500 576",
+          "email": "m.walterski@agro-serwis.pl"
         }
+
       ]
     },
     {
@@ -39,15 +57,8 @@
       "data": [
         {
           "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
         }
       ]
     },
@@ -56,15 +67,8 @@
       "data": [
         {
           "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
         }
       ]
     },
@@ -73,17 +77,11 @@
       "data": [
         {
           "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
         }
       ]
+
     },
     {
       "name": "informacje",
@@ -94,27 +92,6 @@
           "address": "Aleja Wilanowska 67A lok. 20; 02-765 Warszawa",
           "nip": "NIP: 7010580103",
           "bdo": "BDO 000404840"
-        }
-      ]
-    },
-    {
-      "name": "centrum maszyn używanych",
-      "data": [
-        {
-          "type": "link",
-          "value": "https://agroserwis.otomoto.pl/"
-        },
-        {
-          "type": "link",
-          "value": "https://www.agriaffaires.pro/pl/agroserwis"
-        },
-        {
-          "type": "link",
-          "value": "https://www.agriaffaires.pl/pros/list/279788-0/1/agro-serwis-ds-spo%C5%82ka-z-ograniczona-odpowiedzialno%C5%9Bcia-sp-k.html"
-        },
-        {
-          "type": "link",
-          "value": "https://www.mascus.pl/agro-serwis-ds-spolka-z-ograniczona-odpowiedzialnoscia-sp-k/574adc54,1,relevance,searchdealer.html"
         }
       ]
     }

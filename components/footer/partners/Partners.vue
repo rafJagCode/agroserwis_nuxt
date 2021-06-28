@@ -61,6 +61,7 @@ export default {
 .partners {
   display: flex;
   flex-direction: column;
+  min-width: 100%;
 }
 .partners__row{
   justify-content: space-evenly;

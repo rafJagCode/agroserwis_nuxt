@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <MainLogoBar></MainLogoBar>
     <MainNavbar></MainNavbar>
 
     <!-- Sizes your content based upon application components -->
@@ -13,11 +12,10 @@
 </template>
 <script>
 
-import MainLogoBar from "~/components/navbar/MainLogoBar";
 import MainNavbar from "~/components/navbar/MainNavbar";
 export default {
   components: {
-    MainNavbar, MainLogoBar
+    MainNavbar
   },
 }
 </script>

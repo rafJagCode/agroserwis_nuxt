@@ -11,6 +11,36 @@
           "bdo": "BDO 000404840"
         }
       ]
+    },
+    {
+      "name": "usługi / wynajem",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "finansowanie",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "ubezpieczenia",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
     }
   ]
 }

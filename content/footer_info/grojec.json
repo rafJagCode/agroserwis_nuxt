@@ -1,91 +1,6 @@
 {
   "sections": [
     {
-      "name": "magazyn główny części zamiennych",
-      "data": [
-        {
-          "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
-        }
-      ]
-    },
-    {
-      "name": "serwis",
-      "data": [
-        {
-          "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
-        }
-      ]
-    },
-    {
-      "name": "usługi / wynajem",
-      "data": [
-        {
-          "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
-        }
-      ]
-    },
-    {
-      "name": "finansowanie",
-      "data": [
-        {
-          "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
-        }
-      ]
-    },
-    {
-      "name": "ubezpieczenia",
-      "data": [
-        {
-          "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "697 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
-        },
-        {
-          "type": "contact",
-          "name": "Marcin Sopolewski",
-          "mobile": "693 500 193",
-          "email": "m.sopelewski@agro-serwis.pl"
-        }
-      ]
-    },
-    {
       "name": "informacje",
       "data": [
         {
@@ -98,23 +13,32 @@
       ]
     },
     {
-      "name": "centrum maszyn używanych",
+      "name": "usługi / wynajem",
       "data": [
         {
-          "type": "link",
-          "value": "https://agroserwis.otomoto.pl/"
-        },
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "finansowanie",
+      "data": [
         {
-          "type": "link",
-          "value": "https://www.agriaffaires.pro/pl/agroserwis"
-        },
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "ubezpieczenia",
+      "data": [
         {
-          "type": "link",
-          "value": "https://www.agriaffaires.pl/pros/list/279788-0/1/agro-serwis-ds-spo%C5%82ka-z-ograniczona-odpowiedzialno%C5%9Bcia-sp-k.html"
-        },
-        {
-          "type": "link",
-          "value": "https://www.mascus.pl/agro-serwis-ds-spolka-z-ograniczona-odpowiedzialnoscia-sp-k/574adc54,1,relevance,searchdealer.html"
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
         }
       ]
     }

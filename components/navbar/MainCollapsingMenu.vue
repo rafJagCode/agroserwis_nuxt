@@ -13,7 +13,7 @@
     <v-btn class="main-collapsing-menu__link accent--text" v-show="$nuxt.$route.name !== 'index' && !mobile" text nuxt href="/">
       Home
     </v-btn>
-    <v-btn class="main-collapsing-menu__link accent--text" v-show="$nuxt.$route.name === 'index' && !mobile" v-for="link in links" :key="link.name" text @click="$vuetify.goTo(link.link)">
+    <v-btn class="main-collapsing-menu__link accent--text" v-show="($nuxt.$route.name === 'index' && !mobile) || (link.name === 'Dane Kontaktowe' && !mobile)" v-for="link in links" :key="link.name" text @click="$vuetify.goTo(link.link)">
       {{ link.name }}
     </v-btn>
   </v-list>
@@ -21,19 +21,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      links: [
-        {
-          name: 'Oddziały',
-          link: '.departments'
-        },
-        {
-          name: 'O nas',
-          link: '.main-about-us'
-        },
-      ],
-    }
+  props:{
+    links: null,
   },
   computed: {
     mobile() {

@@ -1,6 +1,6 @@
 <template>
 <div class="products py-2">
-  <Product v-for="(product, index) in products" :key="product.title" :product="product" :index="index" class="product-desktop"></Product>
+  <Product v-for="(product, index) in products" :key="product.title + index" :product="product" :index="index" class="product-desktop"></Product>
   <ProductMobile v-for="product in products" :key="product.title" :product="product" class="product-mobile"></ProductMobile>
 </div>
 </template>

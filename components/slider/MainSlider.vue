@@ -13,9 +13,11 @@
     }"
   >
     <v-carousel-item
+      eager
       v-for="(item, i) in items"
       :key="i"
       :src="require(`~/assets/images/slides/${item.src}`)"
+      class="main-slider__carousel-item"
     ></v-carousel-item>
     <v-btn
       @click="scrollFullPage"
@@ -23,7 +25,7 @@
       elevation="2"
       fab
       color="accent"
-      v-show="!mobile && scrolledTop">
+      v-show="showScrollButton">
       <v-icon>mdi-hand-pointing-down</v-icon>
     </v-btn>
   </v-carousel>
@@ -33,7 +35,7 @@
 export default {
   data() {
     return {
-      scrolledTop: true,
+      scrollY: 0,
       activeSlide: 0,
       items: [
         {
@@ -50,24 +52,25 @@ export default {
   },
   computed:{
     fullHeight(){
-      return window.innerHeight - 112;
+      return window.innerHeight - 104;
     },
     mobile(){
       return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm;
     },
+    showScrollButton(){
+      return !this.mobile && !this.scrollY;
+    }
   },
   methods:{
-    handleScroll(){
-      window.onscroll = () => {
-        this.scrolledTop = window.scrollY === 0;
-      }
-    },
     scrollFullPage(){
       window.scroll(0, window.innerHeight);
     }
   },
   beforeMount(){
-    window.addEventListener('scroll', this.handleScroll);
+    let that = this;
+    window.addEventListener('scroll', function(){
+      that.scrollY = window.scrollY;
+    });
   }
 }
 </script>
