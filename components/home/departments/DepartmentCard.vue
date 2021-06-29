@@ -7,7 +7,7 @@
     :class="hover ? 'department-card--shadow' : ''"
     width="300"
 
-    color="success"
+    color="info"
   >
     <NuxtLink v-show="department.name !== 'Białystok'" class="department-card__main-content" :to="department.link">
       <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
