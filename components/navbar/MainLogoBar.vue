@@ -1,7 +1,7 @@
 <template>
-<v-app-bar class="main-logo-bar" color="primary">
-    <v-img class="main-logo-bar__logo" :src="require('~/assets/images/agroserwis_logo.png')" height="80" width="100" contain></v-img>
-</v-app-bar>
+<div class="main-logo-bar" color="primary">
+    <v-img class="main-logo-bar__logo" :src="require('~/assets/images/agroserwis_logo.png')" height="40" width="40" contain></v-img>
+</div>
 </template>
 
 <script>
@@ -11,7 +11,8 @@ export default {
 
 <style scoped>
 .main-logo-bar{
-  top:7px;
+  width: 100%;
+  display: flex;
 }
 .main-logo-bar__logo::before{
   content: '';
@@ -19,7 +20,7 @@ export default {
   width:calc(50% - 40px);
   height:0;
   position: absolute;
-  top: 72%;
+  bottom: 0;
 }
 .main-logo-bar__logo::after{
   content: '';
@@ -27,7 +28,7 @@ export default {
   width:calc(50% - 40px);
   height:0;
   position: absolute;
-  top: 72%;
+  bottom: 0;
   transform: translateX(calc(100% + 80px));
 }
 </style>

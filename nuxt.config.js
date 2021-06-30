@@ -38,13 +38,11 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl/' }],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxt/content'
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -55,7 +53,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    treeShake: true,
+    treeShake: false,
     customVariables: ['~/assets/variables.scss'],
     theme: {
       options: {
@@ -67,8 +65,8 @@ export default {
           secondary: '#656468',
           accent: '#466060',
           error: '#ff0033',
-          info: '#221D23',
-          success: '#E0E0E1',
+          info: '#E0E0E1',
+          success: '#87d3b5',
           warning: '#d4af37',
         }
       }
@@ -77,5 +75,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  router: {
+    scrollBehavior: function (to, from, savedPosition) {
+      return { x: 0, y: 0 }
+    }
+  },
 }

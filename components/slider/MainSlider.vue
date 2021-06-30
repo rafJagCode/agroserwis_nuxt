@@ -8,14 +8,23 @@
     interval="4000"
     class="main-slider ma-0"
     :touch="{
-      left: () => activeSlide--,
-      right: () => activeSlide++,
+      left: ()=>{
+        activeSlide++;
+      },
+      right: ()=>{
+        if(activeSlide===0){
+          activeSlide = items.length-1;
+        }
+        else activeSlide--;
+      },
     }"
   >
     <v-carousel-item
+      eager
       v-for="(item, i) in items"
       :key="i"
       :src="require(`~/assets/images/slides/${item.src}`)"
+      class="main-slider__carousel-item"
     ></v-carousel-item>
     <v-btn
       @click="scrollFullPage"
@@ -23,7 +32,7 @@
       elevation="2"
       fab
       color="accent"
-      v-show="!mobile && scrolledTop">
+      v-show="showScrollButton">
       <v-icon>mdi-hand-pointing-down</v-icon>
     </v-btn>
   </v-carousel>
@@ -33,41 +42,54 @@
 export default {
   data() {
     return {
-      scrolledTop: true,
+      scrollY: 0,
       activeSlide: 0,
       items: [
         {
-          src: 'casenew.jpg',
+          src: '1.png'
         },
         {
-          src: 'lemkennew.jpg',
+          src: '2.jpg'
         },
         {
-          src: 'lemkennew2.jpg',
+          src: '3.jpg'
+        },
+        {
+          src: '4.jpg',
+        },
+        {
+          src: '5.png',
+        },
+        {
+          src: '7.jpg'
+        },
+        {
+          src: '8.jpg'
         },
       ],
     }
   },
   computed:{
     fullHeight(){
-      return window.innerHeight - 112;
+      return window.innerHeight - 104;
     },
     mobile(){
       return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm;
     },
-  },
-  methods:{
-    handleScroll(){
-      window.onscroll = () => {
-        this.scrolledTop = window.scrollY === 0;
-      }
-    },
-    scrollFullPage(){
-      window.scroll(0, window.innerHeight);
+    showScrollButton(){
+      return !this.mobile && !this.scrollY;
     }
   },
+  methods:{
+    scrollFullPage(){
+      window.scroll(0, window.innerHeight);
+    },
+  },
   beforeMount(){
-    window.addEventListener('scroll', this.handleScroll);
+    let that = this;
+    window.addEventListener('scroll', function(){
+      that.scrollY = window.scrollY;
+    });
   }
 }
 </script>

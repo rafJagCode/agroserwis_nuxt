@@ -1,5 +1,9 @@
 <template>
 <div class="email-us-card pa-8">
+
+  <transition name="fade">
+    <SendConfirmation :message="sentResponse" :sentSuccessfully="sentSuccessfully" v-show="showSendConfirmation"></SendConfirmation>
+  </transition>
   <div class="email-us-card__header mb-2">
     <v-icon size="100" color="accent" left>mdi-wechat</v-icon>
     <div class="email-us-card__title text-h6 font-weight-medium accent--text">
@@ -46,12 +50,24 @@
       wyślij
     </v-btn>
   </v-form>
+  <v-progress-linear
+    indeterminate
+    color="warning"
+    class="mt-2"
+    v-show="sendingEmail"
+  ></v-progress-linear>
 </div>
 </template>
 
 <script>
+import SendConfirmation from "~/components/contact/SendConfirmation";
 export default {
+  components: {SendConfirmation},
   data: () => ({
+    sendingEmail: false,
+    showSendConfirmation: false,
+    sentSuccessfully: false,
+    sentResponse: '',
     valid: true,
     name: '',
     nameRules: [
@@ -70,29 +86,55 @@ export default {
   }),
 
   methods: {
-    submit () {
+    async submit () {
       if (this.$refs.form.validate()) {
-        // Native form submission is not yet supported
-        axios.post('/api/submit', {
-          name: this.name,
-          email: this.email,
-        })
+        this.sendingEmail = true;
+        let message = `Dane Nadawcy:\nImię i Nazwisko: ${this.name}\nEmail: ${this.email}${this.phone ? '\nTelefon: ' + this.phone : ''}\n\nWiadomość:\n${this.message}`;
+
+        try{
+          let response = await this.$axios.post('/api/send-mail', {
+            to: "biuro@agro-serwis.pl",
+            subject: "Wiadomość z AGROSERWIS",
+            message: message,
+            from: this.email
+          });
+          this.sentResponse = response.data.message;
+          this.sentSuccessfully = true;
+        }
+        catch(error){
+          this.sentResponse = error.response.data.message;
+          this.sentSuccessfully = false;
+        }
+
+        this.sendingEmail = false;
+        this.showSendConfirmation = true;
+        setTimeout(()=>{
+          this.showSendConfirmation = false;
+        },4000)
       }
     },
   }
 }
 </script>
 
-<style scoped>
-.theme--light.v-label {
-  color: #ff9800;
-}
+<style>
 .email-us-card{
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .email-us-card__header{
   display: flex;
 }
+.fade-enter-active {
+  transition: opacity 500ms ease-out;
+}
+.fade-leave-active{
+  transition: opacity 500ms ease-in;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 </style>

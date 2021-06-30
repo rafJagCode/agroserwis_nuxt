@@ -8,12 +8,12 @@
         :image="partner.image"
       ></Partner>
     </v-row>
-    <v-divider color="primary" class="my-6"></v-divider>
+    <v-divider color="primary" class="mt-6"></v-divider>
   </v-container>
 </template>
 
 <script>
-import Partner from '~/components/partners/Partner';
+import Partner from '~/components/footer/partners/Partner';
 export default {
   components: { Partner },
   data: () => ({
@@ -36,18 +36,18 @@ export default {
       },
       {
         image:
-          'manitou.png',
+          'manitou.svg',
       },
       {
         image:
-          'mashio.png',
+          'maschio.svg',
       },
       {
         image:
           'partner_agro.png',
       },
       {
-        image: 'steyr.png',
+        image: 'steyr.svg',
       },
     ],
   }),
@@ -61,6 +61,7 @@ export default {
 .partners {
   display: flex;
   flex-direction: column;
+  min-width: 100%;
 }
 .partners__row{
   justify-content: space-evenly;

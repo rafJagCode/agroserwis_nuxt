@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{THE_REQUEST} ^.*/index\.php/
+RewriteRule ^index\.php/(.*)$ /api/$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

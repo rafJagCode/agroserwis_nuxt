@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <MainLogoBar></MainLogoBar>
     <MainNavbar></MainNavbar>
 
     <!-- Sizes your content based upon application components -->
@@ -9,17 +8,14 @@
         <Nuxt />
     </v-main>
 
-    <MainFooter></MainFooter>
   </v-app>
 </template>
 <script>
 
-import MainLogoBar from "~/components/navbar/MainLogoBar";
 import MainNavbar from "~/components/navbar/MainNavbar";
-import MainFooter from "~/components/footer/MainFooter";
 export default {
   components: {
-    MainFooter, MainNavbar, MainLogoBar
+    MainNavbar
   },
 }
 </script>
