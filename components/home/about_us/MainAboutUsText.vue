@@ -5,14 +5,7 @@
     <p class="main-about-us-text__text-big">Działamy na rynku od 1997r.</p>
     <br>
     <p>
-      Specjalizujemy się w sprzedaży i serwisie maszyn do produkcji rolnej.
-      Posiadamy pełną ofertę maszyn firm: <strong>STEYER, CASE IH, STRAUTMANN, MANITOU, MASCHIO GASPARDO, LEMKEN, ITALMIX, ANNABURGER</strong> i wielu innych.
-      Oferujemy maszyny nowe jak i używane z obsługą finansowania i z możliwością skorzystania z pakietu ubezpieczeń.
-      W sprzedaży posiadamy szeroką gamę części zamiennych oraz kompleksowy serwis podparty fachowym doradztwem techniczym.
-      Dodatkowo świadczymy usługi rolnicze z możliwością wynajmu maszyn.
-      Zdajemy sobie sprawę z tego, jak cenny jest dziś czas, dlatego naszym klientom oferujemy wszystkie niezbędne usługi w jednym miejscu.
-      Nasza działalność obejmuje głównie teren centralnej i północno - wschodniej Polski. Siedziba główna naszej firmy znajduje się w Zambrowie (woj. podlaskie).
-      Nasze oddziały zlokalizowane są w: Przasnysz , Grójec, Stare Opole k. Siedlec i Białystok.
+      {{text}}
     </p>
     <p class="main-about-us-text__text-medium">
       Zapraszamy do współpracy!
@@ -22,6 +15,13 @@
 
 <script>
 export default {
+  data: ()=>({
+    text: ''
+  }),
+  async fetch(){
+    let response = await this.$content('/about_us').fetch();
+    this.text = response.about;
+  }
 }
 </script>
 

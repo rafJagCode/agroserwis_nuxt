@@ -21,7 +21,6 @@ export default {
   },
   methods:{
     handleClick(link){
-      console.log('test');
       this.$emit('hidemobilenavbar');
       this.$vuetify.goTo(link);
     }

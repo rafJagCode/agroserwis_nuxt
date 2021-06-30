@@ -19,6 +19,7 @@ function router($httpMethods, $route, $callback, $exit = true)
     if (!preg_match_all($regex, $path, $matches)) {
         return;
     }
+    var_dump($matches);
     if (empty($matches)) {
         $callback();
     } else {

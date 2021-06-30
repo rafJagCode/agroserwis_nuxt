@@ -93,7 +93,7 @@ export default {
 
         try{
           let response = await this.$axios.post('/api/send-mail', {
-            to: "biuro@agro-serwis.pl",
+            to: "jagielski.rafal.uwm@gmail.com",
             subject: "Wiadomość z AGROSERWIS",
             message: message,
             from: this.email
