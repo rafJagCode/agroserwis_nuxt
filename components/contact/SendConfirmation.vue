@@ -52,4 +52,7 @@ export default {
   flex-direction: column;
   max-width: 90%;
 }
+.send-confirmation__text{
+  text-align: center;
+}
 </style>

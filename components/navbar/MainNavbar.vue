@@ -19,7 +19,7 @@
           @hamburger-clicked="showMobileList = !showMobileList" :links="links"
         ></MainCollapsingMenu>
         <transition name="slide-fade">
-          <NavbarMobileList v-show="showMobileList && mobile" :links="links"></NavbarMobileList>
+          <NavbarMobileList v-show="showMobileList && mobile" :links="links" @hidemobilenavbar="hideMobileNavbar()"></NavbarMobileList>
         </transition>
       </v-layout>
     </v-container>
@@ -51,6 +51,11 @@ export default {
       }
     ],
   }),
+  methods:{
+    hideMobileNavbar(){
+      this.showMobileList = false;
+    }
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs

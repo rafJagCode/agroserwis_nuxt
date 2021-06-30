@@ -50,6 +50,12 @@
       wyślij
     </v-btn>
   </v-form>
+  <v-progress-linear
+    indeterminate
+    color="warning"
+    class="mt-2"
+    v-show="sendingEmail"
+  ></v-progress-linear>
 </div>
 </template>
 
@@ -58,6 +64,7 @@ import SendConfirmation from "~/components/contact/SendConfirmation";
 export default {
   components: {SendConfirmation},
   data: () => ({
+    sendingEmail: false,
     showSendConfirmation: false,
     sentSuccessfully: false,
     sentResponse: '',
@@ -81,12 +88,12 @@ export default {
   methods: {
     async submit () {
       if (this.$refs.form.validate()) {
-
+        this.sendingEmail = true;
         let message = `Dane Nadawcy:\nImię i Nazwisko: ${this.name}\nEmail: ${this.email}${this.phone ? '\nTelefon: ' + this.phone : ''}\n\nWiadomość:\n${this.message}`;
 
         try{
           let response = await this.$axios.post('/api/send-mail', {
-            to: "jagielski.rafal.uwm@gmail.com",
+            to: "biuro@agro-serwis.pl",
             subject: "Wiadomość z AGROSERWIS",
             message: message,
             from: this.email
@@ -99,10 +106,11 @@ export default {
           this.sentSuccessfully = false;
         }
 
+        this.sendingEmail = false;
         this.showSendConfirmation = true;
         setTimeout(()=>{
           this.showSendConfirmation = false;
-        },2000)
+        },4000)
       }
     },
   }

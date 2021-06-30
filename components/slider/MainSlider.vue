@@ -8,8 +8,15 @@
     interval="4000"
     class="main-slider ma-0"
     :touch="{
-      left: () => activeSlide--,
-      right: () => activeSlide++,
+      left: ()=>{
+        activeSlide++;
+      },
+      right: ()=>{
+        if(activeSlide===0){
+          activeSlide = items.length-1;
+        }
+        else activeSlide--;
+      },
     }"
   >
     <v-carousel-item
@@ -76,7 +83,7 @@ export default {
   methods:{
     scrollFullPage(){
       window.scroll(0, window.innerHeight);
-    }
+    },
   },
   beforeMount(){
     let that = this;
