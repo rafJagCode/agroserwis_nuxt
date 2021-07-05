@@ -127,7 +127,7 @@ export default {
 .tilt:hover {
   box-shadow: 0px 0px 10px var(--v-secondary-base);
   & .check-offer {
-    color: var(--v-warning-base)!important;
+    color: var(--v-accent-base)!important;
   }
 }
 .product{
@@ -137,9 +137,11 @@ export default {
   place-items: center;
 }
 .product__image{
-  height: 400px;
-  width: 400px;
-  background-size: contain;
+  max-height: 400px;
+  max-width: 400px;
+  min-width:200px;
+  min-height: 100px;
+  background-size: cover;
 }
 .product__text{
   font-family: 'Brygada 1918', serif;

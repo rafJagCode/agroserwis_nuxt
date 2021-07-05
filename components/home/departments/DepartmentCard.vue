@@ -1,59 +1,62 @@
 
 <template>
-  <div class="department mb-12">
-  <v-hover v-slot="{hover}">
+  <div class="department mb-12"
+
+  >
   <v-card
     class="department-card"
+    color="secondary"
     :class="hover ? 'department-card--shadow' : ''"
-    width="300"
-
-    color="info"
   >
-    <NuxtLink v-show="department.name !== 'Białystok'" class="department-card__main-content" :to="department.link">
-      <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
-      <div class="department-card__header">
-        <div class="department-card__crest">
-          <v-img
-            height="80"
-            width="80"
-            contain
-            :src="require(`~/assets/images/crest/${department.image}`)"
-          ></v-img>
+    <NuxtLink v-show="department.name !== 'Białystok'" :to="department.link" class="department__link">
+      <div class="department-card__main-content" @mouseenter="hover = true" @mouseleave="hover = false">
+        <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
+        <div class="department-card__header">
+          <div class="department-card__crest">
+            <v-img
+              height="80"
+              width="80"
+              contain
+              :src="require(`~/assets/images/crest/${department.image}`)"
+            ></v-img>
+          </div>
+
+          <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
         </div>
+        <div class="department-card__info">
 
-        <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
-      </div>
-      <div class="department-card__info">
-
-        <v-card-text class="pt-0 font-weight-medium">
-          <div v-show="department.street">{{department.street}}</div>
-          <div v-show="department.address">{{department.address}}</div>
-        </v-card-text>
+          <v-card-text class="pt-0 font-weight-medium">
+            <div v-show="department.street">{{department.street}}</div>
+            <div v-show="department.address">{{department.address}}</div>
+          </v-card-text>
+        </div>
       </div>
     </NuxtLink>
 
-    <a v-show="department.name === 'Białystok'" class="department-card__main-content" :href="department.link">
-      <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
-      <div class="department-card__header">
-        <div class="department-card__crest">
-          <v-img
-            height="80"
-            width="80"
-            contain
-            :src="require(`~/assets/images/crest/${department.image}`)"
-          ></v-img>
+      <a v-show="department.name === 'Białystok'" :href="department.link" class="department__link">
+        <div class="department-card__main-content" @mouseenter="hover = true" @mouseleave="hover = false">
+          <div class="department-card__go-to-page">Przejdź do strony oddziału</div>
+          <div class="department-card__header">
+            <div class="department-card__crest">
+              <v-img
+                height="80"
+                width="80"
+                contain
+                :src="require(`~/assets/images/crest/${department.image}`)"
+              ></v-img>
+            </div>
+
+            <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
+          </div>
+          <div class="department-card__info">
+
+            <v-card-text class="pt-0 font-weight-medium">
+              <div v-show="department.street">{{department.street}}</div>
+              <div v-show="department.address">{{department.address}}</div>
+            </v-card-text>
+          </div>
         </div>
-
-        <v-card-title class="department-card__title py-0 pl-0 pr-4 accent--text">{{department.name}}</v-card-title>
-      </div>
-      <div class="department-card__info">
-
-        <v-card-text class="pt-0 font-weight-medium">
-          <div v-show="department.street">{{department.street}}</div>
-          <div v-show="department.address">{{department.address}}</div>
-        </v-card-text>
-      </div>
-    </a>
+      </a>
 
     <div v-show="showActions" class="department-card__actions">
    <div v-show="department.phone" class="department-card__action">
@@ -107,9 +110,8 @@
       </v-card-actions>
     </div>
     </div>
-  </v-card>
-  </v-hover>
     <v-btn @click="showActions = !showActions" class="department-card__info-btn primary--text" text>kontakt</v-btn>
+  </v-card>
   </div>
 </template>
 
@@ -117,37 +119,56 @@
 export default {
   data: ()=>({
    showActions: false,
+    hover: false,
   }),
   props: {
     department: null
-  }
+  },
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs
+    },
+  },
+  watch: {
+    hover: function(hover){
+      console.log(hover);
+    }
+  },
 }
 </script>>
 <style scoped lang="scss">
 .department{
-  flex: 1 1 150px; /*  Stretching: */
-  flex: 0 1 150px; /*  No stretching: */
   margin: 5px;
   position: relative;
+  min-width:300px;
+  max-width:500px;
+  flex: 1 1 300px;
 }
 .department-card{
   display: grid;
   grid-template-rows: 1fr auto;
   padding: 4px;
+  width: 100%;
 }
 .department-card--shadow{
-  box-shadow: 0 0 1px 2px var(--v-accent-base)!important;
+  box-shadow: 0 0 10px 3px var(--v-accent-base)!important;
+}
+.department__link{
+  text-decoration: none;
 }
 .department-card__main-content{
   cursor: pointer;
   display: grid;
   grid-template-rows: auto 110px 1fr;
-  color: black;
-  text-decoration: none;
+  color: var(--v-accent-base);
   white-space: nowrap;
   &:hover .department-card__go-to-page{
     font-weight: 600;
     font-size: 0.9rem;
+  }
+  &:hover .department-card{
+
+    box-shadow: 0 0 1px 2px var(--v-accent-base)!important;
   }
 }
 .department-card__go-to-page{
@@ -181,10 +202,10 @@ export default {
 }
 .department-card__info-btn{
   position: absolute;
-  bottom: 0;
-  transform: translateY(calc(100% + 3px));
+  bottom: 0px;
+  transform: translateY(calc(100% + 5px));
   background-color: var(--v-accent-base);
-  width: 300px;
+  width: 100%;
   margin: 0 auto;
   font-family: 'Brygada 1918', serif;
   font-weight: 600;

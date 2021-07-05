@@ -23,7 +23,7 @@
       eager
       v-for="(item, i) in items"
       :key="i"
-      :src="require(`~/assets/images/slides/${item.src}`)"
+      :src="require(`~/static/assets/slides/${item.src}`)"
       class="main-slider__carousel-item"
     ></v-carousel-item>
     <v-btn
@@ -44,30 +44,15 @@ export default {
     return {
       scrollY: 0,
       activeSlide: 0,
-      items: [
-        {
-          src: '1.png'
-        },
-        {
-          src: '2.jpg'
-        },
-        {
-          src: '3.jpg'
-        },
-        {
-          src: '4.jpg',
-        },
-        {
-          src: '5.png',
-        },
-        {
-          src: '7.jpg'
-        },
-        {
-          src: '8.jpg'
-        },
-      ],
+      items: [],
     }
+  },
+  async fetch(){
+    const department = this.$route.params.department || 'default';
+    let response = await this.$axios.get(`/api/get-slides/${department}`);
+    Object.entries(response.data).forEach(
+      ([key, value]) => this.items.push({src: value})
+    );
   },
   computed:{
     fullHeight(){

@@ -42,10 +42,30 @@
       validate-on-blur
       color="accent"
     ></v-text-field>
+    <v-combobox
+      class="mt-2"
+      color="accent"
+      v-model="department.partners"
+      :items="availablePartners"
+      label="Partnerzy"
+      multiple
+      outlined
+      dense
+    ></v-combobox>
+    <v-combobox
+      class="mt-2"
+      color="accent"
+      v-model="department.slides"
+      :items="availablePartners"
+      label="Slidy"
+      multiple
+      outlined
+      dense
+    ></v-combobox>
     <v-btn
       class="primary--text mt-2"
       color="warning"
-      @click="submit"
+      @click.prevent="update()"
       :disabled="!valid"
     >
       Uaktualnij
@@ -73,9 +93,12 @@ export default {
   }),
   props: {
     department: null,
+    availablePartners: null,
   },
   methods: {
-    submit () {
+    async update () {
+      if(!this.valid) return;
+      await this.$axios.post(`/api/update-department/${this.department.link}`, this.department);
     },
   }
 }

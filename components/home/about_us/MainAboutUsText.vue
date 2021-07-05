@@ -1,13 +1,13 @@
 <template>
   <div class="main-about-us-text pa-1 text-center">
-    <p class="main-about-us-text__text-biggest">O NAS</p>
+    <p class="main-about-us-text__text-biggest accent--text">O NAS</p>
     <br>
-    <p class="main-about-us-text__text-big">Działamy na rynku od 1997r.</p>
+    <p class="main-about-us-text__text-big accent--text">Działamy na rynku od 1997r.</p>
     <br>
     <p>
       {{text}}
     </p>
-    <p class="main-about-us-text__text-medium">
+    <p class="main-about-us-text__text-medium accent--text">
       Zapraszamy do współpracy!
     </p>
   </div>
@@ -19,8 +19,8 @@ export default {
     text: ''
   }),
   async fetch(){
-    let response = await this.$content('/about_us').fetch();
-    this.text = response.about;
+    let { data } = await this.$axios.get('/api/get-about-us');
+    this.text = data.about;
   }
 }
 </script>
@@ -33,6 +33,7 @@ export default {
   display:grid;
   flex-direction: column;
   justify-items: center;
+  color: var(--v-secondary-base);
 }
 @media (max-width:960px){
   .main-about-us-text{

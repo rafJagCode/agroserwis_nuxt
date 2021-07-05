@@ -8,5 +8,6 @@
   "street": "ul. Leszno 44",
   "address": "06-300 Przasnysz",
   "description": null,
-  "image": "przasnysz.png"
+  "image": "przasnysz.png",
+  "partners": ["steyr", "strautmann", "maschio", "lemken", "italmix", "annaburger", "mandam", "zuptor", "cynkomet"]
 }

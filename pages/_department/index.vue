@@ -2,6 +2,7 @@
 <div class="department-page">
   <MainSlider></MainSlider>
   <Products></Products>
+  <DepartmentGoogleMap></DepartmentGoogleMap>
   <MainFooter></MainFooter>
 </div>
 </template>
@@ -10,8 +11,9 @@
 import MainSlider from '~/components/slider/MainSlider';
 import Products from '~/components/department/Products';
 import MainFooter from "~/components/footer/MainFooter";
+import DepartmentGoogleMap from "~/components/map/DepartmentGoogleMap";
 export default {
-  components: {MainFooter, MainSlider, Products },
+  components: {DepartmentGoogleMap, MainFooter, MainSlider, Products },
   mounted() {
     setTimeout(()=>{
       window.scrollTo(0,0)

@@ -1,0 +1,98 @@
+{
+  "sections": [
+    {
+      "name": "sprzedaż maszyn",
+      "data": [
+        {
+          "type": "contact",
+          "name": "Jacek Narożny",
+          "mobile": "603 203 556",
+          "email": "jacek@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Michał Sawicki",
+          "mobile": "667 500 134",
+          "email": "michal_sawicki@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "Sprzedaż części",
+      "data": [
+        {
+          "type": "contact",
+          "name": "Paweł Dmowski",
+          "mobile": "661 500 757",
+          "email": "p.dmowski@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Maciej Rogowski",
+          "mobile": "667 500 755",
+          "email": "m.rogowski@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Kamil Zaręba",
+          "mobile": "697 500 856",
+          "email": "k.zareba@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "serwis",
+      "data": [
+        {
+          "type": "contact",
+          "name": "Marcin Wyrębiak",
+          "mobile": "606 865 020",
+          "email": "m.wyrebiak@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "usługi / wynajem",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "finansowanie",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+    },
+    {
+      "name": "ubezpieczenia",
+      "data": [
+        {
+          "type": "contact",
+          "phone": "86 270 30 99",
+          "email": "biuro@agro-serwis.pl"
+        }
+      ]
+
+    },
+    {
+      "name": "informacje",
+      "data": [
+        {
+          "type": "info",
+          "name": "AGRO-SERWIS DS Spółka z ograniczoną odpowiedzialnością sp. k.",
+          "address": "Aleja Wilanowska 67A lok. 20; 02-765 Warszawa",
+          "nip": "NIP: 7010580103",
+          "bdo": "BDO 000404840"
+        }
+      ]
+    }
+  ]
+}

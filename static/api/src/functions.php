@@ -16,20 +16,20 @@ function router($httpMethods, $route, $callback, $exit = true)
     }
     $matches = null;
     $regex = '/' . str_replace('/', '\/', $route) . '/';
+//    echo "path => {$path}<br> regex => {$regex}<br>";
     if (!preg_match_all($regex, $path, $matches)) {
         return;
     }
-    var_dump($matches);
-    if (empty($matches)) {
+    if (empty($matches) || !isset($matches[1])) {
         $callback();
     } else {
-        $params = array();
-        foreach ($matches as $k => $v) {
-            if (!is_numeric($k) && !isset($v[1])) {
-                $params[$k] = $v[0];
-            }
-        }
-        $callback($params);
+//        foreach ($matches as $k => $v) {
+//            if (!is_numeric($k) && !isset($v[1])) {
+//                $params[$k] = $v[0];
+//            }
+//        }
+//        var_dump($params);
+        $callback($matches[1][0]);
     }
     if ($exit) {
         exit;

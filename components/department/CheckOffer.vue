@@ -16,6 +16,6 @@ export default {
   left: 5%;
 }
 .theme--light.v-btn.v-btn--disabled{
-  color: var(--v-accent-base)!important;
+  color: var(--v-secondary-base)!important;
 }
 </style>

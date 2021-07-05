@@ -1,6 +1,6 @@
 <template>
 <div class="departments">
-<DepartmentForm v-for="department in departments" :key="department.name" :department="department"></DepartmentForm>
+<DepartmentForm v-for="department in departments" :key="department.name" :department="department" :availablePartners="availablePartners"></DepartmentForm>
 </div>
 </template>
 
@@ -11,9 +11,13 @@ export default {
   layout: 'admin',
   data: () => ({
     departments: [],
+    availablePartners: null,
   }),
   async fetch(){
-    this.departments = await this.$content('departments').fetch();
+    const { data: departments } = await this.$axios.get('/api/get-departments');
+    const { data: availablePartners } = await this.$axios.get('/api/get-partners-slugs');
+    this.departments = departments;
+    this.availablePartners = availablePartners;
   }
 }
 </script>

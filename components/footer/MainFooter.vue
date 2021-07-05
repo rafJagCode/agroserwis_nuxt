@@ -1,13 +1,16 @@
 <template>
-  <v-footer color="secondary" padless class="main-footer mt-12">
+  <v-footer color="secondary" padless class="main-footer">
     <Partners v-show="$nuxt.$route.name==='index'"></Partners>
 
-    <v-container class="main-footer__sections pt-12">
+    <div class="main-footer__sections pt-12">
       <FooterSection v-for="section in sections" :key="section.name" :section="section"></FooterSection>
-    </v-container>
+      <GoogleMap v-show="department === 'default'"></GoogleMap>
+    </div>
     <div class="main-footer__copyright primary--text">
       {{ new Date().getFullYear() }} — <strong>Agroserwis</strong>
     </div>
+
+
 
   </v-footer>
 </template>
@@ -15,14 +18,16 @@
 <script>
 import Partners from "~/components/footer/partners/Partners";
 import FooterSection from "~/components/footer/FooterSection";
+import GoogleMap from "~/components/map/GoogleMap";
 export default {
-  components: {FooterSection, Partners },
+  components: {GoogleMap, FooterSection, Partners },
   data: () => ({
-    sections: []
+    sections: [],
+    department: 'default',
   }),
   async fetch(){
-    const department = !this.$route.params.department ? 'default' : this.$route.params.department;
-    let response = await this.$content('footer_info', `/${department}`).fetch();
+    this.department = !this.$route.params.department ? 'default' : this.$route.params.department;
+    let response = await this.$content('footer_info', `/${this.department}`).fetch();
     this.sections = response.sections;
   },
 }
@@ -33,6 +38,7 @@ export default {
   flex-wrap: wrap;
   justify-content: left;
   width:100%;
+  position: relative;
 }
 .main-footer__copyright{
   display: flex;

@@ -5,9 +5,9 @@
       "data": [
         {
           "type": "contact",
-          "name": "Andrzej Dąbrowski",
-          "mobile": "687 500 007",
-          "email": "andrzej.dabrowski@agro-serwis.pl"
+          "name": "Andrzej Bruszkiewicz",
+          "mobile": "697 500 292",
+          "email": "a.bruszkiewicz@agro-serwis.pl"
         },
         {
           "type": "contact",
@@ -31,6 +31,18 @@
           "name": "Kamil Zaręba",
           "mobile": "697 500 856",
           "email": "k.zareba@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Paweł Szewczyk",
+          "mobile": "697 500 210",
+          "email": "p.szewczyk@agro-serwis.pl"
+        },
+        {
+          "type": "contact",
+          "name": "Paweł Wdziękoński",
+          "mobile": "697 500 425",
+          "email": "p.wdziekonski@agro-serwis.pl"
         }
       ]
     },
@@ -84,7 +96,8 @@
           "name": "AGRO-SERWIS DS Spółka z ograniczoną odpowiedzialnością sp. k.",
           "address": "Aleja Wilanowska 67A lok. 20; 02-765 Warszawa",
           "nip": "NIP: 7010580103",
-          "bdo": "BDO 000404840"
+          "bdo": "BDO 000404840",
+          "correspondence_address": "ul. Polowa 14, 18-300 Zambrów"
         }
       ]
     },

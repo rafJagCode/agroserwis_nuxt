@@ -1,11 +1,9 @@
 <template>
   <div class="departments py-12 px-4">
-    <div v-for="department in departments" :key="department.name">
       <DepartmentCard
-        :department="department"
+        :department="department" v-for="department in departments" :key="department.name"
       >
       </DepartmentCard>
-    </div>
   </div>
 </template>
 
@@ -18,7 +16,8 @@ export default {
     }
   },
   async fetch() {
-    this.departments = await this.$content('departments').fetch();
+      let response = await this.$axios.get('/api/get-departments');
+      this.departments = response.data;
   },
   components:{
     DepartmentCard

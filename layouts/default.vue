@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="default-layout">
     <MainNavbar></MainNavbar>
 
     <!-- Sizes your content based upon application components -->
@@ -20,4 +20,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.default-layout{
+  background-color: var(--v-primary-base);
+}
 </style>

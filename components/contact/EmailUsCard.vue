@@ -93,7 +93,7 @@ export default {
 
         try{
           let response = await this.$axios.post('/api/send-mail', {
-            to: "jagielski.rafal.uwm@gmail.com",
+            to: "biuro@agro-serwis.pl",
             subject: "Wiadomość z AGROSERWIS",
             message: message,
             from: this.email
@@ -123,6 +123,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 0 0 5px 1px var(--v-accent-base);
 }
 .email-us-card__header{
   display: flex;

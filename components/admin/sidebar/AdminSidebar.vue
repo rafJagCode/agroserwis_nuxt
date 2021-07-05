@@ -21,6 +21,11 @@ export default {
         icon: 'mdi-handshake'
       },
       {
+        name: 'O Nas',
+        link: 'about-us',
+        icon: 'mdi-script-text'
+      },
+      {
         name: 'Slider',
         link: 'slider',
         icon: 'mdi-view-carousel'

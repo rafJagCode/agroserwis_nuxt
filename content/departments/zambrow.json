@@ -8,6 +8,7 @@
   "street": "ul. Polowa 14",
   "address": "18-300 Zambrów",
   "description": "",
-  "image": "zambrów.png"
+  "image": "zambrów.png",
+  "partners": ["strautmann", "maschio", "lemken", "italmix", "annaburger", "mandam", "zuptor", "cynkomet"]
 }
 

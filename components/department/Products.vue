@@ -12,20 +12,11 @@ export default {
   components: {ProductMobile, Product},
   data: () => ({
     products: [],
-    productToDisplay:{
-      przasnysz: ['steyr', 'strautmann', 'maschio', 'lemken', 'italmix', 'annaburger'],
-      siedlce: ['case', 'manitou', 'strautmann', 'maschio', 'lemken', 'italmix', 'annaburger '],
-      grojec: ['case', 'manitou', 'strautmann', 'maschio', 'lemken', 'italmix', 'annaburger'],
-      zambrow: ['strautmann', 'maschio', 'lemken', 'italmix', 'annaburger']
-    }
   }),
   async fetch(){
     const department = this.$route.params.department;
-    this.products = await this.$content('partners')
-      .where({
-        slug: { $in: this.productToDisplay[department]}
-      })
-      .fetch();
+    const response = await this.$axios.get(`/api/get-department-partners/${department}`);
+    this.products = response.data;
   },
 }
 </script>

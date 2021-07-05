@@ -49,6 +49,15 @@ export default {
       {
         image: 'steyr.svg',
       },
+      {
+        image: 'zuptor.png',
+      },
+      {
+        image: 'mandam.png',
+      },
+      {
+        image: 'cynkomet.png',
+      },
     ],
   }),
 }

@@ -1,6 +1,6 @@
 <template>
   <v-app-bar class="main-navbar" color="primary" height="max-content">
-    <v-container>
+    <v-container fluid class="main-navbar__container">
       <v-layout row class="pt-3">
         <MainLogoBar></MainLogoBar>
       </v-layout>
@@ -66,6 +66,9 @@ export default {
 <style lang="scss">
 .main-navbar{
   z-index: 2;
+}
+.main-navbar__container{
+  width:100%;
 }
 .main-navbar__navigation{
   align-items: center;

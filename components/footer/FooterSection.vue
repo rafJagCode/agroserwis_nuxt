@@ -65,13 +65,13 @@ export default {
 .footer-section .v-btn {
   text-transform:none !important;
   font-family: "Roboto", sans-serif;
-  color: var(--v-primary-base);
+  color: var(--v-accent-base);
   font-size: 0.875rem;
   padding: 1em;
   font-weight: 500;
   letter-spacing: normal;
   &.v-btn--disabled{
-    color:var(--v-primary-base)!important;
+    color:var(--v-accent-base)!important;
     & .v-icon{
       color:var(--v-primary-base)!important;
     }

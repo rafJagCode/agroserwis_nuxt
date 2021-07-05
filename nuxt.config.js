@@ -39,6 +39,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
+    // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/content',
@@ -68,9 +69,9 @@ export default {
       },
       themes: {
         light: {
-          primary: '#ffffff',
-          secondary: '#656468',
-          accent: '#466060',
+          primary: '#f6f9f0',
+          secondary: '#3C3C3E',
+          accent: '#85AE43',
           error: '#ff0033',
           info: '#E0E0E1',
           success: '#87d3b5',

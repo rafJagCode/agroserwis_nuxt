@@ -27,7 +27,7 @@ export default {
   height: max-content;
   font-family:'Brygada 1918', serif;
   font-size: 3rem;
-  color: var(--v-accent-base);
+  color: var(--v-secondary-base);
   z-index: 1;
 }
 .contact-header__description{
