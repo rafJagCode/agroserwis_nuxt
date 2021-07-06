@@ -86,17 +86,29 @@
           "email": "biuro@agro-serwis.pl"
         }
       ]
-
     },
     {
       "name": "informacje",
       "data": [
         {
           "type": "info",
-          "name": "AGRO-SERWIS DS Spółka z ograniczoną odpowiedzialnością sp. k.",
-          "address": "Aleja Wilanowska 67A lok. 20; 02-765 Warszawa",
-          "nip": "NIP: 7010580103",
-          "bdo": "BDO 000404840"
+          "text": "AGRO-SERWIS DS Spółka z ograniczoną odpowiedzialnością sp. k."
+        },
+        {
+          "type": "info",
+          "text": "Aleja Wilanowska 67A lok. 20; 02-765 Warszawa"
+        },
+        {
+          "type": "info",
+          "text": "NIP: 7010580103"
+        },
+        {
+          "type": "info",
+          "text": "BDO 000404840"
+        },
+        {
+          "type": "info",
+          "text": "Adres do korespondencji: ul. Polowa 14, 18-300 Zambrów"
         }
       ]
     },

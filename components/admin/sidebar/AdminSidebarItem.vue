@@ -1,8 +1,8 @@
 <template>
 <div class="admin-sidebar-item">
-  <v-btn block text nuxt :href="`/admin/${item.link}`">
+  <v-btn color="warning" block text nuxt :href="`/admin/${item.link}`">
     <v-icon left>{{item.icon}}</v-icon>
-    {{item.name}}
+    {{hover ? item.name : ''}}
   </v-btn>
 </div>
 </template>
@@ -14,7 +14,8 @@ export default {
       name: null,
       link: null,
       icon: null,
-    }
+    },
+    hover: false,
   }
 }
 </script>

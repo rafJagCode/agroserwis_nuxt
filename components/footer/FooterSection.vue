@@ -1,9 +1,9 @@
 <template>
 <div class="footer-section">
   <p class="footer-section__name text-h6 ml-4">{{section.name}}</p>
-  <FooterSectionInfo v-for="data in info" :key="data.name" :data="data"></FooterSectionInfo>
-  <FooterSectionContact v-for="data in contacts" :key="data.name" :data="data"></FooterSectionContact>
-  <FooterSectionLink v-for="data in links" :key="data.value" :data="data"></FooterSectionLink>
+  <FooterSectionInfo v-if="data.type === 'info'" v-for="data in section.data" :key="data.name" :data="data"></FooterSectionInfo>
+  <FooterSectionContact v-if="data.type === 'contact'" v-for="data in section.data" :key="data.name" :data="data"></FooterSectionContact>
+  <FooterSectionLink v-if="data.type === 'link'" v-for="data in section.data" :key="data.value" :data="data"></FooterSectionLink>
 </div>
 </template>
 
@@ -13,21 +13,9 @@ import FooterSectionLink from "~/components/footer/FooterSectionLink";
 import FooterSectionInfo from "~/components/footer/FooterSectionInfo";
 export default {
   components: {FooterSectionInfo, FooterSectionLink, FooterSectionContact},
-  data: () => ({
-    contacts: [],
-    links: [],
-    info: []
-  }),
   props: {
     section: null
   },
-  mounted(){
-    this.section.data.forEach((data)=>{
-      if(data.type === 'contact') this.contacts.push(data);
-      if(data.type === 'link') this.links.push(data);
-      if(data.type === 'info') this.info.push(data);
-    })
-  }
 }
 </script>
 

@@ -1,10 +1,6 @@
 <template>
   <div class="footer-section-info">
-    <div>{{data.name}}</div>
-    <div>{{data.address}}</div>
-    <div>{{data.nip}}</div>
-    <div>{{data.bdo}}</div>
-    <div>Adres do korespondecji: {{data.correspondence_address}}</div>
+    {{data.text}}
   </div>
 
 </template>

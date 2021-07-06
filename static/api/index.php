@@ -13,6 +13,8 @@ require_once __DIR__ . '/src/getPartners.php';
 require_once __DIR__ . '/src/updatePartner.php';
 require_once __DIR__ . '/src/getAboutUs.php';
 require_once __DIR__ . '/src/updateAboutUs.php';
+require_once __DIR__ . '/src/getDepartmentFooterInfo.php';
+require_once __DIR__ . '/src/updateDepartmentFooterInfo.php';
 
 // Default index page
 //router('GET', '^/api/$', function() {
@@ -52,6 +54,12 @@ router('POST', '^/update-department/(\w+)$', function($department){
 });
 router('POST', '^/update-partner/(\w+)$', function($partner){
   updatePartner($partner);
+});
+router('GET', '^/get-department-footer-info/(\w+)$', function($department){
+  getDepartmentFooterInfo($department);
+});
+router('POST', '^/update-department-footer-info/(\w+)$', function($department){
+  updateDepartmentFooterInfo($department);
 });
 
 //router('GET', '^/api/get-slides/(\w+)$', function($department){

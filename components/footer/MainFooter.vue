@@ -27,8 +27,8 @@ export default {
   }),
   async fetch(){
     this.department = !this.$route.params.department ? 'default' : this.$route.params.department;
-    let response = await this.$content('footer_info', `/${this.department}`).fetch();
-    this.sections = response.sections;
+    const { data: sections} = await this.$axios.get(`/api/get-department-footer-info/${this.department}`);
+    this.sections = sections.sections;
   },
 }
 </script>

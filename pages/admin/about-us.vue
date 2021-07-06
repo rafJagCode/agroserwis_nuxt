@@ -55,7 +55,7 @@
   padding: 2em;
   border: 2px solid var(--v-accent-base);
   width: 60%;
-  height: 60%;
+  height: max-content;
 }
 </style>
 
