@@ -1,6 +1,6 @@
 <template>
 <div class="contact-header">
-  <div class="contact-header__text pa-12">
+  <div class="contact-header__text pa-2 pa-sm-12">
     <div class="contact-header__title">Skontaktuj się<br>z nami</div>
     <div class="contact-header__description">Szukasz pomocy? Masz pytania odnośnie produktu? Odezwij się do nas, z chęcią pomożemy.</div>
   </div>
@@ -147,6 +147,14 @@ export default {
 @media (max-width:500px){
   .contact-header__text{
     font-size: 2rem;
+  }
+  .contact-header{
+    height:300px;
+  }
+}
+@media (max-width: 450px) {
+  .contact-header__text{
+    font-size: 1.7rem;
   }
 }
 </style>

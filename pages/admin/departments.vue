@@ -1,6 +1,13 @@
 <template>
 <div class="departments">
-<DepartmentForm v-for="department in departments" :key="department.name" :department="department" :availablePartners="availablePartners"></DepartmentForm>
+<DepartmentForm
+  v-for="department in departments"
+  :key="department.name"
+  :department="department"
+  :availablePartners="availablePartners"
+  :availableSlides="availableSlides"
+>
+</DepartmentForm>
 </div>
 </template>
 
@@ -12,12 +19,19 @@ export default {
   data: () => ({
     departments: [],
     availablePartners: null,
+    availableSlides: null,
   }),
   async fetch(){
     const { data: departments } = await this.$axios.get('/api/get-departments');
     const { data: availablePartners } = await this.$axios.get('/api/get-partners-slugs');
-    this.departments = departments;
+    const { data: availableSlides } = await this.$axios.get('/api/get-slider-images');
+    this.departments = departments
+      .sort((o1, o2)=>{
+        return o1.order > o2.order && 1 || -1;
+      });
+
     this.availablePartners = availablePartners;
+    this.availableSlides = Object.values(availableSlides);
   }
 }
 </script>

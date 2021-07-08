@@ -16,8 +16,14 @@ export default {
     }
   },
   async fetch() {
-      let response = await this.$axios.get('/api/get-departments');
-      this.departments = response.data;
+      const { data: departments } = await this.$axios.get('/api/get-departments');
+      this.departments = departments
+        .filter((department)=>{
+          return department.name !== 'Ustawienia domyślne' && !department.disabled;
+        })
+        .sort((o1, o2)=>{
+          return o1.order > o2.order && 1 || -1;
+        })
   },
   components:{
     DepartmentCard

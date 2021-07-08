@@ -42,9 +42,9 @@ export default {
     grid-template-columns: auto;
   }
 }
-@media (max-width: 500px){
+@media (max-width: 520px){
   .contact-card{
-    width: 100%;
+    width: 90vw;
   }
 }
 </style>

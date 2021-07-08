@@ -1,6 +1,6 @@
 <template>
 <div class="main-about-us-gallery">
-  <v-hover v-for="(photo, index) in photos" :key="photo" v-slot="{hover}">
+  <v-hover v-for="(photo, index) in photos" :key="index" v-slot="{hover}">
     <v-img :class="hover ? `main-about-us-gallery__photo${index} photo--hover` : `main-about-us-gallery__photo${index}`" :src="require(`~/assets/images/main_about_us_gallery/${photo}`)"></v-img>
   </v-hover>
 </div>

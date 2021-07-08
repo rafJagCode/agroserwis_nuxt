@@ -2,7 +2,7 @@
   <div class="tilt" :class="index % 2 == 0 ? 'product--right' : ''">
     <a class="tilt__upper-layer" :href="product.link"></a>
     <div class="product">
-    <img class="product__image" :src="require(`~/assets/images/partners/${product.image}`)"></img>
+    <img class="product__image" :src="require(`~/static/assets/partners/${product.image}`)"></img>
     <div class="product__text">
       <div class="product__name">
         {{product.title}}

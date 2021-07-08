@@ -8,6 +8,8 @@
   "street": "ul. Elewatorska 13",
   "address": "15-620 Białystok",
   "description": null,
-  "image": "białystok.png"
+  "image": "białystok.png",
+  "order": 3,
+  "disabled": false
 }
 

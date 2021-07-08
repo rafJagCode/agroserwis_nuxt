@@ -8,7 +8,9 @@
   "street": "do uzupełnienia",
   "address": "do uzupełnienia",
   "description": null,
-  "image": "grójec.png"
+  "image": "grójec.png",
+  "order": 4,
+  "disabled": true
 }
 
 

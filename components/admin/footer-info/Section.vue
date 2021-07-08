@@ -14,6 +14,12 @@
       <v-btn @click="addLink()" icon>
         <v-icon>mdi-web</v-icon>
       </v-btn>
+      <v-btn @click="moveSectionDown()" icon>
+        <v-icon>mdi-arrow-down-bold</v-icon>
+      </v-btn>
+      <v-btn @click="moveSectionUp()" icon>
+        <v-icon>mdi-arrow-up-bold</v-icon>
+      </v-btn>
     </div>
     <v-btn class="section__remove-section-btn" @click="removeSection()" color="error" x-small>
       USUŃ SEKCJE
@@ -74,6 +80,13 @@ export default {
 
     remove(index){
       this.$delete(this.section.data, index);
+    },
+
+    moveSectionDown(){
+      this.$emit('move-section-down', this.index);
+    },
+    moveSectionUp(){
+      this.$emit('move-section-up', this.index);
     },
     removeSection(){
       this.$emit('remove-section', this.index);

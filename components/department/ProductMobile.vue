@@ -1,7 +1,7 @@
 <template>
 <a :href="product.link" class="product-mobile">
   <div class="product-mobile__content">
-    <img class="product-mobile__image" :src="require(`~/assets/images/partners/${product.image}`)"/>
+    <v-img class="product-mobile__image" :src="require(`~/static/assets/partners/${product.image}`)" contain></v-img>
     <CheckOffer></CheckOffer>
   </div>
 </a>
@@ -31,8 +31,8 @@ export default {
   }
 }
 .product-mobile__image{
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   background-size: contain;
 }
 </style>

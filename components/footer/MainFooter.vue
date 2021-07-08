@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="secondary" padless class="main-footer">
+  <v-footer color="secondary" padless class="main-footer px-sm-8 px-0">
     <Partners v-show="$nuxt.$route.name==='index'"></Partners>
 
     <div class="main-footer__sections pt-12">
@@ -39,6 +39,11 @@ export default {
   justify-content: left;
   width:100%;
   position: relative;
+}
+@media (max-width: 400px){
+  .main-footer__sections{
+    justify-content: center;
+  }
 }
 .main-footer__copyright{
   display: flex;

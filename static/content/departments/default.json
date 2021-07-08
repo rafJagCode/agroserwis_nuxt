@@ -1,4 +1,5 @@
 {
   "name": "Ustawienia domyślne",
-  "slides": ["case", "steyr", "strautmann", "maschio", "lemken", "italmix", "annaburger", "mandam", "zuptor", "cynkomet", "italmix"]
+  "slides":["steyr02.jpg","steyr_6300_terrus_cvt_lemken_plough_052016_15_339_edit_3024_2016.jpg","steyr_image_range 1.jpg","steyr_profi_6145_cvt_4145_classic_front_loader_30_sz_082015_de_mg_3118_2736_1824.jpg"],
+  "order": 100
 }

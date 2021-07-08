@@ -129,11 +129,6 @@ export default {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs
     },
   },
-  watch: {
-    hover: function(hover){
-      console.log(hover);
-    }
-  },
 }
 </script>>
 <style scoped lang="scss">

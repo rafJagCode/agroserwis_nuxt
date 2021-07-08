@@ -3,9 +3,9 @@
     <v-row class="partners__text text-h6 font-weight-black primary--text" justify="center">NASI PARTNERZY</v-row>
     <v-row class="partners__row">
       <Partner
-        v-for="partner in partners"
-        :key="partner.image"
-        :image="partner.image"
+        v-for="(partner, index) in partners"
+        :key="index"
+        :image="partner"
       ></Partner>
     </v-row>
     <v-divider color="primary" class="mt-6"></v-divider>
@@ -17,49 +17,12 @@ import Partner from '~/components/footer/partners/Partner';
 export default {
   components: { Partner },
   data: () => ({
-    partners: [
-      {
-        image:
-          'case.svg',
-      },
-      {
-        image:
-          'annaburger.svg',
-      },
-      {
-        image:
-          'italmix.png',
-      },
-      {
-        image:
-          'lemken.png',
-      },
-      {
-        image:
-          'manitou.svg',
-      },
-      {
-        image:
-          'maschio.svg',
-      },
-      {
-        image:
-          'partner_agro.png',
-      },
-      {
-        image: 'steyr.svg',
-      },
-      {
-        image: 'zuptor.png',
-      },
-      {
-        image: 'mandam.png',
-      },
-      {
-        image: 'cynkomet.png',
-      },
-    ],
+    partners: [],
   }),
+  async fetch(){
+    const { data: partnersImages } = await this.$axios.get('/api/get-partners-images');
+    this.partners = Object.values(partnersImages);
+  }
 }
 </script>
 

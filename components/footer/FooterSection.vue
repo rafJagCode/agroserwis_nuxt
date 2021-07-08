@@ -1,5 +1,5 @@
 <template>
-<div class="footer-section">
+<div class="footer-section pa-1">
   <p class="footer-section__name text-h6 ml-4">{{section.name}}</p>
   <FooterSectionInfo v-if="data.type === 'info'" v-for="data in section.data" :key="data.name" :data="data"></FooterSectionInfo>
   <FooterSectionContact v-if="data.type === 'contact'" v-for="data in section.data" :key="data.name" :data="data"></FooterSectionContact>
@@ -24,15 +24,10 @@ export default {
   font-family: "Roboto", sans-serif;
   color: var(--v-primary-base);
   font-size: 0.875rem;
-  padding: 1em;
   font-weight: 500;
-  white-space: nowrap;
-  margin: 0 1em;
-}
-@media (max-width: 400px){
-  .footer-section{
-    white-space: normal;
-  }
+  white-space: normal;
+  flex-grow: 1;
+  max-width: 500px;
 }
 .footer-section__name{
   text-transform: capitalize;

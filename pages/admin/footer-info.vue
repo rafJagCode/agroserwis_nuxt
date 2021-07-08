@@ -1,7 +1,14 @@
 <template>
 <div class="admin-footer-info">
   <DepartmentSelector @change-department="changeDepartment" :departments="departments" class="my-8"></DepartmentSelector>
-  <Section v-for="(section, index) in sections" :key="section.name" :section.sync="section" :index="index" @remove-section="removeSection"></Section>
+  <Section
+    v-for="(section, index) in sections" :key="index"
+    :section.sync="section"
+    :index="index"
+    @remove-section="removeSection"
+    @move-section-down="moveSectionDown"
+    @move-section-up="moveSectionUp"
+  ></Section>
   <div class="admin-footer-info__fixed-btns">
     <v-btn
       class="primary--text mt-2"
@@ -63,6 +70,17 @@ export default {
       };
 
       this.sections.push(section);
+    },
+
+    moveSectionDown(index){
+      if(index===this.sections.length-1) return;
+      this.sections.splice(index+2, 0, this.sections[index]);
+      this.$delete(this.sections, index);
+    },
+    moveSectionUp(index){
+      if(index===0) return;
+      this.sections.splice(index-1, 0, this.sections[index]);
+      this.$delete(this.sections, index+1);
     },
     removeSection(index){
       this.$delete(this.sections, index);

@@ -28,8 +28,13 @@ export default {
         icon: 'mdi-script-text'
       },
       {
-        name: 'Slider',
-        link: 'slider',
+        name: 'Loga Partnerów',
+        link: 'partners-images',
+        icon: 'mdi-office-building'
+      },
+      {
+        name: 'Slider Zdjęcia',
+        link: 'slider-images',
         icon: 'mdi-view-carousel'
       },
       {

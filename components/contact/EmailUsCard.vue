@@ -117,7 +117,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .email-us-card{
   height: 100%;
   display: flex;
@@ -128,6 +128,9 @@ export default {
 .email-us-card__header{
   display: flex;
 }
+.email-us-card__title{
+  max-width:300px;
+}
 .fade-enter-active {
   transition: opacity 500ms ease-out;
 }
@@ -137,5 +140,12 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
+@media (max-width:400px){
+  .email-us-card__header{
+    flex-direction: column;
+  }
+  .email-us-card__title{
+    text-align: center;
+  }
+}
 </style>
