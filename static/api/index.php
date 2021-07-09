@@ -21,57 +21,57 @@ require_once __DIR__ . '/src/removePartner.php';
 
 
 
-//router('GET', '^/get-department-partners/(\w+)$', function($department){
-//  getDepartmentPartners($department);
-//});
-//router('GET', '^/get-department/(\w+)$', function($department){
-//  getDepartment($department);
-//});
-//router('POST', '^/update-department/(\w+)$', function($department){
-//  updateDepartment($department);
-//});
-//router('POST', '^/update-partner/(\w+)$', function($partner){
-//  updatePartner($partner);
-//});
-//router('GET', '^/get-department-footer-info/(\w+)$', function($department){
-//  getDepartmentFooterInfo($department);
-//});
-//router('POST', '^/update-department-footer-info/(\w+)$', function($department){
-//  updateDepartmentFooterInfo($department);
-//});
-//router('POST', '^/update-images/(\w+)$', function($folder){
-//  updateImages($folder);
-//});
-//router('POST', '^/remove-partner/(\w+)$', function($partner){
-//  removePartner($partner);
-//});
-
-
-
-router('GET', '^/api/get-department-partners/(\w+)$', function($department){
+router('GET', '^/get-department-partners/(\w+)$', function($department){
   getDepartmentPartners($department);
 });
-router('GET', '^/api/get-department/(\w+)$', function($department){
+router('GET', '^/get-department/(\w+)$', function($department){
   getDepartment($department);
 });
-router('POST', '^/api/update-department/(\w+)$', function($department){
+router('POST', '^/update-department/(\w+)$', function($department){
   updateDepartment($department);
 });
-router('POST', '^/api/update-partner/(\w+)$', function($partner){
+router('POST', '^/update-partner/(\w+)$', function($partner){
   updatePartner($partner);
 });
-router('GET', '^/api/get-department-footer-info/(\w+)$', function($department){
+router('GET', '^/get-department-footer-info/(\w+)$', function($department){
   getDepartmentFooterInfo($department);
 });
-router('POST', '^/api/update-department-footer-info/(\w+)$', function($department){
+router('POST', '^/update-department-footer-info/(\w+)$', function($department){
   updateDepartmentFooterInfo($department);
 });
-router('POST', '^/api/update-images/(\w+)$', function($folder){
+router('POST', '^/update-images/(\w+)$', function($folder){
   updateImages($folder);
 });
-router('POST', '^/api/remove-partner/(\w+)$', function($partner){
+router('POST', '^/remove-partner/(\w+)$', function($partner){
   removePartner($partner);
 });
+
+
+
+//router('GET', '^/api/get-department-partners/(\w+)$', function($department){
+//  getDepartmentPartners($department);
+//});
+//router('GET', '^/api/get-department/(\w+)$', function($department){
+//  getDepartment($department);
+//});
+//router('POST', '^/api/update-department/(\w+)$', function($department){
+//  updateDepartment($department);
+//});
+//router('POST', '^/api/update-partner/(\w+)$', function($partner){
+//  updatePartner($partner);
+//});
+//router('GET', '^/api/get-department-footer-info/(\w+)$', function($department){
+//  getDepartmentFooterInfo($department);
+//});
+//router('POST', '^/api/update-department-footer-info/(\w+)$', function($department){
+//  updateDepartmentFooterInfo($department);
+//});
+//router('POST', '^/api/update-images/(\w+)$', function($folder){
+//  updateImages($folder);
+//});
+//router('POST', '^/api/remove-partner/(\w+)$', function($partner){
+//  removePartner($partner);
+//});
 
 
 

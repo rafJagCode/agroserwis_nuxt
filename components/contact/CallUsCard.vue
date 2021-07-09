@@ -7,7 +7,7 @@
   <div class="call-us-card__text text-h6 text-center font-weight-medium py-4 secondary--text">
     Jesteś zainteresowany naszą ofertą? Zadzwoń i porozmawiaj z naszą obsługą.
   </div>
-  <v-btn text href="tel:111222333" class="text-h5 warning--text font-weight-bold">+48 111 222 333</v-btn>
+  <v-btn text href="tel:+48 86 270 30 99" class="text-h5 warning--text font-weight-bold">+48 86 270 30 99</v-btn>
 </div>
 </template>
 

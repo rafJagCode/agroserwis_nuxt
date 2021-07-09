@@ -77,14 +77,14 @@
         dense
       ></v-combobox>
     </div>
-    <SlideSelector :slides="availableSlides" :selected="department.slides" @image-clicked="imageClicked"></SlideSelector>
+    <SlideSelector v-if="department.slides" :slides="availableSlides" :selected="department.slides" @image-clicked="imageClicked"></SlideSelector>
     <v-btn
       class="primary--text mt-2"
-      color="warning"
+      :color="changesToUpload ? 'warning' : 'accent'"
       @click.prevent="update()"
       :disabled="!valid"
     >
-      Uaktualnij
+      {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
     </v-btn>
   </v-form>
 </div>
@@ -95,6 +95,7 @@ import SlideSelector from "./SlideSelector";
 export default {
   components: {SlideSelector},
   data: () => ({
+    changesToUpload: false,
     valid: true,
     nameRules: [
       v => !!v || 'Nazwa oddziału jest wymagana',
@@ -114,10 +115,19 @@ export default {
     availablePartners: null,
     availableSlides: null,
   },
+  watch:{
+    department: {
+      deep: true,
+      handler() {
+        this.changesToUpload = true
+      }
+    }
+  },
   methods: {
     async update () {
       if(!this.valid) return;
       await this.$axios.post(`/api/update-department/${this.department.link}`, this.department);
+      this.changesToUpload = false;
     },
     imageClicked(image){
       if(this.department.slides.includes(image)){
@@ -133,7 +143,17 @@ export default {
     },
     moveUp(){
       this.department.order++;
+    },
+    removeNonExistingSlides(){
+      if(!this.department.slides) return;
+      this.department.slides = this.department.slides.filter((slide)=>{
+        return this.availableSlides.includes(slide);
+      });
+      // console.log(this.department.slides);
     }
+  },
+  fetch(){
+    this.removeNonExistingSlides();
   }
 }
 

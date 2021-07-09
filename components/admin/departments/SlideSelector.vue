@@ -5,8 +5,8 @@
     <div class="slide-selector__selected-images" v-if="selected">
       <v-img
         class="ma-1"
-        :width="115" :height="50"
-        :max-width="115" :max-height="50"
+        :width="190" :height="50"
+        :max-width="190" :max-height="50"
         v-for="(image, index) in selected"
         :key="index"
         :src="require(`~/static/assets/slides/${image}`)"
@@ -16,7 +16,7 @@
   </div>
   <div class="slide-selector__images" v-show="showImages">
     <div v-for="(image, index) in slides" :key="index" class="slide-selector__image-container ma-2" @click="choseImage(image)">
-      <v-img :width="230" :height="100" :src="require(`~/static/assets/slides/${image}`)"></v-img>
+      <v-img :width="304" :height="80" :src="require(`~/static/assets/slides/${image}`)"></v-img>
       <div v-if="imageSelected(image)" class="slide-selector__selected-indicator"></div>
     </div>
   </div>
@@ -63,6 +63,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .slide-selector__image-container{
   position: relative;

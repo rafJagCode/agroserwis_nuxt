@@ -1,15 +1,5 @@
 <template>
   <div class="partner-form">
-    <v-progress-linear
-      indeterminate
-      color="accent"
-      v-if="loading"
-    ></v-progress-linear>
-    <div
-      class="partner-form__changes-indicator px-2 py-1"
-      :style="{color: changesToUpload ? 'var(--v-warning-base)' : 'var(--v-accent-base)'}">
-      {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
-    </div>
     <v-btn icon class="partner-form__remove-btn" @click="$emit('remove-partner', index)">
       <v-icon color="error">mdi-trash-can</v-icon>
     </v-btn>
@@ -41,11 +31,11 @@
       <ImageSelector :partnersImages="partnersImages" :selected="partner.image" @change-image="changeImage"></ImageSelector>
       <v-btn
         class="primary--text mt-2"
-        color="warning"
+        :color="changesToUpload ? 'warning' : 'accent'"
         @click.prevent="update()"
         :disabled="!valid"
       >
-        Uaktualnij
+        {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
       </v-btn>
     </v-form>
   </div>
@@ -93,7 +83,14 @@ export default {
     },
     changeImage(image){
       this.partner.image = image;
+    },
+    removeNonExistingImages() {
+      if(!this.partner.image) return;
+      if(!this.partnersImages.includes(this.partner.image)) this.partner.image = null;
     }
+  },
+  fetch(){
+    this.removeNonExistingImages();
   }
 }
 

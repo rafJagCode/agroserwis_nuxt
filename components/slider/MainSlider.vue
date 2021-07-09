@@ -1,6 +1,6 @@
 <template>
   <v-carousel
-    :height="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm ? 200 : fullHeight"
+    :height="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm ? 200 : 500"
     v-model="activeSlide"
     hide-delimiters
     show-arrows-on-hover

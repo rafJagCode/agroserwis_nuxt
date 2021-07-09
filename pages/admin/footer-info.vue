@@ -19,10 +19,10 @@
     </v-btn>
     <v-btn
       class="primary--text mt-2"
-      color="warning"
+      :color="changesToUpload ? 'warning' : 'accent'"
       @click.prevent="update()"
     >
-      Uaktualnij
+      {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
     </v-btn>
   </div>
 </div>
@@ -35,11 +35,25 @@ export default {
   components: {DepartmentSelector, Section },
   layout: 'admin',
   data: () => ({
+    changesToUpload: false,
     sections: null,
     departments: null,
     selectedDepartment: null,
     fetching: true,
+    firstChange: true,
   }),
+  watch:{
+    sections: {
+      deep: true,
+      handler() {
+        if(this.firstChange){
+          this.firstChange = false;
+          return;
+        }
+        this.changesToUpload = true;
+      }
+    }
+  },
   async fetch(){
     const { data: departments } = await this.$axios.get('/api/get-departments-slugs');
     this.departments = departments.filter((department)=>{
@@ -62,6 +76,7 @@ export default {
     },
     async update(){
       await this.$axios.post(`/api/update-department-footer-info/${this.selectedDepartment.slug}`, { "sections": this.sections });
+      this.changesToUpload = false;
     },
     addSection(){
       let section = {

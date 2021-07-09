@@ -13,11 +13,11 @@
         ></v-textarea>
         <v-btn
           class="primary--text mt-2"
-          color="warning"
+          :color="changesToUpload ? 'warning' : 'accent'"
           @click.prevent="update()"
           :disabled="!valid"
         >
-          Uaktualnij
+          {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
         </v-btn>
       </v-form>
     </div>
@@ -28,17 +28,32 @@
   export default {
     layout: 'admin',
     data: () => ({
+      changesToUpload: false,
       about: '',
       valid: true,
+      firstChange: true,
     }),
     async fetch(){
       const { data: about } = await this.$axios.get('/api/get-about-us');
       this.about = about.about;
     },
+    watch:{
+      about: {
+        deep: true,
+        handler() {
+          if(this.firstChange){
+            this.firstChange = false;
+            return;
+          }
+          this.changesToUpload = true;
+        }
+      }
+    },
     methods: {
       async update () {
         if(!this.valid) return;
         await this.$axios.post(`/api/update-about-us`, { "about": this.about });
+        this.changesToUpload = false;
       },
     },
   }

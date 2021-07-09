@@ -1,15 +1,16 @@
 <template>
   <v-app-bar class="main-navbar" color="primary" height="max-content">
     <v-container fluid class="main-navbar__container">
-      <v-layout row class="pt-3">
-        <MainLogoBar></MainLogoBar>
-      </v-layout>
+<!--      <v-layout row class="pt-3">-->
+<!--        <MainLogoBar></MainLogoBar>-->
+<!--      </v-layout>-->
       <v-layout row class="main-navbar__navigation">
         <v-img
-          :src="require('~/assets/images/logo.png')"
+          :src="require('~/assets/images/final_logo.png')"
           contain
           max-width="150"
-          max-height="20"
+          max-height="50"
+          class="my-2"
         >
         </v-img>
 

@@ -1,7 +1,12 @@
 <template>
 <div class="partner-photos">
-  <ImageUploader ref="imageUploader" :api="api" :folder="folder"></ImageUploader>
-  <v-btn color="warning" class="partner-photos__update-btn" @click="update()">UAKTUALNIJ</v-btn>
+  <ImageUploader ref="imageUploader" :api="api" :folder="folder" @change-occurred="changeOccurred()"></ImageUploader>
+  <v-btn
+    :color="changesToUpload ? 'warning' : 'accent'"
+    class="partner-photos__update-btn"
+    @click="update()">
+    {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
+  </v-btn>
 </div>
 </template>
 
@@ -11,12 +16,17 @@ export default {
   components: {ImageUploader},
   layout: 'admin',
   data:() => ({
+    changesToUpload: false,
     api: 'get-partners-images',
     folder: 'partners'
   }),
   methods:{
     async update(){
       await this.$axios.post(`/api/update-images/${this.folder}`, this.$refs.imageUploader.images);
+      this.changesToUpload = false;
+    },
+    changeOccurred(){
+      this.changesToUpload = true;
     }
   }
 }

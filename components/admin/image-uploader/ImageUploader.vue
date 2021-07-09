@@ -3,13 +3,13 @@
 
     <label class="drop__btn drop__btn--above">
       WYBIERZ LUB PRZECIĄGNIJ ZDJĘCIE
-      <input ref="imageInput" type="file" name="imageInput" @change="onChange">
+      <input ref="imageInput" type="file" name="imageInput" @change="onChange" multiple>
     </label>
 
     <div v-for="(image, index) in images" :key="index" class="drop__item">
       <PartnerImage v-if="folder==='partners'" :image="image"></PartnerImage>
       <SliderImage v-if="folder==='slides'" :image="image"></SliderImage>
-      <button class="drop__btn" @click="removeFile(index)">USUŃ</button>
+      <button class="drop__btn mt-2" @click="removeFile(index)">USUŃ</button>
     </div>
 
   </div>
@@ -21,7 +21,8 @@ import SliderImage from "./SliderImage";
 export default {
   components: {PartnerImage, SliderImage},
   data: () =>({
-    images: []
+    images: [],
+    firstChange: true,
   }),
   props:{
     api: null,
@@ -33,6 +34,19 @@ export default {
       this.images.push({ "type": "file", "src": image });
     });
   },
+  watch:{
+    images: {
+      deep: true,
+      handler() {
+        if(this.firstChange){
+          this.firstChange = false;
+          return;
+        }
+        this.$emit('change-occurred');
+      }
+    }
+  },
+
   methods:{
     onDrop: function(e) {
       e.stopPropagation();
@@ -57,7 +71,7 @@ export default {
       let vm = this;
 
       reader.onload = function(e) {
-        vm.images.push({ "type": "dataURL", "src": e.target.result, "name": file.name });
+        vm.images.unshift({ "type": "dataURL", "src": e.target.result, "name": file.name });
       }
       reader.readAsDataURL(file);
     },

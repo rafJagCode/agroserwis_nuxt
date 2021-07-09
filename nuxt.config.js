@@ -38,19 +38,19 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    // ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
-    ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
+    ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
+    // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/content',
     '@nuxtjs/proxy',
   ],
 
-  // proxy: {
-  //   '/api':{
-  //     target: 'http://localhost:8000',
-  //   }
-  // },
+  proxy: {
+    '/api':{
+      target: 'http://localhost:8000',
+    }
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

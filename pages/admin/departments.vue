@@ -1,6 +1,7 @@
 <template>
 <div class="departments">
 <DepartmentForm
+  v-if="department"
   v-for="department in departments"
   :key="department.name"
   :department="department"

@@ -110,7 +110,7 @@
       </v-card-actions>
     </div>
     </div>
-    <v-btn @click="showActions = !showActions" class="department-card__info-btn primary--text" text>kontakt</v-btn>
+    <v-btn @click="showContact()" class="department-card__info-btn primary--text" text>kontakt</v-btn>
   </v-card>
   </div>
 </template>
@@ -129,6 +129,13 @@ export default {
       return this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs
     },
   },
+  methods:{
+    showContact(){
+      this.showActions = !this.showActions;
+      console.log(this);
+      this.$vuetify.goTo(this);
+    }
+  }
 }
 </script>>
 <style scoped lang="scss">

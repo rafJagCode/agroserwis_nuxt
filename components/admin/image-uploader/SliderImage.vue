@@ -15,14 +15,14 @@ export default {
 
 <style scoped>
 .drop__img-container{
-  width: 460px;
-  height: 200px;
+  width: 456px;
+  height: 120px;
   display: grid;
   place-items: center;
 }
 .drop__img {
-  height: 200px;
-  width: 460px;
+  width: 456px;
+  height: 120px;
   background-size: cover;
 }
 </style>
