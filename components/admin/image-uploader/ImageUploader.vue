@@ -28,7 +28,7 @@ export default {
     api: null,
     folder: null,
   },
-  async fetch(){
+  async mounted(){
     const { data } = await this.$axios.get(`/api/${this.api}`);
     Object.values(data).forEach((image)=>{
       this.images.push({ "type": "file", "src": image });

@@ -132,7 +132,6 @@ export default {
   methods:{
     showContact(){
       this.showActions = !this.showActions;
-      console.log(this);
       this.$vuetify.goTo(this);
     }
   }

@@ -2,6 +2,12 @@
     <div class="admin-sidebar" :class="hover ? 'admin-sidebar--show' : ''">
       <div class="admin-sidebars__items">
         <AdminSidebarItem v-for="item in items" :key="item.name" :item="item" :hover="hover"></AdminSidebarItem>
+        <div class="admin-sidebar__logout">
+          <v-btn color="warning" block text @click="logout()">
+            <v-icon left>mdi-logout</v-icon>
+            {{hover ? 'wyloguj' : ''}}
+          </v-btn>
+        </div>
       </div>
     </div>
 </template>
@@ -50,6 +56,12 @@ export default {
   watch:{
     hover: function(hover){
       this.$emit('sidebar-hovered', hover);
+    }
+  },
+  methods: {
+    async logout(){
+      await this.$axios.post('/api/logout');
+      await this.$nuxt.$router.push({"name": 'admin'});
     }
   }
 }

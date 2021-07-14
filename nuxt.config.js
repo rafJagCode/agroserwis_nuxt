@@ -1,7 +1,9 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from 'vuetify/es5/util/colors';
+import axios from 'axios';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
     titleTemplate: '%s - agroserwis_nuxt',
     title: 'agroserwis_nuxt',
@@ -38,19 +40,19 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
-    // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
+    // ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
+    ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/content',
     '@nuxtjs/proxy',
   ],
 
-  proxy: {
-    '/api':{
-      target: 'http://localhost:8000',
-    }
-  },
+  // proxy: {
+  //   '/api':{
+  //     target: 'http://localhost:8000',
+  //   }
+  // },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -89,4 +91,13 @@ export default {
       return { x: 0, y: 0 }
     }
   },
+  generate: {
+    routes() {
+      return axios.get('/api/get-departments-slugs').then(res => {
+        return res.data.map(user => {
+          return '/users/' + user.id
+        })
+      })
+    }
+  }
 }

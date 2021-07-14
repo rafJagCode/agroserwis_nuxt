@@ -15,12 +15,13 @@
 import PartnerForm from "~/components/admin/partners/PartnerForm";
 export default {
   layout: 'admin',
+  middleware: 'auth',
   components: {PartnerForm},
   data: () => ({
     partners: null,
     partnersImages: null,
   }),
-  async fetch(){
+  async mounted(){
     const { data: partners } = await this.$axios.get('/api/get-partners');
     this.partners = partners;
     const { data: partnersImages } = await this.$axios.get('/api/get-partners-images');

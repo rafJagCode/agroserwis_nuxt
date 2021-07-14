@@ -27,13 +27,14 @@
 <script>
   export default {
     layout: 'admin',
+    middleware: 'auth',
     data: () => ({
       changesToUpload: false,
       about: '',
       valid: true,
       firstChange: true,
     }),
-    async fetch(){
+    async mounted(){
       const { data: about } = await this.$axios.get('/api/get-about-us');
       this.about = about.about;
     },

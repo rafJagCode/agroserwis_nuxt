@@ -17,12 +17,13 @@ import DepartmentForm from "~/components/admin/departments/DepartmentForm";
 export default {
   components: {DepartmentForm},
   layout: 'admin',
+  middleware: 'auth',
   data: () => ({
     departments: [],
     availablePartners: null,
     availableSlides: null,
   }),
-  async fetch(){
+  async mounted(){
     const { data: departments } = await this.$axios.get('/api/get-departments');
     const { data: availablePartners } = await this.$axios.get('/api/get-partners-slugs');
     const { data: availableSlides } = await this.$axios.get('/api/get-slider-images');

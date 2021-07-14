@@ -18,7 +18,7 @@ export default {
   data: ()=>({
     text: ''
   }),
-  async fetch(){
+  async mounted(){
     let { data } = await this.$axios.get('/api/get-about-us');
     this.text = data.about;
   }

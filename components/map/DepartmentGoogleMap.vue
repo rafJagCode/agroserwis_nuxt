@@ -16,7 +16,7 @@ export default {
   data: () =>({
     link: null,
   }),
-  async fetch(){
+  async mounted(){
     const department = this.$route.params.department;
     const response = await this.$axios.get(`/api/get-department/${department}`);
     const departmentInfo = response.data;

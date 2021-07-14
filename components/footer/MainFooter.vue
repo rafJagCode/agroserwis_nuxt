@@ -25,7 +25,7 @@ export default {
     sections: [],
     department: 'default',
   }),
-  async fetch(){
+  async mounted(){
     this.department = !this.$route.params.department ? 'default' : this.$route.params.department;
     const { data: sections} = await this.$axios.get(`/api/get-department-footer-info/${this.department}`);
     this.sections = sections.sections;

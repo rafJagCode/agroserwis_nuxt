@@ -47,7 +47,7 @@ export default {
       items: [],
     }
   },
-  async fetch(){
+  async mounted(){
     const department = this.$route.params.department || 'default';
     const { data } = await this.$axios.get(`/api/get-department/${department}`);
     this.items = data.slides;

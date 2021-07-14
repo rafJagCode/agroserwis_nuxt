@@ -34,6 +34,7 @@ import DepartmentSelector from "~/components/admin/footer-info/DepartmentSelecto
 export default {
   components: {DepartmentSelector, Section },
   layout: 'admin',
+  middleware: 'auth',
   data: () => ({
     changesToUpload: false,
     sections: null,
@@ -54,7 +55,7 @@ export default {
       }
     }
   },
-  async fetch(){
+  async mounted(){
     const { data: departments } = await this.$axios.get('/api/get-departments-slugs');
     this.departments = departments.filter((department)=>{
       return department.name !== 'Białystok';

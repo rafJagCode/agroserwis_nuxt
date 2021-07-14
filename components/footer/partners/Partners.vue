@@ -19,7 +19,7 @@ export default {
   data: () => ({
     partners: [],
   }),
-  async fetch(){
+  async mounted(){
     const { data: partnersImages } = await this.$axios.get('/api/get-partners-images');
     this.partners = Object.values(partnersImages);
   }

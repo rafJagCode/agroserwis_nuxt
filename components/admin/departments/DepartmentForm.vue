@@ -149,7 +149,6 @@ export default {
       this.department.slides = this.department.slides.filter((slide)=>{
         return this.availableSlides.includes(slide);
       });
-      // console.log(this.department.slides);
     }
   },
   fetch(){

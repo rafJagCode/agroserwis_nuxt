@@ -10,12 +10,10 @@
 <script>
 import DepartmentCard from "~/components/home/departments/DepartmentCard";
 export default {
-  data(){
-    return{
-      departments: []
-    }
-  },
-  async fetch() {
+  data: () =>({
+    departments: []
+  }),
+  async mounted() {
       const { data: departments } = await this.$axios.get('/api/get-departments');
       this.departments = departments
         .filter((department)=>{

@@ -13,7 +13,7 @@ export default {
   data: () => ({
     products: [],
   }),
-  async fetch(){
+  async mounted(){
     const department = this.$route.params.department;
     const response = await this.$axios.get(`/api/get-department-partners/${department}`);
     this.products = response.data;

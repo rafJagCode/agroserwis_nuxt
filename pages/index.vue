@@ -15,7 +15,7 @@ export default {
   components:{
     MainFooter,
     MainSlider, MainAboutUs, Departments
-  }
+  },
 }
 </script>
 <style>

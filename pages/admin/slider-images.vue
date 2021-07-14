@@ -15,6 +15,7 @@ import ImageUploader from "~/components/admin/image-uploader/ImageUploader";
 export default {
   components: {ImageUploader},
   layout: 'admin',
+  middleware: 'auth',
   data:() => ({
     changesToUpload: false,
     api: 'get-slider-images',
