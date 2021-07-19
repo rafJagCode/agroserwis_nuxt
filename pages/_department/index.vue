@@ -1,27 +1,30 @@
 <template>
-<div class="department-page">
-  <MainSlider></MainSlider>
-  <Products></Products>
-  <DepartmentGoogleMap></DepartmentGoogleMap>
-  <MainFooter></MainFooter>
-</div>
+  <div class="department-page">
+    <MainSlider></MainSlider>
+    <Products></Products>
+    <DepartmentGoogleMap></DepartmentGoogleMap>
+    <MainFooter></MainFooter>
+  </div>
 </template>
 
 <script>
-import MainSlider from '~/components/slider/MainSlider';
-import Products from '~/components/department/Products';
-import MainFooter from "~/components/footer/MainFooter";
-import DepartmentGoogleMap from "~/components/map/DepartmentGoogleMap";
+import MainSlider from '~/components/slider/MainSlider'
+import Products from '~/components/department/Products'
+import MainFooter from '~/components/footer/MainFooter'
+import DepartmentGoogleMap from '~/components/map/DepartmentGoogleMap'
 export default {
-  components: {DepartmentGoogleMap, MainFooter, MainSlider, Products },
+  components: { DepartmentGoogleMap, MainFooter, MainSlider, Products },
   mounted() {
-    setTimeout(()=>{
-      window.scrollTo(0,0)
+    setTimeout(() => {
+      window.scrollTo(0, 0)
     }, 100)
   },
-
+  head() {
+    return {
+      title: 'informacje',
+    }
+  },
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -8,14 +8,13 @@
     interval="4000"
     class="main-slider ma-0"
     :touch="{
-      left: ()=>{
-        activeSlide++;
+      left: () => {
+        activeSlide++
       },
-      right: ()=>{
-        if(activeSlide===0){
-          activeSlide = items.length-1;
-        }
-        else activeSlide--;
+      right: () => {
+        if (activeSlide === 0) {
+          activeSlide = items.length - 1
+        } else activeSlide--
       },
     }"
   >
@@ -32,7 +31,8 @@
       elevation="2"
       fab
       color="accent"
-      v-show="showScrollButton">
+      v-show="showScrollButton"
+    >
       <v-icon>mdi-hand-pointing-down</v-icon>
     </v-btn>
   </v-carousel>
@@ -47,40 +47,40 @@ export default {
       items: [],
     }
   },
-  async mounted(){
-    const department = this.$route.params.department || 'default';
-    const { data } = await this.$axios.get(`/api/get-department/${department}`);
-    this.items = data.slides;
+  async fetch() {
+    const department = this.$route.params.department || 'default'
+    const { data } = await this.$axios.get(`/api/get-department/${department}`)
+    this.items = data.slides
   },
-  computed:{
-    fullHeight(){
-      return window.innerHeight - 104;
+  computed: {
+    fullHeight() {
+      return window.innerHeight - 104
     },
-    mobile(){
-      return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm;
+    mobile() {
+      return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm
     },
-    showScrollButton(){
-      return !this.mobile && !this.scrollY;
-    }
-  },
-  methods:{
-    scrollFullPage(){
-      window.scroll(0, window.innerHeight);
+    showScrollButton() {
+      return !this.mobile && !this.scrollY
     },
   },
-  beforeMount(){
-    let that = this;
-    window.addEventListener('scroll', function(){
-      that.scrollY = window.scrollY;
-    });
-  }
+  methods: {
+    scrollFullPage() {
+      window.scroll(0, window.innerHeight)
+    },
+  },
+  beforeMount() {
+    let that = this
+    window.addEventListener('scroll', function () {
+      that.scrollY = window.scrollY
+    })
+  },
 }
 </script>
 <style scoped lang="scss">
-.main-slider__go-down-btn{
+.main-slider__go-down-btn {
   position: absolute;
   bottom: 0;
   right: 50%;
-  transform: translate(50%,-50%);
+  transform: translate(50%, -50%);
 }
 </style>

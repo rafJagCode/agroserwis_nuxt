@@ -5,14 +5,17 @@
 </template>
 
 <script>
-import LoginForm from "~/components/admin/LoginForm";
+import LoginForm from '~/components/admin/LoginForm'
 export default {
-  components: {LoginForm}
+  components: { LoginForm },
+  async fetch() {
+    console.log('index admin fetch')
+  },
 }
 </script>
 
 <style scoped>
-.admin-page{
+.admin-page {
   display: grid;
   place-items: center;
   min-height: calc(100vh - 66px);

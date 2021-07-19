@@ -1,90 +1,98 @@
 <template>
   <div class="drop" @dragover.prevent @drop="onDrop">
-
     <label class="drop__btn drop__btn--above">
       WYBIERZ LUB PRZECIĄGNIJ ZDJĘCIE
-      <input ref="imageInput" type="file" name="imageInput" @change="onChange" multiple>
+      <input
+        ref="imageInput"
+        type="file"
+        name="imageInput"
+        @change="onChange"
+        multiple
+      />
     </label>
 
     <div v-for="(image, index) in images" :key="index" class="drop__item">
-      <PartnerImage v-if="folder==='partners'" :image="image"></PartnerImage>
-      <SliderImage v-if="folder==='slides'" :image="image"></SliderImage>
+      <PartnerImage v-if="folder === 'partners'" :image="image"></PartnerImage>
+      <SliderImage v-if="folder === 'slides'" :image="image"></SliderImage>
       <button class="drop__btn mt-2" @click="removeFile(index)">USUŃ</button>
     </div>
-
   </div>
 </template>
 
 <script>
-import PartnerImage from "./PartnerImage";
-import SliderImage from "./SliderImage";
+import PartnerImage from './PartnerImage'
+import SliderImage from './SliderImage'
 export default {
-  components: {PartnerImage, SliderImage},
-  data: () =>({
+  components: { PartnerImage, SliderImage },
+  data: () => ({
     images: [],
     firstChange: true,
   }),
-  props:{
+  props: {
     api: null,
     folder: null,
   },
-  async mounted(){
-    const { data } = await this.$axios.get(`/api/${this.api}`);
-    Object.values(data).forEach((image)=>{
-      this.images.push({ "type": "file", "src": image });
-    });
+  async fetch() {
+    const { data } = await this.$axios.get(`/api/${this.api}`)
+    Object.values(data).forEach((image) => {
+      this.images.push({ type: 'file', src: image })
+    })
   },
-  watch:{
+  watch: {
     images: {
       deep: true,
       handler() {
-        if(this.firstChange){
-          this.firstChange = false;
-          return;
+        if (this.firstChange) {
+          this.firstChange = false
+          return
         }
-        this.$emit('change-occurred');
-      }
-    }
+        this.$emit('change-occurred')
+      },
+    },
   },
 
-  methods:{
-    onDrop: function(e) {
-      e.stopPropagation();
-      e.preventDefault();
-      let files = e.dataTransfer.files;
-      files.forEach((file)=>{
-        this.createFile(file);
+  methods: {
+    onDrop: function (e) {
+      e.stopPropagation()
+      e.preventDefault()
+      let files = e.dataTransfer.files
+      files.forEach((file) => {
+        this.createFile(file)
       })
     },
     onChange(e) {
-      let files = e.target.files;
-      files.forEach((file)=>{
-        this.createFile(file);
+      let files = e.target.files
+      files.forEach((file) => {
+        this.createFile(file)
       })
     },
     createFile(file) {
       if (!file.type.match('image.*')) {
-        alert('Select an image');
-        return;
+        alert('Select an image')
+        return
       }
-      let reader = new FileReader();
-      let vm = this;
+      let reader = new FileReader()
+      let vm = this
 
-      reader.onload = function(e) {
-        vm.images.unshift({ "type": "dataURL", "src": e.target.result, "name": file.name });
+      reader.onload = function (e) {
+        vm.images.unshift({
+          type: 'dataURL',
+          src: e.target.result,
+          name: file.name,
+        })
       }
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file)
     },
     removeFile(index) {
-      this.$delete(this.images, index);
-    }
-  }
+      this.$delete(this.images, index)
+    },
+  },
 }
 </script>
 
 <style scoped lang="scss">
 .drop {
-  margin-top:85px;
+  margin-top: 85px;
   margin-bottom: 50px;
   background-color: var(--v-primary-base);
   border: 4px dashed var(--v-accent-base);
@@ -110,7 +118,7 @@ export default {
   padding: 15px 35px;
   position: relative;
 
-  &--above{
+  &--above {
     @extend .drop__btn;
     position: absolute;
     width: calc(100% + 8px);
@@ -123,16 +131,12 @@ export default {
   }
 }
 
-
-input[type="file"] {
+input[type='file'] {
   position: absolute;
   opacity: 0;
   z-index: -1;
 }
-.drop__item{
+.drop__item {
   padding: 10px 30px;
 }
-
-
 </style>
-

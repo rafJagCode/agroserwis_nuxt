@@ -9,20 +9,28 @@
 </template>
 
 <script>
-import ContactHeader from "~/components/contact/ContactHeader";
-import ContactCards from "~/components/contact/ContactCards";
-import MainFooter from "~/components/footer/MainFooter";
+import ContactHeader from '~/components/contact/ContactHeader'
+import ContactCards from '~/components/contact/ContactCards'
+import MainFooter from '~/components/footer/MainFooter'
 export default {
-  components:{
+  components: {
     MainFooter,
     ContactCards,
     ContactHeader,
-  }
+  },
+  head() {
+    return {
+      title: 'kontakt',
+    }
+  },
+  async fetch() {
+    console.log('contact fetch')
+  },
 }
 </script>
 
 <style scoped>
-.contact__content{
+.contact__content {
   display: flex;
   flex-direction: column;
   align-items: center;

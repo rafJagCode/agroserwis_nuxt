@@ -5,7 +5,7 @@
         <v-textarea
           label="O Nas"
           v-model="about"
-          :rules="[v => !!v||'To pole jest wymagane']"
+          :rules="[(v) => !!v || 'To pole jest wymagane']"
           required
           validate-on-blur
           auto-grow
@@ -17,7 +17,7 @@
           @click.prevent="update()"
           :disabled="!valid"
         >
-          {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne'}}
+          {{ changesToUpload ? 'uaktualnij' : 'wszystko aktualne' }}
         </v-btn>
       </v-form>
     </div>
@@ -25,48 +25,48 @@
 </template>
 
 <script>
-  export default {
-    layout: 'admin',
-    middleware: 'auth',
-    data: () => ({
-      changesToUpload: false,
-      about: '',
-      valid: true,
-      firstChange: true,
-    }),
-    async mounted(){
-      const { data: about } = await this.$axios.get('/api/get-about-us');
-      this.about = about.about;
-    },
-    watch:{
-      about: {
-        deep: true,
-        handler() {
-          if(this.firstChange){
-            this.firstChange = false;
-            return;
-          }
-          this.changesToUpload = true;
+export default {
+  layout: 'admin',
+  middleware: 'auth',
+  data: () => ({
+    changesToUpload: false,
+    about: '',
+    valid: true,
+    firstChange: true,
+  }),
+  async fetch() {
+    console.log('about admin fetch')
+    const { data: about } = await this.$axios.get('/api/get-about-us')
+    this.about = about.about
+  },
+  watch: {
+    about: {
+      deep: true,
+      handler() {
+        if (this.firstChange) {
+          this.firstChange = false
+          return
         }
-      }
-    },
-    methods: {
-      async update () {
-        if(!this.valid) return;
-        await this.$axios.post(`/api/update-about-us`, { "about": this.about });
-        this.changesToUpload = false;
+        this.changesToUpload = true
       },
     },
-  }
-
+  },
+  methods: {
+    async update() {
+      if (!this.valid) return
+      await this.$axios.post(`/api/update-about-us`, { about: this.about })
+      this.changesToUpload = false
+    },
+  },
+}
 </script>
 
 <style scoped>
-.admin-about-us{
+.admin-about-us {
   display: grid;
   place-items: center;
 }
-.admin-about-us__form{
+.admin-about-us__form {
   margin: 2em;
   padding: 2em;
   border: 2px solid var(--v-accent-base);
@@ -74,4 +74,3 @@
   height: max-content;
 }
 </style>
-

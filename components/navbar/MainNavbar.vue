@@ -1,9 +1,9 @@
 <template>
   <v-app-bar class="main-navbar" color="primary" height="max-content">
     <v-container fluid class="main-navbar__container">
-<!--      <v-layout row class="pt-3">-->
-<!--        <MainLogoBar></MainLogoBar>-->
-<!--      </v-layout>-->
+      <!--      <v-layout row class="pt-3">-->
+      <!--        <MainLogoBar></MainLogoBar>-->
+      <!--      </v-layout>-->
       <v-layout row class="main-navbar__navigation">
         <v-img
           :src="require('~/assets/images/final_logo.png')"
@@ -17,10 +17,15 @@
         <v-spacer></v-spacer>
 
         <MainCollapsingMenu
-          @hamburger-clicked="showMobileList = !showMobileList" :links="links"
+          @hamburger-clicked="showMobileList = !showMobileList"
+          :links="links"
         ></MainCollapsingMenu>
         <transition name="slide-fade">
-          <NavbarMobileList v-show="showMobileList && mobile" :links="links" @hidemobilenavbar="hideMobileNavbar()"></NavbarMobileList>
+          <NavbarMobileList
+            v-show="showMobileList && mobile"
+            :links="links"
+            @hidemobilenavbar="hideMobileNavbar()"
+          ></NavbarMobileList>
         </transition>
       </v-layout>
     </v-container>
@@ -28,34 +33,38 @@
 </template>
 
 <script>
-import MainCollapsingMenu from "~/components/navbar/MainCollapsingMenu";
-import MainLogoBar from "~/components/navbar/MainLogoBar";
+import MainCollapsingMenu from '~/components/navbar/MainCollapsingMenu'
+import MainLogoBar from '~/components/navbar/MainLogoBar'
 export default {
   components: {
     MainLogoBar,
-    MainCollapsingMenu
+    MainCollapsingMenu,
   },
   data: () => ({
     showMobileList: false,
     links: [
       {
         name: 'Oddziały',
-        link: '.departments'
+        link: '.departments',
       },
       {
         name: 'O nas',
-        link: '.main-about-us'
+        link: '.main-about-us',
       },
       {
         name: 'Dane Kontaktowe',
-        link: '.main-footer__sections'
-      }
+        link: '.main-footer__sections',
+      },
+      {
+        name: 'Części Zamienne',
+        link: '#app',
+      },
     ],
   }),
-  methods:{
-    hideMobileNavbar(){
-      this.showMobileList = false;
-    }
+  methods: {
+    hideMobileNavbar() {
+      this.showMobileList = false
+    },
   },
   computed: {
     mobile() {
@@ -65,23 +74,26 @@ export default {
 }
 </script>
 <style lang="scss">
-.main-navbar{
+.main-navbar {
   z-index: 2;
 }
-.main-navbar__container{
-  width:100%;
+.main-navbar__container {
+  width: 100%;
 }
-.main-navbar__navigation{
+.main-navbar__navigation {
   align-items: center;
 }
-.slide-fade-enter-active, .slide-fade-leave-active {
+.slide-fade-enter-active,
+.slide-fade-leave-active {
   transition: all 300ms ease;
 }
-.slide-fade-enter, .slide-fade-leave-to {
+.slide-fade-enter,
+.slide-fade-leave-to {
   opacity: 0;
 }
-.v-toolbar__content, .v-toolbar__extension {
-  padding-top: 0!important;
-  padding-bottom: 0!important;
+.v-toolbar__content,
+.v-toolbar__extension {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 </style>

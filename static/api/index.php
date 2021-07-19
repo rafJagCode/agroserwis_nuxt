@@ -24,98 +24,136 @@ require_once __DIR__ . '/src/is_auth.php';
 require_once __DIR__ . '/src/logout.php';
 
 
+//ROUTES THAT DON'T NEED AUTHORIZATION
 
-//router('GET', '^/get-department-partners/(\w+)$', function($department){
-//  getDepartmentPartners($department);
-//});
-//router('GET', '^/get-department/(\w+)$', function($department){
-//  getDepartment($department);
-//});
-//router('POST', '^/update-department/(\w+)$', function($department){
-//  updateDepartment($department);
-//});
-//router('POST', '^/update-partner/(\w+)$', function($partner){
-//  updatePartner($partner);
-//});
-//router('GET', '^/get-department-footer-info/(\w+)$', function($department){
-//  getDepartmentFooterInfo($department);
-//});
-//router('POST', '^/update-department-footer-info/(\w+)$', function($department){
-//  updateDepartmentFooterInfo($department);
-//});
-//router('POST', '^/update-images/(\w+)$', function($folder){
-//  updateImages($folder);
-//});
-//router('POST', '^/remove-partner/(\w+)$', function($partner){
-//  removePartner($partner);
-//});
+//AUTHORIZATION
 
-
-
-router('GET', '^/api/get-department-partners/(\w+)$', function($department){
-  getDepartmentPartners($department);
-});
-router('GET', '^/api/get-department/(\w+)$', function($department){
-  getDepartment($department);
-});
-router('POST', '^/api/update-department/(\w+)$', function($department){
-  updateDepartment($department);
-});
-router('POST', '^/api/update-partner/(\w+)$', function($partner){
-  updatePartner($partner);
-});
-router('GET', '^/api/get-department-footer-info/(\w+)$', function($department){
-  getDepartmentFooterInfo($department);
-});
-router('POST', '^/api/update-department-footer-info/(\w+)$', function($department){
-  updateDepartmentFooterInfo($department);
-});
-router('POST', '^/api/update-images/(\w+)$', function($folder){
-  updateImages($folder);
-});
-router('POST', '^/api/remove-partner/(\w+)$', function($partner){
-  removePartner($partner);
-});
-
-
-
-router('POST', '^/api/send-mail$', function(){
-  sendMail();
-});
-router('GET', '^/api/get-departments-slugs$', function(){
-  getDepartmentsSlugs();
-});
-router('GET', '^/api/get-departments$', function(){
-  getDepartments();
-});
-router('GET', '^/api/get-partners-slugs$', function(){
-  getPartnersSlugs();
-});
-router('GET', '^/api/get-partners$', function(){
-  getPartners();
-});
-router('GET', '^/api/get-about-us$', function(){
-  getAboutUs();
-});
-router('POST', '^/api/update-about-us$', function(){
-  updateAboutUs();
-});
-router('GET', '^/api/get-partners-images$', function(){
-  getPartnersImages();
-});
-router('GET', '^/api/get-slider-images$', function(){
-  getSliderImages();
-});
 router('POST', '^/api/login$', function(){
   login();
 });
+
 router('POST', '^/api/logout$', function(){
   logout();
 });
+
 router('GET', '^/api/auth$', function(){
   auth();
 });
 
+//GET DEPARTMENTS INFO
+
+router('GET', '^/api/get-departments$', function(){
+  getDepartments();
+});
+
+router('GET', '^/api/get-department/(\w+)$', function($department){
+  getDepartment($department);
+});
+
+router('GET', '^/api/get-departments-slugs$', function(){
+  getDepartmentsSlugs();
+});
+
+router('GET', '^/api/get-department-partners/(\w+)$', function($department){
+  getDepartmentPartners($department);
+});
+
+router('GET', '^/api/get-department-footer-info/(\w+)$', function($department){
+  getDepartmentFooterInfo($department);
+});
+
+//GET PARTNERS INFO
+
+router('GET', '^/api/get-partners$', function(){
+  getPartners();
+});
+
+router('GET', '^/api/get-partners-slugs$', function(){
+  getPartnersSlugs();
+});
+
+router('GET', '^/api/get-partners-images$', function(){
+  getPartnersImages();
+});
+
+//GET ABOUT US INFO
+
+router('GET', '^/api/get-about-us$', function(){
+  getAboutUs();
+});
+
+//GET SLIDER INFO
+
+router('GET', '^/api/get-slider-images$', function(){
+  getSliderImages();
+});
+
+//SEND EMAIL
+
+router('POST', '^/api/send-mail$', function(){
+  sendMail();
+});
+
+
+// if(!is_auth()){
+// 	http_response_code(400);
+//     echo json_encode(['message' => 'Authorization needed']);
+//     return;
+// }
+
+//ROUTES THAT NEED AUTHORIZATION
+
+router('POST', '^/api/update-department/(\w+)$', function($department){
+  updateDepartment($department);
+});
+
+router('POST', '^/api/update-partner/(\w+)$', function($partner){
+  updatePartner($partner);
+});
+
+router('POST', '^/api/update-department-footer-info/(\w+)$', function($department){
+  updateDepartmentFooterInfo($department);
+});
+
+router('POST', '^/api/update-images/(\w+)$', function($folder){
+  updateImages($folder);
+});
+
+router('POST', '^/api/remove-partner/(\w+)$', function($partner){
+  removePartner($partner);
+});
+
+router('POST', '^/api/update-about-us$', function(){
+  updateAboutUs();
+});
+
+
+
 header("HTTP/1.0 404 Not Found");
 echo '404 Not Found';
+
+// router('GET', '^/get-department-partners/(\w+)$', function($department){
+//  getDepartmentPartners($department);
+// });
+// router('GET', '^/get-department/(\w+)$', function($department){
+//  getDepartment($department);
+// });
+// router('POST', '^/update-department/(\w+)$', function($department){
+//  updateDepartment($department);
+// });
+// router('POST', '^/update-partner/(\w+)$', function($partner){
+//  updatePartner($partner);
+// });
+// router('GET', '^/get-department-footer-info/(\w+)$', function($department){
+//  getDepartmentFooterInfo($department);
+// });
+// router('POST', '^/update-department-footer-info/(\w+)$', function($department){
+//  updateDepartmentFooterInfo($department);
+// });
+// router('POST', '^/update-images/(\w+)$', function($folder){
+//  updateImages($folder);
+// });
+// router('POST', '^/remove-partner/(\w+)$', function($partner){
+//  removePartner($partner);
+// });
 ?>

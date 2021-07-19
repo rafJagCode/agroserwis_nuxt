@@ -7,19 +7,24 @@
   </div>
 </template>
 <script>
-import MainSlider from '~/components/slider/MainSlider';
-import Departments from '~/components/home/departments/Departments';
-import MainAboutUs from '~/components/home/about_us/MainAboutUs';
-import MainFooter from "~/components/footer/MainFooter";
+import MainSlider from '~/components/slider/MainSlider'
+import Departments from '~/components/home/departments/Departments'
+import MainAboutUs from '~/components/home/about_us/MainAboutUs'
+import MainFooter from '~/components/footer/MainFooter'
 export default {
-  components:{
+  components: {
     MainFooter,
-    MainSlider, MainAboutUs, Departments
+    MainSlider,
+    MainAboutUs,
+    Departments,
+  },
+  fetch() {
+    console.log('home fetch')
   },
 }
 </script>
 <style>
-html{
+html {
   scroll-behavior: smooth;
 }
 </style>

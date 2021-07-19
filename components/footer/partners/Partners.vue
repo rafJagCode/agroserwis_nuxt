@@ -1,6 +1,10 @@
 <template>
   <v-container class="partners py-6">
-    <v-row class="partners__text text-h6 font-weight-black primary--text" justify="center">NASI PARTNERZY</v-row>
+    <v-row
+      class="partners__text text-h6 font-weight-black primary--text"
+      justify="center"
+      >NASI PARTNERZY</v-row
+    >
     <v-row class="partners__row">
       <Partner
         v-for="(partner, index) in partners"
@@ -13,16 +17,18 @@
 </template>
 
 <script>
-import Partner from '~/components/footer/partners/Partner';
+import Partner from '~/components/footer/partners/Partner'
 export default {
   components: { Partner },
   data: () => ({
     partners: [],
   }),
-  async mounted(){
-    const { data: partnersImages } = await this.$axios.get('/api/get-partners-images');
-    this.partners = Object.values(partnersImages);
-  }
+  async fetch() {
+    const { data: partnersImages } = await this.$axios.get(
+      '/api/get-partners-images'
+    )
+    this.partners = Object.values(partnersImages)
+  },
 }
 </script>
 
@@ -35,10 +41,10 @@ export default {
   flex-direction: column;
   min-width: 100%;
 }
-.partners__row{
+.partners__row {
   justify-content: space-evenly;
 }
-.partners__text{
-  font-family: 'Brygada 1918', serif!important;
+.partners__text {
+  font-family: 'Brygada 1918', serif !important;
 }
 </style>

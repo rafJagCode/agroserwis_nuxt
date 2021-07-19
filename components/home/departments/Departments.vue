@@ -1,44 +1,46 @@
 <template>
   <div class="departments py-12 px-4">
-      <DepartmentCard
-        :department="department" v-for="department in departments" :key="department.name"
-      >
-      </DepartmentCard>
+    <DepartmentCard
+      :department="department"
+      v-for="department in departments"
+      :key="department.name"
+    >
+    </DepartmentCard>
   </div>
 </template>
 
 <script>
-import DepartmentCard from "~/components/home/departments/DepartmentCard";
+import DepartmentCard from '~/components/home/departments/DepartmentCard'
 export default {
-  data: () =>({
-    departments: []
+  data: () => ({
+    departments: [],
   }),
-  async mounted() {
-      const { data: departments } = await this.$axios.get('/api/get-departments');
-      this.departments = departments
-        .filter((department)=>{
-          return department.name !== 'Ustawienia domyślne' && !department.disabled;
-        })
-        .sort((o1, o2)=>{
-          return o1.order > o2.order && 1 || -1;
-        })
+  async fetch() {
+    console.log('departments fetch')
+    const { data: departments } = await this.$axios.get('/api/get-departments')
+    this.departments = departments
+      .filter((department) => {
+        return department.name !== 'Ustawienia domyślne' && !department.disabled
+      })
+      .sort((o1, o2) => {
+        return (o1.order > o2.order && 1) || -1
+      })
   },
-  components:{
-    DepartmentCard
+  components: {
+    DepartmentCard,
   },
 }
 </script>
 
 <style scoped>
-.departments{
+.departments {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-@media (max-width: 1350px){
-  .departments{
+@media (max-width: 1350px) {
+  .departments {
     justify-content: center;
   }
 }
-
 </style>

@@ -5,8 +5,8 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
   head: {
-    titleTemplate: '%s - agroserwis_nuxt',
-    title: 'agroserwis_nuxt',
+    titleTemplate: 'AGROSERWIS - %s',
+    title: 'sprzedaż i serwis maszyn do produkcji rolnej',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -48,11 +48,7 @@ export default {
     '@nuxtjs/proxy',
   ],
 
-  // proxy: {
-  //   '/api':{
-  //     target: 'http://localhost:8000',
-  //   }
-  // },
+//   proxy: ['http://localhost:8000/api'],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -93,9 +89,12 @@ export default {
   },
   generate: {
     routes() {
-      return axios.get('/api/get-departments-slugs').then(res => {
-        return res.data.map(user => {
-          return '/users/' + user.id
+      	return axios.get('http://agroserwis.amelen.pl/api/get-departments-slugs').then(res => {
+		 const filteredRoutes = res.data.filter((department)=>{
+			 return !['default', 'grojec', 'bialystok'].includes(department.slug);
+		 });
+        return filteredRoutes.map(department => {
+          return '/' + department.slug;
         })
       })
     }

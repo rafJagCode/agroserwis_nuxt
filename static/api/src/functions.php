@@ -4,19 +4,20 @@ function router($httpMethods, $route, $callback, $exit = true)
     static $path = null;
     if ($path === null) {
         $path = parse_url($_SERVER['REQUEST_URI'])['path'];
-        $scriptName = dirname(dirname($_SERVER['SCRIPT_NAME']));
-        $scriptName = str_replace('\\', '/', $scriptName);
-        $len = strlen($scriptName);
-        if ($len > 0 && $scriptName !== '/') {
-            $path = substr($path, $len);
-        }
+        // $scriptName = dirname(dirname($_SERVER['SCRIPT_NAME']));
+        // $scriptName = str_replace('\\', '/', $scriptName);
+        // $len = strlen($scriptName);
+		// var_dump($path, $scriptName);
+        // if ($len > 0 && $scriptName !== '/') {
+			// $path = substr($path, $len);
+        // }
     }
     if (!in_array($_SERVER['REQUEST_METHOD'], (array) $httpMethods)) {
-        return;
+		return;
     }
     $matches = null;
     $regex = '/' . str_replace('/', '\/', $route) . '/';
-//    echo "path => {$path}<br> regex => {$regex}<br>";
+	//    echo "path => {$path}<br> regex => {$regex}<br>";
     if (!preg_match_all($regex, $path, $matches)) {
         return;
     }
