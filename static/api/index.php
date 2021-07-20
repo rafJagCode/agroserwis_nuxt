@@ -22,6 +22,7 @@ require_once __DIR__ . '/src/login.php';
 require_once __DIR__ . '/src/auth.php';
 require_once __DIR__ . '/src/is_auth.php';
 require_once __DIR__ . '/src/logout.php';
+require_once __DIR__ . '/src/updateFile.php';
 
 
 //ROUTES THAT DON'T NEED AUTHORIZATION
@@ -127,33 +128,10 @@ router('POST', '^/api/update-about-us$', function(){
   updateAboutUs();
 });
 
-
+router('POST', '^/api/update-file$', function(){
+  updateFile();
+});
 
 header("HTTP/1.0 404 Not Found");
 echo '404 Not Found';
-
-// router('GET', '^/get-department-partners/(\w+)$', function($department){
-//  getDepartmentPartners($department);
-// });
-// router('GET', '^/get-department/(\w+)$', function($department){
-//  getDepartment($department);
-// });
-// router('POST', '^/update-department/(\w+)$', function($department){
-//  updateDepartment($department);
-// });
-// router('POST', '^/update-partner/(\w+)$', function($partner){
-//  updatePartner($partner);
-// });
-// router('GET', '^/get-department-footer-info/(\w+)$', function($department){
-//  getDepartmentFooterInfo($department);
-// });
-// router('POST', '^/update-department-footer-info/(\w+)$', function($department){
-//  updateDepartmentFooterInfo($department);
-// });
-// router('POST', '^/update-images/(\w+)$', function($folder){
-//  updateImages($folder);
-// });
-// router('POST', '^/remove-partner/(\w+)$', function($partner){
-//  removePartner($partner);
-// });
 ?>

@@ -24,7 +24,7 @@
           <NavbarMobileList
             v-show="showMobileList && mobile"
             :links="links"
-            @hidemobilenavbar="hideMobileNavbar()"
+            @hide-mobile-navbar="hideMobileNavbar()"
           ></NavbarMobileList>
         </transition>
       </v-layout>
@@ -44,20 +44,78 @@ export default {
     showMobileList: false,
     links: [
       {
+        name: '86 270 30 99',
+        link: 'tel:86 270 30 99',
+        type: 'contact',
+        icon: 'mdi-cellphone-basic',
+        display:{
+          show: [],
+          hide: []
+        }
+      },
+      {
+        name: 'biuro@agro-serwis.pl',
+        link: 'mailTo:biuro@agro-serwis.pl',
+        type: 'contact',
+        icon: 'mdi-email',
+        display:{
+          show: [],
+          hide: []
+        }
+      },
+      {
+        name: 'Home',
+        link: '/',
+        type: 'nuxt',
+        display:{
+          show: [],
+          hide: ['index']
+        }
+      },
+      {
         name: 'Oddziały',
         link: '.departments',
+        type: 'anchor',
+        display:{
+          show: ['index'],
+          hide: []
+        }
       },
       {
         name: 'O nas',
         link: '.main-about-us',
+        type: 'anchor',
+        display:{
+          show: ['index'],
+          hide: []
+        }
       },
       {
         name: 'Dane Kontaktowe',
         link: '.main-footer__sections',
+        type: 'anchor',
+        display:{
+          show: [],
+          hide: []
+        }
       },
       {
         name: 'Części Zamienne',
-        link: '#app',
+        link: '/spare-parts',
+        type: 'nuxt',
+        display:{
+          show: ['index'],
+          hide: []
+        }
+      },
+      {
+        name: 'Kontakt',
+        link: '/contact',
+        type: 'nuxt',
+        display:{
+          show: [],
+          hide: ['contact']
+        }
       },
     ],
   }),

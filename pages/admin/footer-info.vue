@@ -69,6 +69,7 @@ export default {
     this.departments = departments.filter((department) => {
       return !['Białystok', 'Grójec'].includes(department.name)
     })
+    this.departments.push({'name': 'Części zamienne', 'slug': 'spareparts'});
     if (!this.selectedDepartment) {
       this.selectedDepartment = this.departments[0]
     }

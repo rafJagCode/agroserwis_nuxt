@@ -6,8 +6,7 @@
   </transition>
   <div class="email-us-card__header mb-2">
     <v-icon size="100" color="accent" left>mdi-wechat</v-icon>
-    <div class="email-us-card__title text-h6 font-weight-medium accent--text">
-      Kontakt z klientem jest dla nas bardzo ważny. Napisz z pewnością odpowiemy.
+    <div class="email-us-card__title text-h6 font-weight-medium accent--text" v-html="text">
     </div>
   </div>
   <v-form v-model="valid" ref="form" lazy-validation>
@@ -30,6 +29,24 @@
     <v-text-field
       label="Telefon"
       v-model="phone"
+      color="accent"
+    ></v-text-field>
+    <v-text-field
+      v-if="type==='spare-parts'"
+      label="Producent Maszyny"
+      v-model="producer"
+      color="accent"
+    ></v-text-field>
+    <v-text-field
+      v-if="type==='spare-parts'"
+      label="Model Maszyny"
+      v-model="model"
+      color="accent"
+    ></v-text-field>
+    <v-text-field
+      v-if="type==='spare-parts'"
+      label="Nr Seryjny Maszyny"
+      v-model="serialNumber"
       color="accent"
     ></v-text-field>
     <v-textarea
@@ -82,15 +99,27 @@ export default {
     message: '',
     messageRules: [
       v => !!v || 'Treść wiadomości nie może być pusta'
-    ]
+    ],
+    producer: '',
+    model: '',
+    serialNumber: ''
   }),
-
+  props:{
+    type: null,
+    text: {
+      default: 'Kontakt z klientem jest dla nas bardzo ważny. Napisz z pewnością odpowiemy.'
+    }
+  },
   methods: {
     async submit () {
       if (this.$refs.form.validate()) {
         this.sendingEmail = true;
-        let message = `Dane Nadawcy:\nImię i Nazwisko: ${this.name}\nEmail: ${this.email}${this.phone ? '\nTelefon: ' + this.phone : ''}\n\nWiadomość:\n${this.message}`;
-
+        let info = `Dane Nadawcy:\nImię i Nazwisko: ${this.name}\nEmail: ${this.email}${this.phone ? '\nTelefon: ' + this.phone : ''}`;
+        if(this.type==='spare-parts'){
+          let productInfo = `\nProducent: ${this.producer}\nModel: ${this.model}\nNumer Seryjny: ${this.serialNumber}`;
+          info += productInfo;
+        }
+        let message = info + `\n\nWiadomość: \n${this.message}`;
         try{
           let response = await this.$axios.post('/api/send-mail', {
             to: "biuro@agro-serwis.pl",
@@ -129,7 +158,7 @@ export default {
   display: flex;
 }
 .email-us-card__title{
-  max-width:300px;
+  //max-width:300px;
 }
 .fade-enter-active {
   transition: opacity 500ms ease-out;

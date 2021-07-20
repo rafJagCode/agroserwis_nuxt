@@ -47,7 +47,12 @@ export default {
         name: 'Informacje w stopce',
         link: 'footer-info',
         icon: 'mdi-information'
-      }
+      },
+      {
+        name: 'Pliki',
+        link: 'files',
+        icon: 'mdi-file-pdf'
+      },
     ]
   }),
   props: {

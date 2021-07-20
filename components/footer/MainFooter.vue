@@ -26,11 +26,21 @@ export default {
     sections: [],
     department: 'default',
   }),
+  methods:{
+    getRouteName(){
+      if(this.$route.params.department) {
+        return this.$route.params.department;
+      }
+      if(this.$route.name === 'spare-parts'){
+        return 'spareparts';
+      }
+      return 'default';
+    }
+  },
   async fetch() {
     console.log('footer fetch')
-    this.department = !this.$route.params.department
-      ? 'default'
-      : this.$route.params.department
+    console.log(this.$route.name);
+    this.department = this.getRouteName();
     const { data: sections } = await this.$axios.get(
       `/api/get-department-footer-info/${this.department}`
     )
