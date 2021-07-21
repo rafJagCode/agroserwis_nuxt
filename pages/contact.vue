@@ -23,9 +23,6 @@ export default {
       title: 'kontakt',
     }
   },
-  async fetch() {
-    console.log('contact fetch')
-  },
 }
 </script>
 

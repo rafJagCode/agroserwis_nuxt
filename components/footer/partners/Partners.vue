@@ -29,6 +29,9 @@ export default {
     )
     this.partners = Object.values(partnersImages)
   },
+  mounted(){
+    this.$fetch();
+  }
 }
 </script>
 

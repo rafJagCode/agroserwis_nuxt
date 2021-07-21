@@ -2,8 +2,8 @@ import colors from 'vuetify/es5/util/colors';
 import axios from 'axios';
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'AGROSERWIS - %s',
     title: 'sprzedaż i serwis maszyn do produkcji rolnej',
@@ -40,7 +40,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    ['@nuxtjs/axios', { baseURL: 'http://localhost:3000', proxy:true }],
+    ['@nuxtjs/axios', process.env.NODE_ENV !== 'production' ? { baseURL: 'http://localhost:3000', proxy:true } : { baseURL: 'http://agroserwis.amelen.pl'}],
     // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
@@ -48,7 +48,7 @@ export default {
     '@nuxtjs/proxy',
   ],
 
-  proxy: ['http://localhost:8000/api'],
+  proxy: process.env.NODE_ENV !== 'production' ? ['http://localhost:8000/api'] : null,
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

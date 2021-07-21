@@ -18,9 +18,6 @@ export default {
     MainAboutUs,
     Departments,
   },
-  fetch() {
-    console.log('home fetch')
-  },
 }
 </script>
 <style>

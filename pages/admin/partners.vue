@@ -35,6 +35,9 @@ export default {
     )
     this.partnersImages = Object.values(partnersImages)
   },
+  mounted(){
+    this.$fetch();
+  },
   methods: {
     async removePartner(index) {
       const fileName = this.partners[index].fileName

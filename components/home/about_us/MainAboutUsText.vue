@@ -22,10 +22,12 @@ export default {
     text: '',
   }),
   async fetch() {
-    console.log('about fetch')
     let { data } = await this.$axios.get('/api/get-about-us')
     this.text = data.about
   },
+  mounted(){
+    this.$fetch();
+  }
 }
 </script>
 

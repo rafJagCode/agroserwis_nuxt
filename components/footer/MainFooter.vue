@@ -38,14 +38,15 @@ export default {
     }
   },
   async fetch() {
-    console.log('footer fetch')
-    console.log(this.$route.name);
     this.department = this.getRouteName();
     const { data: sections } = await this.$axios.get(
       `/api/get-department-footer-info/${this.department}`
     )
     this.sections = sections.sections
   },
+  mounted(){
+    this.$fetch();
+  }
 }
 </script>
 <style scoped lang="scss">

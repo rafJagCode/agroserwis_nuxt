@@ -1,12 +1,12 @@
 <template>
   <v-carousel
-    :height="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm ? 200 : 500"
     v-model="activeSlide"
     hide-delimiters
     show-arrows-on-hover
     cycle
     interval="4000"
     class="main-slider ma-0"
+    height="25vw"
     :touch="{
       left: () => {
         activeSlide++
@@ -22,9 +22,10 @@
       eager
       v-for="(item, i) in items"
       :key="i"
-      :src="require(`~/static/assets/slides/${item}`)"
       class="main-slider__carousel-item"
-    ></v-carousel-item>
+      :src="require(`~/static/assets/slides/${item}`)"
+    >
+    </v-carousel-item>
     <v-btn
       @click="scrollFullPage"
       class="main-slider__go-down-btn"
@@ -51,6 +52,9 @@ export default {
     const department = this.$route.params.department || 'default'
     const { data } = await this.$axios.get(`/api/get-department/${department}`)
     this.items = data.slides
+  },
+  mounted(){
+    this.$fetch();
   },
   computed: {
     fullHeight() {
@@ -83,4 +87,8 @@ export default {
   right: 50%;
   transform: translate(50%, -50%);
 }
+.main-slider__placeholder{
+  height: 100%;
+}
+
 </style>

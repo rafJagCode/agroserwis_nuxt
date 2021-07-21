@@ -38,6 +38,9 @@ export default {
     this.availablePartners = availablePartners
     this.availableSlides = Object.values(availableSlides)
   },
+  mounted(){
+    this.$fetch();
+  },
 }
 </script>
 

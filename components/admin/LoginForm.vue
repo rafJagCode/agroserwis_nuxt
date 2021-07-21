@@ -37,7 +37,13 @@
       required
       validate-on-blur
     ></v-text-field>
-    <v-btn @click.prevent="logIn()" color="warning">Zaloguj</v-btn>
+    <v-btn
+      @click.prevent="logIn()"
+      color="warning"
+      :loading="loading"
+    >
+      Zaloguj
+    </v-btn>
   </v-form>
 </div>
 </template>
@@ -45,6 +51,7 @@
 <script>
 export default {
   data: () => ({
+    loading: false,
     valid: true,
     login: '',
     password: '',
@@ -58,16 +65,21 @@ export default {
     text: ``,
   }),
   methods: {
-    async logIn(){
-      if(!this.valid) return;
-      try{
-        await this.$axios.post('/api/login', { "login": this.login, "password": this.password});
-        await this.$nuxt.$router.push({ name: 'admin-departments'});
-      }catch(e){
-        const message = e.response.data.message;
-        this.text = message;
-        this.snackbar = true;
-      }
+    logIn() {
+      if (!this.valid) return;
+      this.loading = true;
+      this.$axios.post('/api/login', {"login": this.login, "password": this.password})
+        .then(() => {
+          this.$nuxt.$router.push({name: 'admin-departments'});
+        })
+        .catch((e) => {
+          const message = e.response.data.message;
+          this.text = message;
+          this.snackbar = true;
+        })
+      .finally(()=>{
+        this.loading = false;
+      })
     }
   }
 }

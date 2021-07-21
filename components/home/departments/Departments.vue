@@ -16,7 +16,6 @@ export default {
     departments: [],
   }),
   async fetch() {
-    console.log('departments fetch')
     const { data: departments } = await this.$axios.get('/api/get-departments')
     this.departments = departments
       .filter((department) => {
@@ -25,6 +24,9 @@ export default {
       .sort((o1, o2) => {
         return (o1.order > o2.order && 1) || -1
       })
+  },
+  mounted(){
+    this.$fetch();
   },
   components: {
     DepartmentCard,

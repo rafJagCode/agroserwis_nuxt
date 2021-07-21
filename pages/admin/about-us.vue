@@ -35,9 +35,11 @@ export default {
     firstChange: true,
   }),
   async fetch() {
-    console.log('about admin fetch')
     const { data: about } = await this.$axios.get('/api/get-about-us')
     this.about = about.about
+  },
+  mounted(){
+    this.$fetch();
   },
   watch: {
     about: {

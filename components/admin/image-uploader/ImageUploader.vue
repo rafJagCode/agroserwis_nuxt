@@ -38,6 +38,9 @@ export default {
       this.images.push({ type: 'file', src: image })
     })
   },
+  mounted(){
+    this.$fetch();
+  },
   watch: {
     images: {
       deep: true,

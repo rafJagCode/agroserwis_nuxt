@@ -1,10 +1,11 @@
 <?php
 function updateFile(){
-  $requestData = json_decode(file_get_contents('php://input'));
-  $dir    = __DIR__ . '/../../documents/' . $requestData->fileName;
+  $file = $_FILES['file']['tmp_name'];
+  $fileName = $_POST['fileName'];
+  $dir    = __DIR__ . '/../../documents/' . $fileName;
 
-  var_dump($requestData);
-  if (file_put_contents($dir, json_encode($requestData->file))){
+
+  if (move_uploaded_file($file, $dir)){
     http_response_code(200);
     echo "Updated";
   }

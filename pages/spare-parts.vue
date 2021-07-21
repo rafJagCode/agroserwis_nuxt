@@ -73,20 +73,16 @@ export default {
   color: var(--v-accent-base);
 }
 .spare-parts__email-us-card{
-  position: absolute;
+  position: absolute!important;
   background-color: var(--v-secondary-lighten1);
-  /*mix-blend-mode: multiply;*/
   height: 830px;
   width: 600px;
-  left: 5%;
+  left:5%;
 }
 .theme--light.v-label{
   color: var(--v-primary-base);
 }
 @media (max-width: 1600px){
-  .spare-parts__content{
-    /*flex-direction: row;*/
-  }
   .spare-parts__header-bg{
     top: 0;
   }
@@ -95,7 +91,7 @@ export default {
     transform: translate(-50%,-50%);
   }
   .spare-parts__email-us-card{
-    position: relative;
+    position: relative!important;
     left:0;
     margin: auto;
     top: -100px;

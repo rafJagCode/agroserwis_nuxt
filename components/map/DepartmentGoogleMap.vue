@@ -25,6 +25,9 @@ export default {
     location = location.replace(/\s/g, '+')
     this.link = `https://www.google.com/maps/embed/v1/place?key=AIzaSyCLBv6OT89Rk2BdJ3PJgFUxT_laoCkAMt4&q=${location}&language=pl`
   },
+  mounted(){
+    this.$fetch();
+  },
 }
 </script>
 

@@ -10,7 +10,7 @@
 export default {
   data: () => ({
     photos: [
-      'field1.jpeg',
+      'field1.jpg',
       'field2.jpg',
       'field3.jpg',
     ]

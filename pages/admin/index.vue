@@ -8,9 +8,6 @@
 import LoginForm from '~/components/admin/LoginForm'
 export default {
   components: { LoginForm },
-  async fetch() {
-    console.log('index admin fetch')
-  },
 }
 </script>
 

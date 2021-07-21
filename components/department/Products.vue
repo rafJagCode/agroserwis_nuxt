@@ -33,6 +33,9 @@ export default {
       this.products = response.data
     } catch (e) {}
   },
+  mounted(){
+    this.$fetch();
+  },
 }
 </script>
 

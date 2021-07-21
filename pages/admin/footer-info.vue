@@ -62,7 +62,6 @@ export default {
     },
   },
   async fetch() {
-    console.log('footer info admin fetch')
     const { data: departments } = await this.$axios.get(
       '/api/get-departments-slugs'
     )
@@ -74,6 +73,9 @@ export default {
       this.selectedDepartment = this.departments[0]
     }
     await this.getSections(this.selectedDepartment.slug)
+  },
+  mounted(){
+    this.$fetch();
   },
   methods: {
     async getSections(department) {
