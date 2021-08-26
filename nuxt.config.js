@@ -40,7 +40,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    ['@nuxtjs/axios', process.env.NODE_ENV !== 'production' ? { baseURL: 'http://localhost:3000', proxy:true } : { baseURL: 'http://agroserwis.amelen.pl'}],
+    ['@nuxtjs/axios', process.env.NODE_ENV !== 'production' ? { baseURL: 'http://localhost:3000', proxy:true } : { baseURL: 'https://agro-serwis.com'}],
     // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',

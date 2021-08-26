@@ -41,6 +41,8 @@ export default {
 }
 .spare-parts__image{
   background-image: url('~assets/images/spare-parts/spare-parts-bg.jpg');
+  background-color: var(--v-primary-darken1);
+  background-blend-mode: lighten;
   width: 100%;
   height:100vh;
   background-size: cover;

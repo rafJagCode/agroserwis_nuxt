@@ -114,12 +114,12 @@ export default {
     async submit () {
       if (this.$refs.form.validate()) {
         this.sendingEmail = true;
-        let info = `Dane Nadawcy:\nImię i Nazwisko: ${this.name}\nEmail: ${this.email}${this.phone ? '\nTelefon: ' + this.phone : ''}`;
+        let info = `Dane Nadawcy:<br>Imię i Nazwisko: ${this.name}<br>Email: ${this.email}${this.phone ? '<br>Telefon: ' + this.phone : ''}`;
         if(this.type==='spare-parts'){
-          let productInfo = `\nProducent: ${this.producer}\nModel: ${this.model}\nNumer Seryjny: ${this.serialNumber}`;
+          let productInfo = `<br>Producent: ${this.producer}<br>Model: ${this.model}<br>Numer Seryjny: ${this.serialNumber}`;
           info += productInfo;
         }
-        let message = info + `\n\nWiadomość: \n${this.message}`;
+        let message = info + `<br><br>Wiadomość: <br>${this.message}`;
         try{
           let response = await this.$axios.post('/api/send-mail', {
             to: "biuro@agro-serwis.pl",
