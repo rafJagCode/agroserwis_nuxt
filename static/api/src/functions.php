@@ -1,6 +1,7 @@
 <?php
 function router($httpMethods, $route, $callback, $exit = true)
 {
+	$route = '^/agroserwis/api' . $route;
     static $path = null;
     if ($path === null) {
         $path = parse_url($_SERVER['REQUEST_URI'])['path'];

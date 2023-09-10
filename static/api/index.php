@@ -29,69 +29,69 @@ require_once __DIR__ . '/src/updateFile.php';
 
 //AUTHORIZATION
 
-router('POST', '^/api/login$', function(){
+router('POST', '/login$', function(){
   login();
 });
 
-router('POST', '^/api/logout$', function(){
+router('POST', '/logout$', function(){
   logout();
 });
 
-router('GET', '^/api/auth$', function(){
+router('GET', '/auth$', function(){
   auth();
 });
 
 //GET DEPARTMENTS INFO
 
-router('GET', '^/api/get-departments$', function(){
+router('GET', '/get-departments$', function(){
   getDepartments();
 });
 
-router('GET', '^/api/get-department/(\w+)$', function($department){
+router('GET', '/get-department/(\w+)$', function($department){
   getDepartment($department);
 });
 
-router('GET', '^/api/get-departments-slugs$', function(){
+router('GET', '/get-departments-slugs$', function(){
   getDepartmentsSlugs();
 });
 
-router('GET', '^/api/get-department-partners/(\w+)$', function($department){
+router('GET', '/get-department-partners/(\w+)$', function($department){
   getDepartmentPartners($department);
 });
 
-router('GET', '^/api/get-department-footer-info/(\w+)$', function($department){
+router('GET', '/get-department-footer-info/(\w+)$', function($department){
   getDepartmentFooterInfo($department);
 });
 
 //GET PARTNERS INFO
 
-router('GET', '^/api/get-partners$', function(){
+router('GET', '/get-partners$', function(){
   getPartners();
 });
 
-router('GET', '^/api/get-partners-slugs$', function(){
+router('GET', '/get-partners-slugs$', function(){
   getPartnersSlugs();
 });
 
-router('GET', '^/api/get-partners-images$', function(){
+router('GET', '/get-partners-images$', function(){
   getPartnersImages();
 });
 
 //GET ABOUT US INFO
 
-router('GET', '^/api/get-about-us$', function(){
+router('GET', '/get-about-us$', function(){
   getAboutUs();
 });
 
 //GET SLIDER INFO
 
-router('GET', '^/api/get-slider-images$', function(){
+router('GET', '/get-slider-images$', function(){
   getSliderImages();
 });
 
 //SEND EMAIL
 
-router('POST', '^/api/send-mail$', function(){
+router('POST', '/send-mail$', function(){
   sendMail();
 });
 
@@ -104,31 +104,31 @@ router('POST', '^/api/send-mail$', function(){
 
 //ROUTES THAT NEED AUTHORIZATION
 
-router('POST', '^/api/update-department/(\w+)$', function($department){
+router('POST', '/update-department/(\w+)$', function($department){
   updateDepartment($department);
 });
 
-router('POST', '^/api/update-partner/(\w+)$', function($partner){
+router('POST', '/update-partner/(\w+)$', function($partner){
   updatePartner($partner);
 });
 
-router('POST', '^/api/update-department-footer-info/(\w+)$', function($department){
+router('POST', '/update-department-footer-info/(\w+)$', function($department){
   updateDepartmentFooterInfo($department);
 });
 
-router('POST', '^/api/update-images/(\w+)$', function($folder){
+router('POST', '/update-images/(\w+)$', function($folder){
   updateImages($folder);
 });
 
-router('POST', '^/api/remove-partner/(\w+)$', function($partner){
+router('POST', '/remove-partner/(\w+)$', function($partner){
   removePartner($partner);
 });
 
-router('POST', '^/api/update-about-us$', function(){
+router('POST', '/update-about-us$', function(){
   updateAboutUs();
 });
 
-router('POST', '^/api/update-file$', function(){
+router('POST', '/update-file$', function(){
   updateFile();
 });
 
