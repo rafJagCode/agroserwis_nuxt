@@ -1,5 +1,5 @@
-import colors from 'vuetify/es5/util/colors';
-import axios from 'axios';
+import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
 
 export default {
   target: 'static',
@@ -10,21 +10,16 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/css/global.css'
-  ],
+  css: ['~/assets/css/global.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -40,7 +35,12 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    ['@nuxtjs/axios', process.env.NODE_ENV !== 'production' ? { baseURL: 'http://localhost:3000', proxy:true } : { baseURL: 'https://agro-serwis.com'}],
+    [
+      '@nuxtjs/axios',
+      process.env.NODE_ENV !== 'production'
+        ? { baseURL: 'http://localhost:3000', proxy: true }
+        : { baseURL: 'http://vps-09ad16df.vps.ovh.net/agroserwis' },
+    ],
     // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
@@ -48,13 +48,16 @@ export default {
     '@nuxtjs/proxy',
   ],
 
-  proxy: process.env.NODE_ENV !== 'production' ? ['http://localhost:8000/api'] : null,
+  proxy:
+    process.env.NODE_ENV !== 'production'
+      ? ['http://localhost:8000/api']
+      : null,
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      lang: 'en',
+    },
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -63,7 +66,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       options: {
-        customProperties: true
+        customProperties: true,
       },
       themes: {
         light: {
@@ -74,29 +77,30 @@ export default {
           info: '#E0E0E1',
           success: '#87d3b5',
           warning: '#d4af37',
-        }
-      }
-    }
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
-    }
+    },
   },
   generate: {
     routes() {
-      	return axios.get('http://agroserwis.amelen.pl/api/get-departments-slugs').then(res => {
-		 const filteredRoutes = res.data.filter((department)=>{
-			 return !['default', 'grojec', 'bialystok'].includes(department.slug);
-		 });
-        return filteredRoutes.map(department => {
-          return '/' + department.slug;
+      return axios
+        .get('http://agroserwis.amelen.pl/api/get-departments-slugs')
+        .then((res) => {
+          const filteredRoutes = res.data.filter((department) => {
+            return !['default', 'grojec', 'bialystok'].includes(department.slug)
+          })
+          return filteredRoutes.map((department) => {
+            return '/' + department.slug
+          })
         })
-      })
-    }
-  }
+    },
+  },
 }
