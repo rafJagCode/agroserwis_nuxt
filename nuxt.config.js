@@ -92,7 +92,9 @@ export default {
   generate: {
     routes() {
       return axios
-        .get('http://agroserwis.amelen.pl/api/get-departments-slugs')
+        .get(
+          'http://vps-09ad16df.vps.ovh.net/agroserwis/api/get-departments-slugs'
+        )
         .then((res) => {
           const filteredRoutes = res.data.filter((department) => {
             return !['default', 'grojec', 'bialystok'].includes(department.slug)
