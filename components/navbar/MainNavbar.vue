@@ -48,74 +48,74 @@ export default {
         link: 'tel:86 270 30 99',
         type: 'contact',
         icon: 'mdi-cellphone-basic',
-        display:{
+        display: {
           show: [],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'biuro@agro-serwis.pl',
         link: 'mailTo:biuro@agro-serwis.pl',
         type: 'contact',
         icon: 'mdi-email',
-        display:{
+        display: {
           show: [],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'Home',
-        link: '/',
+        link: '/agroserwis/',
         type: 'nuxt',
-        display:{
+        display: {
           show: [],
-          hide: ['index']
-        }
+          hide: ['index'],
+        },
       },
       {
         name: 'Oddziały',
         link: '.departments',
         type: 'anchor',
-        display:{
+        display: {
           show: ['index'],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'O nas',
         link: '.main-about-us',
         type: 'anchor',
-        display:{
+        display: {
           show: ['index'],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'Dane Kontaktowe',
         link: '.main-footer__sections',
         type: 'anchor',
-        display:{
+        display: {
           show: [],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'Części Zamienne',
-        link: '/spare-parts',
+        link: '/agroserwis/spare-parts',
         type: 'nuxt',
-        display:{
+        display: {
           show: ['index'],
-          hide: []
-        }
+          hide: [],
+        },
       },
       {
         name: 'Kontakt',
-        link: '/contact',
+        link: '/agroserwis/contact',
         type: 'nuxt',
-        display:{
+        display: {
           show: [],
-          hide: ['contact']
-        }
+          hide: ['contact'],
+        },
       },
     ],
   }),
