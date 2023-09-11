@@ -17,7 +17,7 @@ export default {
   computed: {
     href() {
       if (this.item.type === 'link') return this.item.link
-      return '/agroserwis/documents/' + this.item.link
+      return '/documents/' + this.item.link
     },
   },
 }

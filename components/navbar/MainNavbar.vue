@@ -65,7 +65,7 @@ export default {
       },
       {
         name: 'Home',
-        link: '/agroserwis/',
+        link: '/',
         type: 'nuxt',
         display: {
           show: [],
@@ -101,7 +101,7 @@ export default {
       },
       {
         name: 'Części Zamienne',
-        link: '/agroserwis/spare-parts',
+        link: '/spare-parts',
         type: 'nuxt',
         display: {
           show: ['index'],
@@ -110,7 +110,7 @@ export default {
       },
       {
         name: 'Kontakt',
-        link: '/agroserwis/contact',
+        link: '/contact',
         type: 'nuxt',
         display: {
           show: [],
