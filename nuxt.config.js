@@ -39,7 +39,7 @@ export default {
       '@nuxtjs/axios',
       process.env.NODE_ENV !== 'production'
         ? { baseURL: 'http://localhost:3000', proxy: true }
-        : { baseURL: 'http://vps-09ad16df.vps.ovh.net/agroserwis' },
+        : { baseURL: 'http://agroserwis.rafaljagielski.ovh' },
     ],
     // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
     // https://go.nuxtjs.dev/pwa
@@ -85,7 +85,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
   router: {
-    base: '/agroserwis/',
     scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
     },
@@ -93,9 +92,7 @@ export default {
   generate: {
     routes() {
       return axios
-        .get(
-          'http://vps-09ad16df.vps.ovh.net/agroserwis/api/get-departments-slugs'
-        )
+        .get('http://agroserwis.rafaljagielski.ovh/api/get-departments-slugs')
         .then((res) => {
           const filteredRoutes = res.data.filter((department) => {
             return !['default', 'grojec', 'bialystok'].includes(department.slug)
