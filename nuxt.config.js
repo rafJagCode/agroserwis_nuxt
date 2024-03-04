@@ -1,4 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
 
 export default {
@@ -38,25 +37,29 @@ export default {
     [
       '@nuxtjs/axios',
       process.env.NODE_ENV !== 'production'
-        ? { baseURL: 'http://localhost:3000', proxy: true }
-        : { baseURL: 'http://agroserwis.rafaljagielski.ovh' },
+        ? { baseURL: 'http://localhost:3000' }
+        : { baseURL: 'http://agroserwis.rafaljagielski.pl' },
     ],
-    // ['@nuxtjs/axios', { baseURL: 'http://agroserwis.amelen.pl'}],
+
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxt/content',
     '@nuxtjs/proxy',
   ],
 
-  proxy:
-    process.env.NODE_ENV !== 'production'
-      ? ['http://localhost:8000/api']
-      : null,
-
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'pl',
+    },
+  },
+
+  googleFonts: {
+    families: {
+      'Brygada+1918': {
+        wght: [100, 400, 500],
+        ital: [100],
+      },
     },
   },
 
