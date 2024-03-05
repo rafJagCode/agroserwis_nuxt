@@ -1,48 +1,40 @@
 <template>
-  <div class="departments py-12 px-4">
+  <div class="departments ma-6">
     <DepartmentCard
-      :department="department"
       v-for="department in departments"
       :key="department.name"
-    >
-    </DepartmentCard>
+      :department="department"
+    />
   </div>
 </template>
 
 <script>
 import DepartmentCard from '~/components/home/departments/DepartmentCard'
+import data from 'static/content/departments.json'
+
 export default {
-  data: () => ({
-    departments: [],
-  }),
-  async fetch() {
-    const { data: departments } = await this.$axios.get('/api/get-departments')
-    this.departments = departments
-      .filter((department) => {
-        return department.name !== 'Ustawienia domyślne' && !department.disabled
-      })
-      .sort((o1, o2) => {
-        return (o1.order > o2.order && 1) || -1
-      })
+  created() {
+    this.departments = data
   },
-  mounted(){
-    this.$fetch();
-  },
-  components: {
-    DepartmentCard,
-  },
+  components: { DepartmentCard },
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .departments {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, min-content);
+  justify-content: center;
+  gap: 2rem;
 }
-@media (max-width: 1350px) {
+@media (max-width: 1560px) {
   .departments {
-    justify-content: center;
+    grid-template-columns: repeat(2, min-content);
+  }
+}
+@media (max-width: 800px) {
+  .departments {
+    grid-template-columns: min-content;
   }
 }
 </style>
