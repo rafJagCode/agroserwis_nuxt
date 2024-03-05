@@ -60,6 +60,9 @@ export default {
         wght: [100, 400, 500],
         ital: [100],
       },
+      roboto: {
+        wght: [400, 500],
+      },
     },
   },
 
