@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Białystok",
+    "mobile": "688 345 211",
+    "street": "ul. Elewatorska 13",
+    "address": "15-620 Białystok",
+    "link": "http://partneragro.pl",
+    "img": "building1.png"
+  },
+  {
+    "name": "Zambr\u00f3w",
+    "mobile": "652 222 389",
+    "street": "ul. Polowa 14",
+    "address": "18-300 Zambr\u00f3w",
+    "link": "http://partneragro.pl",
+    "img": "building2.png"
+  },
+  {
+    "name": "Siedlce",
+    "mobile": "603 500 709",
+    "street": "ul. Warszawska 55",
+    "address": "08-103 Siedlce",
+    "link": "http://partneragro.pl",
+    "img": "building3.png"
+  },
+  {
+    "name": "Przasnysz",
+    "mobile": "693 500 193",
+    "street": "ul. Leszno 44",
+    "address": "06-300 Przasnysz",
+    "link": "http://partneragro.pl",
+    "img": "building4.png"
+  }
+]
