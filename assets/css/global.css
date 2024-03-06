@@ -1,3 +1,9 @@
 * {
   font-family: 'Brygada 1918', serif;
 }
+:root {
+  --navbar-height: 66px;
+}
+html {
+  scroll-behavior: smooth;
+}
