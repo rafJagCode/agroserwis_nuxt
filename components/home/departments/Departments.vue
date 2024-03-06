@@ -1,5 +1,5 @@
 <template>
-  <div class="departments ma-6">
+  <div id="departments" class="departments pa-6">
     <DepartmentCard
       v-for="department in departments"
       :key="department.name"
