@@ -2,7 +2,7 @@
   <v-card class="card pa-6">
     <v-img
       class="card-img"
-      :src="`/assets/departments/${department.img}`"
+      :src="`/departments/images/${department.img}`"
       contain
     ></v-img>
     <v-card-title class="card-title">{{ department.name }}</v-card-title>
