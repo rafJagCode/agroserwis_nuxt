@@ -1,27 +1,19 @@
 <template>
   <div class="index">
-    <MainSlider></MainSlider>
+    <Slider></Slider>
     <Departments></Departments>
-    <MainAboutUs></MainAboutUs>
-    <MainFooter></MainFooter>
+    <About></About>
   </div>
 </template>
 <script>
-import MainSlider from '~/components/slider/MainSlider'
+import Slider from '~/components/home/slider/Slider'
 import Departments from '~/components/home/departments/Departments'
-import MainAboutUs from '~/components/home/about_us/MainAboutUs'
-import MainFooter from '~/components/footer/MainFooter'
+import About from '~/components/home/about/About'
 export default {
   components: {
-    MainFooter,
-    MainSlider,
-    MainAboutUs,
+    Slider,
     Departments,
+    About,
   },
 }
 </script>
-<style>
-html {
-  scroll-behavior: smooth;
-}
-</style>

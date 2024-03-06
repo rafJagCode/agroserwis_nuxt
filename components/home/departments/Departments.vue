@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import DepartmentCard from '~/components/home/departments/DepartmentCard'
-import data from 'static/content/departments.json'
+import DepartmentCard from './DepartmentCard'
+import data from 'static/departments/data.json'
 
 export default {
   created() {
