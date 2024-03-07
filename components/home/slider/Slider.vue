@@ -30,9 +30,9 @@
 import data from '/static/slider/data.json'
 
 export default {
-  created() {
-    this.images = data
-  },
+  data: () => ({
+    images: data,
+  }),
   computed: {
     size() {
       const size = { xs: 'x-small', sm: 'small', lg: 'large' }[

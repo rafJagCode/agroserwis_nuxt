@@ -13,9 +13,9 @@ import DepartmentCard from './DepartmentCard'
 import data from 'static/departments/data.json'
 
 export default {
-  created() {
-    this.departments = data
-  },
+  data: () => ({
+    departments: data,
+  }),
   components: { DepartmentCard },
 }
 </script>
