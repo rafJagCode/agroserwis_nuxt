@@ -1,26 +1,21 @@
 <template>
   <v-app class="default-layout">
-    <MainNavbar></MainNavbar>
-
-    <!-- Sizes your content based upon application components -->
+    <AppNavbar></AppNavbar>
     <v-main>
-      <!-- Provides the application the proper gutter -->
-        <Nuxt />
+      <Nuxt />
     </v-main>
-
   </v-app>
 </template>
 <script>
-
-import MainNavbar from "~/components/navbar/MainNavbar";
+import AppNavbar from '~/components/navbar/AppNavbar'
 export default {
   components: {
-    MainNavbar
+    AppNavbar,
   },
 }
 </script>
 <style scoped lang="scss">
-.default-layout{
+.default-layout {
   background-color: var(--v-primary-base);
 }
 </style>
