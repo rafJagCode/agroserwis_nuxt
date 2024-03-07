@@ -1,0 +1,22 @@
+[
+  {
+    "text": "Oddziały",
+    "link": "#departments",
+    "nuxt": false
+  },
+  {
+    "text": "Partnerzy",
+    "link": "/partners",
+    "nuxt": true
+  },
+  {
+    "text": "Kontakt",
+    "link": "/contact",
+    "nuxt": true
+  },
+  {
+    "text": "O nas",
+    "link": "#about",
+    "nuxt": false
+  }
+]
