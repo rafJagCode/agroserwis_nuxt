@@ -3,13 +3,13 @@
     <v-list v-show="mobile && showSidebar" class="sidebar pa-6" color="primary">
       <v-list-item
         @click="$emit('toggle-sidebar')"
-        class="sidebar-item accent-text"
+        class="sidebar-item accent-text text-h4"
         v-for="item in items"
         :key="item.text"
         :href="item.link"
         :nuxt="item.nuxt"
       >
-        {{ item.text }}
+        <span class="text-h4 font-weight-medium">{{ item.text }}</span>
       </v-list-item>
     </v-list>
   </transition>
@@ -41,9 +41,6 @@ export default {
 }
 .sidebar-item {
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
   justify-content: end;
 }
 .sidebar-item:hover {

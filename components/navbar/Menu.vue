@@ -2,9 +2,11 @@
   <div class="menu">
     <ul class="menu-list d-flex">
       <li class="menu-item" v-for="item in items" :key="item.text">
-        <v-btn color="accent" :nuxt="item.nuxt" text :href="item.link">{{
-          item.text
-        }}</v-btn>
+        <v-btn color="accent" :nuxt="item.nuxt" text :href="item.link"
+          ><span class="text-h4 font-weight-medium">{{
+            item.text
+          }}</span></v-btn
+        >
       </li>
       <li class="hamburger">
         <v-btn
