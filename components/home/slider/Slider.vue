@@ -13,15 +13,8 @@
       :src="`slider/images/${image}`"
     >
     </v-carousel-item>
-    <v-btn
-      class="scroll-btn"
-      href="#departments"
-      v-bind="size"
-      color="accent"
-      elevation="2"
-      fab
-    >
-      <v-icon v-bind="size">mdi-hand-pointing-down</v-icon>
+    <v-btn href="#departments" class="scroll-btn" plain>
+      <v-icon v-bind="btnSize">mdi-hand-pointing-down</v-icon>
     </v-btn>
   </v-carousel>
 </template>
@@ -34,30 +27,29 @@ export default {
     images: data,
   }),
   computed: {
-    size() {
-      const size = { xs: 'x-small', sm: 'small', lg: 'large' }[
-        this.$vuetify.breakpoint.name
-      ]
-      return size ? { [size]: true } : {}
+    btnSize() {
+      return { [this.$vuetify.breakpoint.smAndUp ? 'large' : 'small']: true }
     },
   },
 }
 </script>
 <style scoped lang="scss">
 .slider {
-  margin-bottom: var(--navbar-height);
+  scroll-snap-align: start;
+  scroll-margin: var(--navbar-height);
 }
 ::v-deep .v-carousel__controls {
   padding-left: 2rem;
   justify-content: start;
+  background: rgba(0, 0, 0, 0.7);
   & .v-carousel__controls__item {
-    margin: 0 1.5rem;
+    margin: 0 2rem;
     &:before {
       background: none;
     }
   }
   & .v-icon {
-    font-size: 5rem !important;
+    font-size: 10rem !important;
     &:hover {
       opacity: 1;
     }
@@ -73,26 +65,7 @@ export default {
   position: absolute;
   bottom: 0;
   right: 50%;
-  transform: translate(50%, -50%);
-}
-@media (max-width: 1160px) {
-  ::v-deep .v-carousel__controls {
-    & .v-carousel__controls__item {
-      margin: 0 1rem;
-    }
-    & .v-icon {
-      font-size: 4rem !important;
-    }
-  }
-}
-@media (max-width: 850px) {
-  ::v-deep .v-carousel__controls {
-    & .v-carousel__controls__item {
-      margin: 0 0.5rem;
-    }
-    & .v-icon {
-      font-size: 3rem !important;
-    }
-  }
+  z-index: 2;
+  transform: translate(50%, -1rem);
 }
 </style>
