@@ -34,8 +34,8 @@ export default {
 </script>
 <style scoped lang="scss">
 .card {
-  height: 400px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
   display: grid;
   align-content: space-between;
   box-shadow: 0px 3px 1px -2px rgba(133, 174, 67, 0.2),
@@ -50,15 +50,15 @@ export default {
 }
 .card-title {
   font-family: Roboto, sans-serif;
-  font-size: 1.6rem;
+  font-size: 3rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
 }
 .card-text {
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   flex-direction: column;
   & * {
-    margin: 0.1rem 0.2rem;
+    margin: 1rem 2rem;
     text-align: center;
   }
   & :first-child {
@@ -66,42 +66,6 @@ export default {
   }
 }
 .card-link {
-  font-size: 1.2rem;
-}
-@media (max-width: 1560px) {
-  .card {
-    height: 300px;
-    width: 450px;
-  }
-  .card-img {
-    height: 80px;
-  }
-  .card-text {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-@media (max-width: 1150px) {
-  .card {
-    height: 330px;
-    width: 300px;
-  }
-}
-@media (max-width: 800px) {
-  .card {
-    height: 350px;
-    width: 250px;
-  }
-}
-@media (max-width: 800px) {
-  .card {
-    height: 300px;
-    width: 480px;
-  }
-}
-@media (max-width: 550px) {
-  .card {
-    width: 80vw;
-  }
+  font-size: 2.2rem;
 }
 </style>
