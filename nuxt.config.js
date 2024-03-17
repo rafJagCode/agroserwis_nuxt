@@ -72,6 +72,8 @@ export default {
           info: '#E0E0E1',
           success: '#87d3b5',
           warning: '#d4af37',
+          text: '#313131',
+          grey: '#919191',
         },
       },
     },
