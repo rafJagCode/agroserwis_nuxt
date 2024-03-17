@@ -5,15 +5,17 @@
       :src="`/departments/images/${department.img}`"
       contain
     ></v-img>
-    <v-card-title class="card-title">{{ department.name }}</v-card-title>
-    <v-card-text class="card-text d-flex align-center">
+    <v-card-title class="card-title app-text-h2">{{
+      department.name
+    }}</v-card-title>
+    <v-card-text class="card-text d-flex align-center app-text-info">
       <p>{{ department.mobile }}</p>
       <p>{{ department.address }}</p>
       <p>{{ department.street }}</p>
     </v-card-text>
     <v-card-actions>
       <v-btn
-        class="card-link"
+        class="app-text-button"
         color="accent"
         text
         plain
@@ -48,14 +50,7 @@ export default {
 .card-img {
   height: 128px;
 }
-.card-title {
-  font-family: Roboto, sans-serif;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-}
 .card-text {
-  font-size: 2.5rem;
   flex-direction: column;
   & * {
     margin: 1rem 2rem;
@@ -64,8 +59,5 @@ export default {
   & :first-child {
     flex-basis: 100%;
   }
-}
-.card-link {
-  font-size: 2.2rem;
 }
 </style>

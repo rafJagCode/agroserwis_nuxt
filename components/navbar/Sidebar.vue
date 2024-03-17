@@ -9,7 +9,7 @@
         :href="item.link"
         :nuxt="item.nuxt"
       >
-        <span class="text-h4 font-weight-medium">{{ item.text }}</span>
+        <span class="app-text-button">{{ item.text }}</span>
       </v-list-item>
     </v-list>
   </transition>

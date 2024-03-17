@@ -1,8 +1,9 @@
 <template>
   <div class="departments-caption d-flex flex-column">
-    <h4 class="text-h4 accent--text">What We Do?</h4>
-    <h1 class="departments-text text-h1 text-center">
-      We are giving you perfect solutions with our proficient services.
+    <h2 class="app-text-subtitle">Poznaj Nasze Oddziały</h2>
+    <h1 class="departments-text app-text-h1 text-center">
+      Nasze wsparcie techniczne pomoże Ci wybrać rozwiązanie dopasowane do
+      Twoich potrzeb
     </h1>
     <v-divider class="departments-hr mt-4"></v-divider>
   </div>
@@ -18,7 +19,7 @@ export default {}
   margin-bottom: 10rem;
 }
 .departments-text {
-  width: 80rem;
+  max-width: 600px;
 }
 .departments-hr {
   width: 50rem;

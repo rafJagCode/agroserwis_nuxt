@@ -3,9 +3,7 @@
     <ul class="menu-list d-flex">
       <li class="menu-item" v-for="item in items" :key="item.text">
         <v-btn color="accent" :nuxt="item.nuxt" text :href="item.link"
-          ><span class="text-h4 font-weight-medium">{{
-            item.text
-          }}</span></v-btn
+          ><span class="app-text-button">{{ item.text }}</span></v-btn
         >
       </li>
       <li class="hamburger">
