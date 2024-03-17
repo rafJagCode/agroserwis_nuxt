@@ -29,6 +29,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -51,18 +52,6 @@ export default {
   pwa: {
     manifest: {
       lang: 'pl',
-    },
-  },
-
-  googleFonts: {
-    families: {
-      'Brygada+1918': {
-        wght: [100, 400, 500],
-        ital: [100],
-      },
-      roboto: {
-        wght: [400, 500],
-      },
     },
   },
 
