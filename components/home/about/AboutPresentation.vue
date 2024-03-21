@@ -18,7 +18,7 @@ export default {
 <style scoped lang="scss">
 .about-presentation {
   height: fit-content;
-  max-width: 80%;
+  max-width: min(80%, 1980px);
   margin-bottom: 3rem;
   align-self: end;
   justify-self: center;

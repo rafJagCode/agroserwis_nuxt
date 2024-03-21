@@ -17,10 +17,12 @@ export default {
 <style scoped lang="scss">
 .departments {
   scroll-snap-align: start;
-  min-height: 100vh;
+  min-height: min(100vh, 1280px);
   display: grid;
   grid-template-rows: auto 1fr;
   padding: 15rem 10rem;
+  max-width: min(100%, 1980px);
+  margin: auto;
 }
 @media (max-width: 1560px) {
   .departments {

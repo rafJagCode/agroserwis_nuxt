@@ -5,7 +5,7 @@
     cycle
     delimiter-icon="mdi-minus"
     hide-delimiter-background
-    height="calc(100vh - var(--navbar-height))"
+    height="min(calc(100vh - var(--navbar-height)), 1280px)"
   >
     <v-carousel-item
       v-for="image in images"

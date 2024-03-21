@@ -25,7 +25,7 @@ export default {
 .about {
   scroll-snap-align: start;
   position: relative;
-  min-height: 100vh;
+  min-height: min(100vh, 1280px);
   box-shadow: 0 0 2px 1px rgba(60, 60, 62);
 }
 ::v-deep.about-content {
