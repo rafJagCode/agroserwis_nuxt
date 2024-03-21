@@ -14,7 +14,7 @@
     >
     </v-carousel-item>
     <v-btn href="#departments" class="scroll-btn" plain>
-      <v-icon v-bind="btnSize">mdi-hand-pointing-down</v-icon>
+      <v-icon class="scroll-icon">mdi-hand-pointing-down</v-icon>
     </v-btn>
   </v-carousel>
 </template>
@@ -67,5 +67,8 @@ export default {
   right: 50%;
   z-index: 2;
   transform: translate(50%, -1rem);
+  & .scroll-icon {
+    font-size: 4rem;
+  }
 }
 </style>
