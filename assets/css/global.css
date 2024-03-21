@@ -212,7 +212,7 @@ html {
 .app-text-long {
   font-family: 'Source Sans 3', sans-serif !important;
   font-weight: 500 !important;
-  font-size: 2.3rem !important;
+  font-size: 2rem !important;
   letter-spacing: 0.1rem;
   color: var(--v-text-base) !important;
 }
