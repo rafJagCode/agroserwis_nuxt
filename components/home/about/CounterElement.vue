@@ -42,18 +42,24 @@ export default {
 .counter-element {
   display: grid;
   place-items: center;
+  font-size: 1rem;
 }
 .counter-number {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 8rem;
+  font-size: 8em;
   line-height: 9rem;
   color: var(--v-grey-lighten1);
 }
 .counter-text {
   font-family: 'Libre Baskerville', sans-serif;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3.5em;
   color: var(--v-primary-base);
+}
+@media (max-width: 1150px) {
+  .counter-element {
+    font-size: 0.8rem;
+  }
 }
 </style>
