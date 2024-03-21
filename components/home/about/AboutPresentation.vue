@@ -26,6 +26,9 @@ export default {
   box-shadow: 2px 2px 5px 0px gray;
   display: grid;
   padding: 4rem 6rem;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  z-index: 1;
 }
 .about-title {
   align-self: start;

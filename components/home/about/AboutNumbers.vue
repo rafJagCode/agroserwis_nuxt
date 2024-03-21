@@ -23,10 +23,17 @@ export default {
 .about-numbers {
   background: transparent;
   display: flex;
-  gap: 20rem;
+  gap: 10%;
   justify-content: center;
-  width: 100%;
-  align-self: center;
-  justify-self: center;
+  align-items: center;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  z-index: 1;
+  padding: 10% 0;
+}
+@media (max-width: 800px) {
+  .about-numbers {
+    flex-direction: column;
+  }
 }
 </style>
