@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Informacje",
+    "items": [
+      { "type": "text", "value": "AGRO-SERWIS DS sp. z o.o. sp. k." },
+      { "type": "text", "value": "Aleja Wilanowska 67A lok. 20" },
+      { "type": "text", "value": "02-765 Warszawa" },
+      { "type": "text", "value": "NIP: 701-058-01-03" },
+      { "type": "text", "value": "BDO 000404840" }
+    ]
+  },
+  {
+    "title": "Oddziały",
+    "items": [
+      {
+        "type": "link",
+        "value": "Białystok",
+        "href": "https://partneragro.pl"
+      },
+      { "type": "link", "value": "Zambrów", "href": "https://partneragro.pl" },
+      { "type": "link", "value": "Siedlce", "href": "https://partneragro.pl" },
+      { "type": "link", "value": "Przasnysz", "href": "https://partneragro.pl" }
+    ]
+  },
+  {
+    "title": "Kontakt",
+    "items": [
+      { "type": "text", "value": "ul. Polowa 14" },
+      { "type": "text", "value": "18-300 Zambrów" },
+      { "type": "link", "value": "+48 86 270 30 99", "href": "tel:48862703099" }
+    ]
+  }
+]
