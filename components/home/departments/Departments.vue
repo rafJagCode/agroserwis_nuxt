@@ -1,16 +1,22 @@
 <template>
   <section id="departments" class="departments">
-    <DepartmentsCaption></DepartmentsCaption>
+    <SectionHeadline>
+      <template #title>Poznaj Nasze Oddziały</template>
+      <template #text
+        >Nasze wsparcie techniczne pomoże Ci wybrać rozwiązanie dopasowane do
+        Twoich potrzeb</template
+      >
+    </SectionHeadline>
     <DepartmentsCards></DepartmentsCards>
   </section>
 </template>
 
 <script>
-import DepartmentsCaption from './DepartmentsCaption'
+import SectionHeadline from '~/components/section_headline/SectionHeadline'
 import DepartmentsCards from './DepartmentsCards'
 
 export default {
-  components: { DepartmentsCaption, DepartmentsCards },
+  components: { SectionHeadline, DepartmentsCards },
 }
 </script>
 
