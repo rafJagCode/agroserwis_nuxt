@@ -2,6 +2,7 @@
   <div class="about-numbers">
     <CounterElement
       v-for="counter in counters"
+      :key="counter.text"
       :text="counter.text"
       :countTo="counter.countTo"
     />
