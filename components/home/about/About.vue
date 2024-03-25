@@ -24,17 +24,12 @@ export default {
 <style scoped lang="scss">
 .about {
   scroll-snap-align: start;
-  position: relative;
-  min-height: min(100vh, 1280px);
   box-shadow: 0 0 2px 1px rgba(60, 60, 62);
 }
 ::v-deep.about-content {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  height: clamp(800px, 100vh, 1280px);
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: minmax(0, 1fr) auto;
   & .about-img {
     grid-row: 1/3;
     grid-column: 1/2;
