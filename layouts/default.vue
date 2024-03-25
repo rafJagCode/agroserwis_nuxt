@@ -4,13 +4,16 @@
     <v-main>
       <Nuxt />
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
 <script>
 import AppNavbar from '~/components/navbar/AppNavbar'
+import AppFooter from '~/components/footer/AppFooter'
 export default {
   components: {
     AppNavbar,
+    AppFooter,
   },
 }
 </script>

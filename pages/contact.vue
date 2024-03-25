@@ -4,17 +4,14 @@
       <ContactHeader></ContactHeader>
       <ContactCards></ContactCards>
     </div>
-    <MainFooter></MainFooter>
   </div>
 </template>
 
 <script>
 import ContactHeader from '~/components/contact/ContactHeader'
 import ContactCards from '~/components/contact/ContactCards'
-import MainFooter from '~/components/footer/MainFooter'
 export default {
   components: {
-    MainFooter,
     ContactCards,
     ContactHeader,
   },
