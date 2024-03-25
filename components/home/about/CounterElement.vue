@@ -18,12 +18,16 @@ export default {
     runCounter(entries) {
       if (!entries[0].isIntersecting) return
       this.observer.disconnect()
-      let intervalID
-
-      intervalID = setInterval(() => {
-        if (this.number >= this.countTo) clearInterval(intervalID)
-        else this.number++
-      }, 100)
+      const start = performance.now()
+      const duration = 1000
+      const increment = (timestamp) => {
+        const currDuration = timestamp - start
+        const progress = Math.min(1, currDuration / duration)
+        this.number = Math.floor(this.countTo * progress)
+        if (this.number === this.countTo) return
+        requestAnimationFrame(increment)
+      }
+      requestAnimationFrame(increment)
     },
   },
   mounted() {
