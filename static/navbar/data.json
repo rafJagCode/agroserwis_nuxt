@@ -5,18 +5,18 @@
     "nuxt": false
   },
   {
+    "text": "O nas",
+    "link": "#about",
+    "nuxt": false
+  },
+  {
     "text": "Partnerzy",
-    "link": "/partners",
-    "nuxt": true
+    "link": "#partners",
+    "nuxt": false
   },
   {
     "text": "Kontakt",
-    "link": "/contact",
-    "nuxt": true
-  },
-  {
-    "text": "O nas",
-    "link": "#about",
+    "link": "#contact",
     "nuxt": false
   }
 ]

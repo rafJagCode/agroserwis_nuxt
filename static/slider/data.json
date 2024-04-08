@@ -1,1 +1,17 @@
-["slide1.jpg", "slide2.jpg", "slide3.jpg"]
+[
+  {
+    "img": "slide1.jpg",
+    "title": "Dynamic Drive Technology",
+    "desc": "Wypróbuj ciągniki z rewolucyjną technologią Dynamic Drive, zapewniającą niezrównaną moc, wydajność i oszczędność paliwa."
+  },
+  {
+    "img": "slide2.jpg",
+    "title": "Innowacyjne złącza Connect-Pro",
+    "desc": "Akcesoria do ciagników Claas z technologią Connect-Pro. Zmiana osprzętu jeszcze nigdy nie była tak prosta."
+  },
+  {
+    "img": "slide3.jpg",
+    "title": "Ciągniki dla Nowoczesnych Gospodarstw - Steyr",
+    "desc": "Ciągniki Steyr, zaprojektowane dla maksymalnej produktywności i wydajności w rolnictwie."
+  }
+]

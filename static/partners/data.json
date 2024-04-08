@@ -1,10 +1,13 @@
 [
-  "annaburger.svg",
-  "case.svg",
-  "cynkomet.svg",
-  "lemken.svg",
-  "manitou.svg",
-  "john-deere.svg",
-  "steyr.svg",
-  "strautman.svg"
+  { "img": "annaburger.svg", "link": "https://www.annaburger.de/en/" },
+  { "img": "case.svg", "link": "https://www.caseih.com/pl-pl/poland" },
+  { "img": "cynkomet.svg", "link": "https://cynkomet.pl/" },
+  { "img": "lemken.svg", "link": "https://lemken.com/en-en/" },
+  { "img": "manitou.svg", "link": "https://www.manitou.com/pl-PL" },
+  { "img": "john-deere.svg", "link": "https://www.deere.pl/pl/index.html" },
+  {
+    "img": "steyr.svg",
+    "link": "https://www.steyr-traktoren.com/pl-pl/rolnictwo"
+  },
+  { "img": "strautman.svg", "link": "https://www.strautmann.com/pl" }
 ]
