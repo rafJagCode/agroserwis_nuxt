@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="navbar" color="primary" height="66px">
+  <v-app-bar class="navbar" color="primary" fixed>
     <div class="content">
       <Logo></Logo>
       <Menu @toggle-sidebar="toggleSidebar()"></Menu>
@@ -33,7 +33,9 @@ export default {
 </script>
 <style scoped lang="scss">
 .navbar {
-  z-index: 2;
+  z-index: 3;
+  position: sticky !important;
+  height: var(--navbar-height) !important;
 }
 .content {
   width: 100%;
