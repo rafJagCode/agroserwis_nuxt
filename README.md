@@ -1,4 +1,4 @@
-# Agroserwis
+# HervestSolutions
 
 Business website for a company selling agricultural equipment.
 

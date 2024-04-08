@@ -4,14 +4,14 @@ export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: 'AGROSERWIS - %s',
+    titleTemplate: 'HervestSolutions - %s',
     title: 'sprzedaż i serwis maszyn do produkcji rolnej',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,7 +39,7 @@ export default {
       '@nuxtjs/axios',
       process.env.NODE_ENV !== 'production'
         ? { baseURL: 'http://localhost:3000' }
-        : { baseURL: 'http://agroserwis.rafaljagielski.pl' },
+        : { baseURL: 'http://hervestsolutions.rafaljagielski.pl' },
     ],
 
     // https://go.nuxtjs.dev/pwa
@@ -65,14 +65,12 @@ export default {
       },
       themes: {
         light: {
-          primary: '#f6f9f0',
-          secondary: '#3C3C3E',
+          primary: '#fbfdf9',
+          secondary: '#2a2b2a',
+          bg: '#d7d4dc',
+          emph: '#FFE9D6',
           accent: '#85AE43',
           error: '#ff0033',
-          info: '#E0E0E1',
-          success: '#87d3b5',
-          warning: '#d4af37',
-          text: '#313131',
           grey: '#919191',
         },
       },
@@ -80,24 +78,4 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    },
-  },
-  generate: {
-    routes() {
-      return axios
-        .get('http://agroserwis.rafaljagielski.ovh/api/get-departments-slugs')
-        .then((res) => {
-          const filteredRoutes = res.data.filter((department) => {
-            return !['default', 'grojec', 'bialystok'].includes(department.slug)
-          })
-          return filteredRoutes.map((department) => {
-            return '/' + department.slug
-          })
-        })
-    },
-  },
 }
