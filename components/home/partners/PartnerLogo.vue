@@ -1,12 +1,12 @@
 <template>
-  <a class="partner-logo">
-    <v-img :src="`/partners/images/${img}`"></v-img>
+  <a class="partner-logo" :href="partner.link" target="_blank">
+    <v-img :src="`/partners/images/${partner.img}`"></v-img>
   </a>
 </template>
 <script>
 export default {
   props: {
-    img: null,
+    partner: null,
   },
 }
 </script>
