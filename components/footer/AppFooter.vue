@@ -9,7 +9,7 @@
       <GoogleMap />
     </div>
     <div class="copyright">
-      <strong>{{ new Date().getFullYear() }} — Agroserwis</strong>
+      <strong>{{ new Date().getFullYear() }} — HervestSolutions</strong>
     </div>
   </footer>
 </template>
@@ -30,7 +30,7 @@ export default {
   padding: 5rem 3rem 0 3rem;
   display: grid;
   justify-content: center;
-  background: var(--v-secondary-darken1);
+  background: var(--v-secondary-base);
 }
 .content {
   width: fit-content;

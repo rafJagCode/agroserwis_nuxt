@@ -19,6 +19,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .default-layout {
-  background-color: var(--v-primary-base);
+  background-color: var(--v-bg-base);
 }
 </style>

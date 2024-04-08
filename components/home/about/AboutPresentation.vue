@@ -22,7 +22,7 @@ export default {
   margin-bottom: 3rem;
   align-self: end;
   justify-self: center;
-  background: var(--v-primary-base);
+  background-color: var(--v-emph-base);
   box-shadow: 2px 2px 5px 0px gray;
   display: grid;
   padding: 4rem 6rem;
