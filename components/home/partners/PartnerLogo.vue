@@ -19,9 +19,10 @@ export default {
   padding: 2rem;
   align-items: center;
   filter: contrast(10%);
-  transition: filter 300ms ease;
+  transition: all 300ms ease;
   &:hover {
     filter: contrast(100%);
+    scale: 1.2;
   }
 }
 </style>
