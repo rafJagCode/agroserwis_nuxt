@@ -36,6 +36,7 @@ export default {
   z-index: 3;
   position: sticky !important;
   height: var(--navbar-height) !important;
+  flex-grow: 0;
 }
 .content {
   width: 100%;
