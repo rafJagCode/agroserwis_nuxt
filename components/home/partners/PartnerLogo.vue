@@ -25,4 +25,9 @@ export default {
     scale: 1.2;
   }
 }
+@media (pointer: coarse) {
+  .partner-logo {
+    filter: none;
+  }
+}
 </style>
