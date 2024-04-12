@@ -184,9 +184,8 @@ table {
   --navbar-height: 66px;
 }
 html {
-  font-size: 10px !important;
+  font-size: clamp(5px, calc(0.3vw + 1px), 10px) !important;
   scroll-behavior: smooth;
-  /* scroll-snap-type: y proximity; */
 }
 /* <--- TYPOGRAPHY ---> */
 .app-text-h1 {
@@ -230,24 +229,4 @@ html {
 }
 strong {
   color: var(--v-accent-base);
-}
-@media (max-width: 1960px) {
-  html {
-    font-size: 8px !important;
-  }
-}
-@media (max-width: 1260px) {
-  html {
-    font-size: 7px !important;
-  }
-}
-@media (max-width: 960px) {
-  html {
-    font-size: 6px !important;
-  }
-}
-@media (max-width: 600px) {
-  html {
-    font-size: 5px !important;
-  }
 }
