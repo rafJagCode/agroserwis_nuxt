@@ -1,5 +1,6 @@
 <template>
-  <section id="departments" class="departments">
+  <section class="departments">
+    <Anchor id="departments" />
     <SectionHeadline>
       <template #title>Poznaj Nasze Oddziały</template>
       <template #text
@@ -12,32 +13,27 @@
 </template>
 
 <script>
+import Anchor from '~/components/anchor/Anchor'
 import SectionHeadline from '~/components/section_headline/SectionHeadline'
 import DepartmentsCards from './DepartmentsCards'
 
 export default {
-  components: { SectionHeadline, DepartmentsCards },
+  components: { Anchor, SectionHeadline, DepartmentsCards },
 }
 </script>
 
 <style scoped lang="scss">
 .departments {
-  scroll-snap-align: start;
-  min-height: min(100vh, 1280px);
+  position: relative;
+  padding: 10rem 0;
   display: grid;
-  grid-template-rows: auto 1fr;
-  padding: 15rem 10rem;
-  max-width: min(100%, 1980px);
-  margin: auto;
+  grid-template-rows: repeat(2, min-content);
+  align-content: center;
 }
 @media (max-width: 1560px) {
   .departments {
-    padding: 10rem 10rem;
-  }
-}
-@media (max-width: 800px) {
-  .departments {
-    padding: 10rem 5rem;
+    max-height: revert;
+    height: fit-content;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <section id="about" class="about">
+  <section class="about">
+    <Anchor id="about" />
     <div class="about-content">
       <v-img
         class="about-img"
@@ -14,20 +15,23 @@
 </template>
 
 <script>
+import Anchor from '~/components/anchor/Anchor'
 import AboutNumbers from './AboutNumbers'
 import AboutPresentation from './AboutPresentation'
 export default {
-  components: { AboutNumbers, AboutPresentation },
+  components: { Anchor, AboutNumbers, AboutPresentation },
 }
 </script>
 
 <style scoped lang="scss">
 .about {
-  scroll-snap-align: start;
+  position: relative;
   box-shadow: 0 0 2px 1px rgba(60, 60, 62);
+  margin-bottom: 2px;
+  grid-column: full-width;
 }
 ::v-deep.about-content {
-  height: clamp(800px, 100vh, 1280px);
+  height: 100%;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   & .about-img {
@@ -36,6 +40,15 @@ export default {
   }
   & .v-image__image {
     background-position: center bottom !important;
+    @media (min-width: 2560px) {
+      background-position: center 70% !important;
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .about {
+    --max-height: revert;
+    height: fit-content;
   }
 }
 </style>

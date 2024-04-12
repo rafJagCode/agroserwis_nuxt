@@ -1,5 +1,6 @@
 <template>
-  <section id="partners" class="partners">
+  <section class="partners">
+    <Anchor id="partners" />
     <SectionHeadline>
       <template #title>Nasi Partnerzy</template>
       <template #text
@@ -8,30 +9,34 @@
       >
     </SectionHeadline>
     <div class="partners-logos">
-      <PartnerLogo v-for="logo in logos" :key="logo" :img="logo"></PartnerLogo>
+      <PartnerLogo
+        v-for="partner in partners"
+        :key="partner.img"
+        :partner="partner"
+      ></PartnerLogo>
     </div>
   </section>
 </template>
 <script>
+import Anchor from '~/components/anchor/Anchor'
 import SectionHeadline from '~/components/section_headline/SectionHeadline'
 import PartnerLogo from './PartnerLogo'
 import data from '/static/partners/data.json'
 export default {
-  components: { SectionHeadline, PartnerLogo },
+  components: { Anchor, SectionHeadline, PartnerLogo },
   data: () => ({
-    logos: data,
+    partners: data,
   }),
 }
 </script>
 
 <style scoped lang="scss">
 .partners {
+  position: relative;
+  padding: 10rem 0;
   display: grid;
-  grid-template-rows: auto 1fr;
-  min-height: min(100vh, 1280px);
-  max-width: min(100%, 1980px);
-  padding: 15rem 10rem;
-  margin: auto;
+  grid-template-rows: repeat(2, min-content);
+  align-content: center;
 }
 .partners-logos {
   --logos-columns: 4;
@@ -42,12 +47,16 @@ export default {
   place-items: center;
 }
 @media (max-width: 1280px) {
+  .partners {
+    max-height: revert;
+    height: fit-content;
+  }
   .partners-logos {
     --logos-columns: 2;
     width: 70%;
   }
 }
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .partners-logos {
     --logos-columns: 1;
     width: 50%;
