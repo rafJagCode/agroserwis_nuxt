@@ -24,7 +24,7 @@ export default {}
 ::v-deep.logo {
   & .v-btn__content {
     height: 100%;
-    padding: 5px;
+    padding: 2px;
   }
 }
 .logo:before {
