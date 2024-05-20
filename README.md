@@ -2,65 +2,63 @@
 
 Business website for a company selling agricultural equipment.
 
-[**=> LINK TO LIVE VERSION <=**](toDo)
-
----
+## [🔗 CLICK TO SEE IT LIVE](https://hervestsolutions.rafaljagielski.pl)
 
 ## Table of Contents
 
-- [General Informations](#general-informations)
-- [Technologies](#technologies)
-- [Build Setup](#built-setup)
-- [License](#license)
+[⚓General Informations](#general-informations)
 
----
+[⚓Technologies](#technologies)
+
+[⚓Build Setup](#built-setup)
+
+[⚓License](#license)
 
 ## General Informations
 
 It is a mockup of business website. It's main focus is to provide customers with a sales offer, contact and address details.
 
----
-
 ## Technologies
 
 List of technologies used to build the app:
 
-**Backend:**
+<a href="https://nuxt.com/"> <img src="https://github.com/rafJagCode/tech_icons/blob/main/nuxt.png?raw=true" width="30" height="30" style="vertical-align:middle"/> Nuxt</a> - an open source framework under MIT license.
 
-- [php] - a popular general-purpose scripting language that is especially suited to web development.
-
-**Frontend:**
-
-- [nuxt] - an open source framework under MIT license.
-- [vuetify] - Open Source UI Library with beautifully handcrafted Vue Components.
-
----
+<a href="https://vuetifyjs.com"> <img src="https://raw.githubusercontent.com/rafJagCode/tech_icons/289e0727706e12ff5296e4c0dd05cf5dbb4d62d2/vuetify.svg" width="30" height="30" style="vertical-align:middle"/> Vuetify</a> - open source UI library with beautifully handcrafted Vue Components.
 
 ## Build Setup
 
-### install dependencies
+- Install dependencies
 
-$ yarn install
+  ```sh
+  yarn install
+  ```
 
-### serve with hot reload at localhost:3000
+- Serve with hot reload at localhost:3000
 
-$ yarn dev
+  ```sh
+  yarn dev
+  ```
 
-### build for production and launch server
+- Build for production and launch server
 
-$ yarn build
-$ yarn start
+  ```sh
+  yarn build
+  ```
 
-### generate static project
+  ```sh
+  yarn start
+  ```
 
-$ yarn generate
+- Generate static project
 
----
+  ```sh
+  yarn generate
+  ```
 
 ## License
 
 MIT
 
-[php]: https://www.php.net
 [nuxt]: https://nuxt.com/
 [vuetify]: https://vuetifyjs.com
