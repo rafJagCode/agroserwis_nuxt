@@ -28,9 +28,16 @@ List of technologies used to build the app:
 
 ## Build Setup
 
+- Clone repository
+
+  ```sh
+  git clone https://github.com/rafJagCode/hervestsolutions.git
+  ```
+
 - Install dependencies
 
   ```sh
+  cd hervestsolutions
   yarn install
   ```
 
